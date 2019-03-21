@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>You are being watched</title>
+  
+  <link rel="shortcut icon" type="image/png" href="img/cctv.png"/>
+  
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.css" rel="stylesheet">
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+      
+var img = $('.image');
+if(img.length > 0){
+    var offset = img.offset();
+    function mouse(evt){
+        var center_x = (offset.left) + (img.width()/2);
+        var center_y = (offset.top) + (img.height()/2);
+        var mouse_x = evt.pageX; var mouse_y = evt.pageY;
+        var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
+        var degree = (radians * (180 / Math.PI) * -1) + 90; 
+        img.css('-moz-transform', 'rotate('+degree+'deg)');
+        img.css('-webkit-transform', 'rotate('+degree+'deg)');
+        img.css('-o-transform', 'rotate('+degree+'deg)');
+        img.css('-ms-transform', 'rotate('+degree+'deg)');
+    }
+    $(document).mousemove(mouse);
+}
+
+
+
+    });
+</script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Nicu Calcea</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Story</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="index.html">Code</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://nicu.md/">About me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://nicu.md/contact/">Contact me</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/nicucalcea/">Hire me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+		  <div id="apDiv1"><img src="img/cctv.png" class="image" width="100px"></div>
+            <h1>You are being watched</h1>
+            <h2 class="subheading">Mapping CCTV cameras in Islington</h2>
+            <span class="meta">Words and maps by
+              <a href="http://nicu.md/">Nicu Calcea</a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>If you were walking around London’s West End last Christmas, chances are you were filmed and identified in a <a href="https://www.independent.co.uk/news/uk/home-news/facial-recognition-cameras-london-met-police-suspects-arrests-identity-a8687481.html">Metropolitan Police trial</a> of its facial recognition software.</p>
+		  
+		  <p>But even if you weren’t, it’s nearly impossible to go outside your house without being recorded by a CCTV camera. A study published in the pages of CCTV Image Magazine estimated the number of private and local government operated cameras in the United Kingdom to be 1.85 million in 2011.</p>
+		  
+		  <p>This amounts to about one camera for every 32 people. It also means that each person is seen, on average, by 70 cameras a day. The numbers have undoubtedly grown since 2011 as more businesses and local governments installed security cameras.</p>
+		  
+          <h2 class="section-heading">What’s the purpose of CCTV?</h2>
+
+          <p>Most of the CCTV cameras installed around London are owned by private businesses. However, the London Borough of Islington operates 156 public surveillance cameras. According to the Islington Council website, the cameras are “used to tackle crime and anti-social behaviour”.</p>
+
+          <blockquote class="blockquote">Our control room is open 24 hours a day 365 days a year and is in constant two-way radio contact with the police.  It can direct emergency services and our own ASB officers to incidents as well as record evidence for the police and council services to use in their investigations.</blockquote>
+		  
+		  <p>Transport for London is another big operator of CCTV cameras. These “jamcams” are used to protect property, investigate incidents, prevent and detect crime and monitor traffic.</p>
+		  
+		  <center><video loop="" autoplay="" muted="" poster="https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.09631.jpg" onclick="playPause(this);" onloadeddata="hideload()"><source id="myImg" src="https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.09631.mp4?i=gp8mk"></video></center>
+          <span class="caption text-muted">Some of these cameras have publically accessible feeds <a href="https://www.tfljamcams.net/">that you can watch</a>.</span>
+		  
+		  <h2 class="section-heading">Deterring crime</h2>
+
+          <p>Both Conservative and Labour administrations have supported the proliferation of surveillance cameras by making funding available for local areas. However, when the government spent hundreds of millions of pounds without there being established research on its effectiveness. Later research provided <a href="http://discovery.ucl.ac.uk/1411441/">conflicting results</a>. Some types of crimes, such as illegal parking, <a href="https://books.google.co.uk/books/about/Crime_Prevention_Effects_of_Closed_Circu.html?id=BpPWAAAACAAJ">significantly went down</a> in areas observed by CCTV cameras. Violent crimes, however, seemed to not be affected.</p>
+		  
+		  <center><iframe width='100%' height='440px' id='mapcanvas' src='https://maps.google.com/maps?q=London,%20United%20Kingdom&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=&amp;output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'><div class="zxos8_gm"><a rel="nofollow"  href="https://themesort.com/category/agency-themes">themes here</a></div><div style='overflow:hidden;'><div id='gmap_canvas' style='height:440px;width:100%;'></div></div><div><small>Powered by <a href="https://www.embedgooglemap.co.uk">Embed Google Map</a></small></div></iframe></center>
+          <span class="caption text-muted">Heatmap of crimes in Islington in 2018 and locations of CCTV cameras.</span>
+		  
+		  <p>The map above shows the locations of CCTV cameras operated by the Islington Council and TfL. Since most CCTV cameras are privately-owned, this represents only a small subset. Zoom in to see cameras around your location.</p>
+		  
+		  <h2 class="section-heading">Does it work?</h2>
+		  
+		  <p>A <a href="https://www.telegraph.co.uk/news/uknews/crime/6082530/1000-CCTV-cameras-to-solve-just-one-crime-Met-Police-admits.html">2009 report from the Metropolitan Police</a> admitted that for every 1,000 CCTV cameras, only one crime is solved every year. That crime will cost around £20,000 to detect.</p>
+		  
+		  <img class="img-fluid" src="img/chart.png" alt="Chart about things">
+		  <span class="caption text-muted">Percentage of true and false-positives in police face recognition trials.</span>
+		  
+		  <p>Face recognition doesn't seem to be improving matters. Data obrained by <a href="https://bigbrotherwatch.org.uk/all-campaigns/face-off-campaign/">Big Brother Watch</a> through FOIA request shows that face recognition largely fails.</p>
+		  
+		  <p>One question remains. <b>If it doesn't deter crime, what's the purpose of CCTV?</b></p>
+		  
+		  <br>
+
+          <p><i>Website built with <a href="https://getbootstrap.com/">Bootstrap</a>. Theme by <a href="https://startbootstrap.com/">Star Bootstrap</a>.</p>
+		  <p>Data from <a href="http://islington.gov.uk">Islington Council</a>, <a href="https://tfl.gov.uk/info-for/open-data-users/">TfL</a>, <a href="https://data.police.uk/">police</a> & <a href="https://bigbrotherwatch.org.uk/all-campaigns/face-off-campaign/">Big Brother Watch</a>. Header image by <a href="https://unsplash.com/photos/imwaY7KA9qs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rohan G</a>.</i></p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://twitter.com/nicucalcea">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/nicucalcea">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/nicucalcea/">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Nicu Calcea 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
