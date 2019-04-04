@@ -24,7 +24,7 @@
   <link href="css/clean-blog.css" rel="stylesheet">
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
+  <!-- Bootstrap core JavaScript -->
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
@@ -33,12 +33,12 @@
   <script src="js/clean-blog.min.js"></script>
 
   <script type="text/javascript">
-    $(window).load(function(){
+  $(window).load(function(){
 
-var img = $('.image');
-if(img.length > 0){
-    var offset = img.offset();
-    function mouse(evt){
+    var img = $('.image');
+    if(img.length > 0){
+      var offset = img.offset();
+      function mouse(evt){
         var center_x = (offset.left) + (img.width()/2);
         var center_y = (offset.top) + (img.height()/2);
         var mouse_x = evt.pageX; var mouse_y = evt.pageY;
@@ -48,13 +48,13 @@ if(img.length > 0){
         img.css('-webkit-transform', 'rotate('+degree+'deg)');
         img.css('-o-transform', 'rotate('+degree+'deg)');
         img.css('-ms-transform', 'rotate('+degree+'deg)');
+      }
+      $(document).mousemove(mouse);
     }
-    $(document).mousemove(mouse);
-}
 
 
 
-    });
+  });
 </script>
 
 </head>
@@ -71,8 +71,8 @@ if(img.length > 0){
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-		  <li class="nav-item">
-            <a class="nav-link" href="https://github.com/nicucalcea/nicucalcea.github.io/tree/master/cctv" target="_blank">Code</a>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/nicucalcea/nicucalcea.github.io/blob/master/cctv/islington.R" target="_blank">Code</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="http://nicu.md/" target="_blank">About me</a>
@@ -80,7 +80,7 @@ if(img.length > 0){
           <li class="nav-item">
             <a class="nav-link" href="http://nicu.md/contact/" target="_blank">Contact me</a>
           </li>
-		  <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="https://www.linkedin.com/in/nicucalcea/" target="_blank">Hire me</a>
           </li>
         </ul>
@@ -95,7 +95,7 @@ if(img.length > 0){
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-		  <div id="apDiv1"><img src="img/cctv.png" class="image" width="100px"></div>
+            <div id="apDiv1"><img src="img/cctv.png" class="image" width="100px"></div>
             <h1>You are being watched</h1>
             <h2 class="subheading">CCTV cameras watch our every move. What for?</h2>
             <span class="meta">Words and maps by <a href="http://nicu.md/" target="_blank">Nicu Calcea</a></span>
@@ -112,179 +112,177 @@ if(img.length > 0){
         <div class="col-lg-8 col-md-10 mx-auto">
           <p>If you were walking around London’s West End last Christmas, chances are you were, unknowingly, part of a <a href="https://www.independent.co.uk/news/uk/home-news/facial-recognition-cameras-london-met-police-suspects-arrests-identity-a8687481.html" target="_blank">Metropolitan Police trial</a> of its facial recognition software.</p>
 
-		  <p>But even if you weren’t, it’s nearly impossible to leave your house without being recorded by a CCTV camera. A study <a href="https://www.theguardian.com/uk/2011/mar/02/cctv-cameras-watching-surveillance" target="_blank">published in the pages of CCTV Image Magazine</a> estimated the number of private and publically operated cameras in the United Kingdom to be around 1.85 million in 2011.</p>
+          <p>But even if you weren’t, it’s nearly impossible to leave your house without being recorded by a CCTV camera. A study <a href="https://www.theguardian.com/uk/2011/mar/02/cctv-cameras-watching-surveillance" target="_blank">published in the pages of CCTV Image Magazine</a> estimated the number of private and publically operated cameras in the United Kingdom to be around 1.85 million in 2011.</p>
 
-		  <p>This amounts to about one camera for every 32 people. It also means that each person is seen, on average, by 70 cameras a day. The numbers have undoubtedly grown since 2011 as more businesses and local governments installed security cameras.</p>
+          <p>This amounts to about one camera for every 32 people. It also means that each person is seen, on average, by 70 cameras a day. The numbers have undoubtedly grown since 2011 as more businesses and local governments installed security cameras.</p>
 
           <h2 class="section-heading">What’s the purpose of CCTV?</h2>
 
           <p>Most of the CCTV cameras installed around London are owned by private businesses.</p>
 
-		  		  <style>
-.scrollarticle {
-  padding: 0 1rem 60vh;
-  margin: 0 auto;
-  max-width: 40rem;
-}
-.scrollp {
-  background-color: rgba(255, 255, 255, 0.75);
-  margin: 0;
-  padding: 1rem;
-}
-.scrollp:not(:last-of-type) {
-  margin-bottom: 60vh;
-}
+          <style>
+          .scrollarticle {
+            padding: 0 1rem 60vh;
+            margin: 0 auto;
+            max-width: 40rem;
+          }
+          .scrollp {
+            background-color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+            padding: 1rem;
+          }
+          .scrollp:not(:last-of-type) {
+            margin-bottom: 60vh;
+          }
 
-.scrollimg {
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
+          .scrollimg {
+            display: block;
+            -o-object-fit: cover;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
 
-figure {
-  align-items: center;
-  align-self: flex-start;
-  display: flex;
-  height: 100vh;
-  margin: 0;
-  width: 100%;
-  justify-content: center;
-  top: 0;
-  z-index: -1;
-}
-@media screen and (min-width: 35rem) {
-  figure {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-}
+          figure {
+            align-items: center;
+            align-self: flex-start;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            width: 100%;
+            justify-content: center;
+            top: 0;
+            z-index: -1;
+          }
+          @media screen and (min-width: 35rem) {
+            figure {
+              position: -webkit-sticky;
+              position: sticky;
+            }
+          }
 
-    </style>
+          </style>
 
-  <script>
-  window.console = window.console || function(t) {};
-</script>
+          <script>
+          window.console = window.console || function(t) {};
+          </script>
 
+          <script>
+          if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+          }
+          </script>
 
+          <section>
 
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
+            <figure>
+              <img src="img/gov_map.png" alt="Council data" class="scrollimg">
+            </figure>
 
-<section>
+            <article class="scrollarticle">
+              <p class="scrollp">However, the London Borough of Islington operates 156 public surveillance cameras. According to the Islington Council website, the cameras are “used to tackle crime and anti-social behaviour”.
 
-  <figure>
-    <img src="img/gov_map.png" alt="Council data" class="scrollimg">
-  </figure>
+                <blockquote  class="scrollp">"Our control room is open 24 hours a day 365 days a year and is in constant two-way radio contact with the police. It can direct emergency services and our own ASB [anti-social behaviour] officers to incidents as well as record evidence for the police and council services to use in their investigations." - <a href="https://www.islington.gov.uk/community-safety/cctv" target="_blank">Islington Council</a></blockquote>
+              </article>
 
-  <article class="scrollarticle">
-    <p class="scrollp">However, the London Borough of Islington operates 156 public surveillance cameras. According to the Islington Council website, the cameras are “used to tackle crime and anti-social behaviour”.
-	
-	<blockquote  class="scrollp">"Our control room is open 24 hours a day 365 days a year and is in constant two-way radio contact with the police.  It can direct emergency services and our own ASB officers to incidents as well as record evidence for the police and council services to use in their investigations." - <a href="https://www.islington.gov.uk/community-safety/cctv" target="_blank">Islington Council</a></blockquote>
-  </article>
+            </section>
 
-</section>
+            <section>
 
-<section>
+              <figure>
+                <img src="img/tfl_map.png" alt="TfL data" class="scrollimg">
+              </figure>
 
-  <figure>
-    <img src="img/tfl_map.png" alt="TfL data" class="scrollimg">
-  </figure>
+              <article class="scrollarticle">
+                <p class="scrollp">Transport for London is another big operator of CCTV cameras. These “jamcams” are used to protect property, investigate incidents, prevent and detect crime and monitor traffic. <br><br>
+                  <video loop="" autoplay="" muted="" poster="https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.09722.jpg" onclick="playPause(this);" onloadeddata="hideload()"><source id="myImg" src="https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.09722.mp4?i=1xx9t"></video>
+                    <span class="caption text-muted">Some of these cameras have publically accessible feeds <a href="https://www.tfljamcams.net/" target="_blank">that you can watch</a>.</span></p>
+                  </article>
 
-  <article class="scrollarticle">
-    <p class="scrollp">Transport for London is another big operator of CCTV cameras. These “jamcams” are used to protect property, investigate incidents, prevent and detect crime and monitor traffic. <br><br>
-	<video loop="" autoplay="" muted="" poster="https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.09722.jpg" onclick="playPause(this);" onloadeddata="hideload()"><source id="myImg" src="https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.09722.mp4?i=1xx9t"></video>
-    <span class="caption text-muted">Some of these cameras have publically accessible feeds <a href="https://www.tfljamcams.net/" target="_blank">that you can watch</a>.</span></p>
-  </article>
+                </section>
 
-</section>
- 
-<section>
+                <section>
 
-  <figure>
-    <img src="img/osm_map.png" alt="OSM data" class="scrollimg">
-  </figure>
+                  <figure>
+                    <img src="img/osm_map.png" alt="OSM data" class="scrollimg">
+                  </figure>
 
-  <article class="scrollarticle">
-    <p class="scrollp">Open Street Map volunteers have mapped some of the private CCTV cameras in Islington.</p>
-  </article>
+                  <article class="scrollarticle">
+                    <p class="scrollp">OpenStreetMap volunteers have mapped some of the private CCTV cameras in Islington and Camden.</p>
+                  </article>
 
-</section> 
+                </section>
 
-          <p>Knowing the total number of cameras in any given area is nearly impossible, as businesses aren't required to register their use of CCTV with any authorities. Even some local authorities refuse to disclose the locations of the cameras they operate due to security concerns.</p>
+                <p>Knowing the total number of cameras in any given area is nearly impossible, as businesses aren't required to register their use of CCTV with any authorities. Even some local authorities refuse to disclose the locations of the cameras they operate due to security concerns. Scraping the <a href="http://find.camden.gov.uk/" target="_blank">Camden Council website</a> only returns 41 camera locations. The Camden press service did not respond to an email about their CCTV system.</p>
 
-		  <h2 class="section-heading">What are they watching?</h2> 
+                <h2 class="section-heading">What are they watching?</h2>
 
-          <p>Both Conservative and Labour administrations have supported the proliferation of surveillance cameras by making funding available for local areas. However, when the government spent hundreds of millions of pounds without there being established research on its effectiveness. Later research provided <a href="http://discovery.ucl.ac.uk/1411441/" target="_blank">conflicting results</a>. Some types of crimes, such as illegal parking, <a href="https://books.google.co.uk/books/about/Crime_Prevention_Effects_of_Closed_Circu.html" target="_blank">significantly went down</a> in areas observed by CCTV cameras. Violent crimes, however, seemed to not be affected.</p>
+                <p>Both Conservative and Labour administrations have supported the proliferation of surveillance cameras by making funding available for local areas. The government spent hundreds of millions of pounds without there being established research on its effectiveness. Later research provided <a href="http://discovery.ucl.ac.uk/1411441/" target="_blank">conflicting results</a>. Some types of crimes, such as illegal parking, <a href="https://books.google.co.uk/books/about/Crime_Prevention_Effects_of_Closed_Circu.html" target="_blank">significantly went down</a> in areas observed by CCTV cameras. Violent crimes, however, seemed to not be affected.</p>
 
-		  <style>.embed-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='map.html' style='border:0'></iframe></div>
-          <span class="caption text-muted">Heatmap of crimes in Islington in 2018 and locations of CCTV cameras.</span>
+                <style>.embed-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='map.html' style='border:0'></iframe></div>
+                <span class="caption text-muted">Heatmap of crimes in Islington and Camden in 2018 and locations of CCTV cameras.</span>
 
-		  <p>The map above shows the locations of CCTV cameras operated by the Islington Council and TfL. The heatmap displays the locations of reported crimes in Islington throughout 2018. Zoom in to explore.</p>
+                <p>The map above shows the locations of CCTV cameras operated by the Islington Council, Camden Council and TfL. The heatmap displays the locations of reported crimes in Islington and Camden throughout 2018. Zoom in to explore.</p>
 
-		  <h2 class="section-heading">Does it work?</h2>
+                <h2 class="section-heading">Does it work?</h2>
 
-		  <p>A <a href="https://www.telegraph.co.uk/news/uknews/crime/6082530/1000-CCTV-cameras-to-solve-just-one-crime-Met-Police-admits.html" target="_blank">2009 report from the Metropolitan Police</a> admitted that for every 1,000 CCTV cameras, only one crime is solved every year. That crime will cost around £20,000 to detect.</p>
+                <p>A <a href="https://www.telegraph.co.uk/news/uknews/crime/6082530/1000-CCTV-cameras-to-solve-just-one-crime-Met-Police-admits.html" target="_blank">2009 report from the Metropolitan Police</a> admitted that for every 1,000 CCTV cameras, only one crime is solved every year. That crime will cost around £20,000 to detect.</p>
 
-		  <p>Face recognition doesn't seem to be improving matters. Data obtained by <a href="https://bigbrotherwatch.org.uk/all-campaigns/face-off-campaign/" target="_blank">Big Brother Watch</a> through FOIA request shows that face recognition largely fails. It also raises questions about the police archiving photos of innocent people without the person's knowledge.</p>
+                <p>Face recognition doesn't seem to be improving matters. Data obtained by <a href="https://bigbrotherwatch.org.uk/all-campaigns/face-off-campaign/" target="_blank">Big Brother Watch</a> through FOIA request shows that face recognition largely fails. It also raises questions about the police archiving photos of innocent people without the person's knowledge.</p>
 
-		  <img class="img-fluid" src="img/chart.png" alt="Chart about things">
-		  <span class="caption text-muted">Percentage of true and false-positives in police face recognition trials.</span>
-		  
-		  <p>One question remains. <b>If it doesn't deter crime, what's the purpose of CCTV?</b></p>
+                <img class="img-fluid" src="img/chart.png" alt="Chart about things">
+                <span class="caption text-muted">Percentage of true and false-positives in police face recognition trials.</span>
 
-		  <br>
+                <p>One question remains. <b>If it doesn't deter crime, what's the purpose of CCTV?</b></p>
 
-          <p><i>Website built with <a href="https://getbootstrap.com/">Bootstrap</a>. Theme by <a href="https://startbootstrap.com/">Star Bootstrap</a>.</p>
-		  <p>Data from <a href="http://islington.gov.uk">Islington Council</a>, <a href="https://tfl.gov.uk/info-for/open-data-users/">TfL</a>, <a href="https://www.openstreetmap.org/">OSM</a>, <a href="https://data.police.uk/">police</a> & <a href="https://bigbrotherwatch.org.uk/all-campaigns/face-off-campaign/">Big Brother Watch</a>. Header image by <a href="https://unsplash.com/photos/imwaY7KA9qs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rohan G</a>.</i></p>
-        </div>
-      </div>
-    </div>
-  </article>
+                <br>
 
-  <hr>
+                <p><i>Website built with <a href="https://getbootstrap.com/">Bootstrap</a>. Theme by <a href="https://startbootstrap.com/">Star Bootstrap</a>.</p>
+                  <p>Data from <a href="http://islington.gov.uk">Islington Council</a>, <a href="http://find.camden.gov.uk/">Camden Council</a>, <a href="https://tfl.gov.uk/info-for/open-data-users/">TfL</a>, <a href="https://www.openstreetmap.org/">OSM</a>, <a href="https://data.police.uk/">police</a> & <a href="https://bigbrotherwatch.org.uk/all-campaigns/face-off-campaign/">Big Brother Watch</a>. Header image by <a href="https://unsplash.com/photos/imwaY7KA9qs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rohan G</a>.</i></p>
+                </div>
+              </div>
+            </div>
+          </article>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <ul class="list-inline text-center">
-            <li class="list-inline-item">
-              <a href="https://twitter.com/nicucalcea">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/nicucalcea">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/nicucalcea/">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-          <p class="copyright text-muted">Copyright &copy; <a href="http://nicu.md/" target="_blank">Nicu Calcea</a> 2019</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+          <hr>
 
-</body>
+          <!-- Footer -->
+          <footer>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                  <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                      <a href="https://twitter.com/nicucalcea">
+                        <span class="fa-stack fa-lg">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="https://www.facebook.com/nicucalcea">
+                        <span class="fa-stack fa-lg">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="https://www.linkedin.com/in/nicucalcea/">
+                        <span class="fa-stack fa-lg">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                  <p class="copyright text-muted">Copyright &copy; <a href="http://nicu.md/" target="_blank">Nicu Calcea</a> 2019</p>
+                </div>
+              </div>
+            </div>
+          </footer>
 
-</html>
+        </body>
+
+        </html>
