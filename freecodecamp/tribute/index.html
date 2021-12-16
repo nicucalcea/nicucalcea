@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+✔ User Story #1: My tribute page should have an element with a corresponding id="main", which contains all other elements.
+✔ User Story #2: I should see an element with a corresponding id="title", which contains a string (i.e. text) that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug").
+✔ User Story #3: I should see either a figure or a div element with a corresponding id="img-div".
+✔ User Story #4: Within the img-div element, I should see an img element with a corresponding id="image".
+✔ User Story #5: Within the img-div element, I should see an element with a corresponding id="img-caption" that contains textual content describing the image shown in img-div.
+✔ User Story #6: I should see an element with a corresponding id="tribute-info", which contains textual content describing the subject of the tribute page.
+✔ User Story #7: I should see an a element with a corresponding id="tribute-link", which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of target and set it to _blank in order for your link to open in a new tab (i.e. target="_blank").
+User Story #8: The img element should responsively resize, relative to the width of its parent element, without exceeding its original size.
+User Story #9: The img element should be centered within its parent element.
+
+Inspiration: https://images-na.ssl-images-amazon.com/images/I/910Uk6X0P1L.jpg
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <style>
+            img {
+                max-width: 100%;
+            }
+
+            #btn-read-more {
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main id="main">
+            <nav>
+                <ul>
+                    <li>MENU 1</li>
+                    <li>MENU 2</li>
+                    <li>MENU 3</li>
+                </ul>
+            </nav>
+            <h1>TRANSMETROPOLITAN</h1>
+            <figure id="img-div">
+                <img id="img" src="img/wide.jpg" alt="">
+                <figcaption id="img-caption">“Journalism is just a gun. It's only got one bullet in it, but if you aim right, that's all you need. Aim it right, and you can blow a kneecap off the world.” - <em>Spider Jerusalem</em></figcaption>
+            </figure>
+            <article id="tribute-info">
+                <p>Transmetropolitan is a cyberpunk transhumanist comic book series written by Warren Ellis and co-created and designed by Darick Robertson; it was published by the American company DC Comics in 1997-2002. The series was originally part of the short-lived DC Comics imprint Helix, but upon the end of the book's first year the series was moved to the Vertigo imprint after DC Comics shut down their Helix imprint. Transmetropolitan chronicles the battles of Spider Jerusalem, infamous renegade gonzo journalist of the future.</p>
+                <p>Spider Jerusalem dedicates himself to fighting the corruption and abuse of power of two successive United States presidents. He and his "filthy assistants" strive to keep their world from turning more dystopian than it already is while dealing with the struggles of fame and power, brought about due to the popularity of Spider via his articles.</p>
+            </article>
+            <a id="btn-read-more" href="https://en.wikipedia.org/wiki/Transmetropolitan" target="_blank">Read more 📖</a>
+        </main>
+    </body>
+</html>
