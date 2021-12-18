@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+User Story #13: Inside the form element, I can select a field from one or more groups of radio buttons. Each group should be grouped using the name attribute.
+User Story #14: Inside the form element, I can select several fields from a series of checkboxes, each of which must have a value attribute.
+User Story #15: Inside the form element, I am presented with a textarea at the end for additional comments.
+User Story #16: Inside the form element, I am presented with a button with id="submit" to submit all my inputs.
+-->
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Data visualisation request</h1>
+            <p id="description">If you need help visualising a dataset or reproducing a chart, fill in the form and someone on the data team will get back to you in a short while.</p>
+        </header>
+        <form id="survey-form">
+            <div class="question">
+                <label id="name-label" for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Firstname Lastname" required/>
+            </div>
+            <div class="question">
+                <label id="email-label" for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="youremail@example.com" required/>
+            </div>
+            <div class="question">
+                <label id="number-label" for="number">Deadline (in days)</label>
+                <input type="number" name="number" id="number" min="0" max="7" placeholder="5" required/>
+            </div>
+            <div class="question">
+                <label id="dropdown-label" for="dropdown">Website</label>
+                <select name="dropdown" id="dropdown">
+                    <option value="ns">NS</option>
+                    <option value="em">EM</option>
+                    <option value="tm">TM</option>
+                    <option value="cm">CM</option>
+                </select>
+            </div>
+            <div class="question">
+                <label id="radio-label" for="radio">What is the request?</label>
+                <select name="radio" id="radio">
+                    <option value="ns">NS</option>
+                    <option value="em">EM</option>
+                    <option value="tm">TM</option>
+                    <option value="cm">CM</option>
+                </select>
+            </div>
+        </form>
+        <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
