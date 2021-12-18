@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <!--
-✔ User Story #1: My tribute page should have an element with a corresponding id="main", which contains all other elements.
-✔ User Story #2: I should see an element with a corresponding id="title", which contains a string (i.e. text) that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug").
-✔ User Story #3: I should see either a figure or a div element with a corresponding id="img-div".
-✔ User Story #4: Within the img-div element, I should see an img element with a corresponding id="image".
-✔ User Story #5: Within the img-div element, I should see an element with a corresponding id="img-caption" that contains textual content describing the image shown in img-div.
-✔ User Story #6: I should see an element with a corresponding id="tribute-info", which contains textual content describing the subject of the tribute page.
-✔ User Story #7: I should see an a element with a corresponding id="tribute-link", which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of target and set it to _blank in order for your link to open in a new tab (i.e. target="_blank").
-✔ User Story #8: The img element should responsively resize, relative to the width of its parent element, without exceeding its original size.
-✔ User Story #9: The img element should be centered within its parent element.
-
 Inspiration:
 https://images-na.ssl-images-amazon.com/images/I/910Uk6X0P1L.jpg
 https://codepen.io/freeCodeCamp/pen/zNqgVx?editors=1100
@@ -19,12 +9,18 @@ https://codepen.io/freeCodeCamp/pen/zNqgVx?editors=1100
 
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
     <style>
+        body {
+            background-color: #ccc;
+        }
+
         #main {
-            margin: 30px 8px;
+            margin: 30px 6%;
             padding: 15px;
-            border-radius: 5px;
-            background: #eee;
+            background: #fff;
         }
 
         #main-menu {
@@ -32,7 +28,8 @@ https://codepen.io/freeCodeCamp/pen/zNqgVx?editors=1100
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #333333;
+            display: flex;
+            justify-content: center;
         }
 
         #main-menu li {
@@ -40,15 +37,26 @@ https://codepen.io/freeCodeCamp/pen/zNqgVx?editors=1100
         }
 
         #main-menu li a {
+            font-family: Anton, sans-serif;
             display: block;
-            color: white;
+            color: #1c1a1b;
             text-align: center;
-            padding: 16px;
+            padding: 12px;
             text-decoration: none;
+            font-size: 2.5vw;
         }
 
         #main-menu li a:hover {
             background-color: #111111;
+            color: #fff;
+        }
+
+        #title {
+            text-align: center;
+            font-family: Anton, sans-serif;
+            font-size: 9.8vw;
+            color: #ee1b24;
+            margin: 0;
         }
 
         img {
@@ -58,9 +66,16 @@ https://codepen.io/freeCodeCamp/pen/zNqgVx?editors=1100
             margin: 0 auto;
         }
 
+        #tribute-info {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
         #tribute-link {
             background-color: black;
             color: white;
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
@@ -69,9 +84,9 @@ https://codepen.io/freeCodeCamp/pen/zNqgVx?editors=1100
     <main id="main">
         <nav>
             <ul id="main-menu">
-                <li><a href="#">MENU 1</a></li>
-                <li><a href="#">MENU 2</a></li>
-                <li><a href="#">MENU 3</a></li>
+                <li><a href="#">WARREN ELLIS</a></li>
+                <li><a href="#">DARICK ROBERTSON</a></li>
+                <li><a href="#">RODNEY RAMOS</a></li>
             </ul>
         </nav>
         <h1 id="title">TRANSMETROPOLITAN</h1>
