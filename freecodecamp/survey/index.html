@@ -3,6 +3,7 @@
 
 <!--
 https://www.reddit.com/r/webdev/comments/nm6wcl/18_cards_of_how_to_design_web_forms/?sort=top
+https://codepen.io/tash2020/pen/GRoKBzo?editors=1100
 -->
 
 <head>
@@ -33,6 +34,7 @@ https://www.reddit.com/r/webdev/comments/nm6wcl/18_cards_of_how_to_design_web_fo
 
         #container {
             width: 100%;
+            max-width: 260px;
             margin: 3.1rem auto 0 auto;
             border-width: 2px;
             border-style: solid;
@@ -43,11 +45,7 @@ https://www.reddit.com/r/webdev/comments/nm6wcl/18_cards_of_how_to_design_web_fo
             padding: 30px;
         }
 
-        @media (min-width: 380px) {
-            #container {
-                max-width: 300px;
-            }
-        }
+
         
         @media (min-width: 630px) {
             #container {
@@ -67,12 +65,19 @@ https://www.reddit.com/r/webdev/comments/nm6wcl/18_cards_of_how_to_design_web_fo
             color: var(--color-darkblue);
         }
 
-        label {
+        label p {
             display: flex;
         }
 
         .question {
             margin-bottom: 20px;
+        }
+
+        textarea {
+            resize:vertical;
+            width:90%;
+            max-width:90%;
+            max-height:30%;
         }
 
     </style>
