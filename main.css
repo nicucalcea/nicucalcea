@@ -20,13 +20,12 @@ html {
     background-color: #2f243a;
     color: #f9f9f9;
     font-family: "Roboto Slab";
+    font-size: 18px;
     line-height: 1.5;
     width: 100%
 }
 
 a {
-    text-decoration: none;
-    font-weight: 500;
     color: inherit
 }
 
@@ -274,8 +273,8 @@ section {
     }
 }
 
-.events .institution {
-    font-weight: 400
+.institution {
+    font-weight: 500;
 }
 
 .events .date {
