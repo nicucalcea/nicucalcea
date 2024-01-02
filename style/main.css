@@ -492,3 +492,7 @@ aside> :first-child {
 .dark .icon, .dark .switcher {
     filter: invert(1)
 }
+
+#custom-substack-embed {
+    margin-top: 1em;
+}
