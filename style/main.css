@@ -17,7 +17,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Segoe UI, Roboto, Noto Sans, Helvetica Neue;
+    font-family: 'Roboto', sans-serif;
     color: var(--gray-600);
     -webkit-font-smoothing: antialiased;
     max-width: 70em;
@@ -65,6 +65,7 @@ body>header {
 }
 
 h1 {
+    font-family: 'Domine', serif;
     font-size: 3rem;
     font-weight: 720;
     line-height: 1.2;
@@ -72,6 +73,10 @@ h1 {
     color: #f4f4f5;
     max-width: 12em;
     margin-bottom: .5em
+}
+
+.section-header, .flex b {
+    font-family: 'Domine', serif;
 }
 
 html {
