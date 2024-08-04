@@ -379,10 +379,7 @@ button:active {
     white-space: nowrap;
     color: var(--gray-800);
     width: 100%;
-    background-color: var(--gray-50);
-    display: flex;
-    align-items: center;
-    justify-content: center; 
+    background-color: var(--gray-50)
 }
 
 .secondary:hover {
@@ -391,8 +388,7 @@ button:active {
 
 .secondary img {
     max-width: 1.2em;
-    float: right;
-    margin-left: 0.5em;
+    float: right
 }
 
 /* Grid */
