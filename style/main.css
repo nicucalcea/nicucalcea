@@ -244,7 +244,7 @@ a.entry {
     margin-left: -1em;
     margin-right: -1em;
     background-repeat: no-repeat;
-    background-image: url(/media/buttons/arrow-up-right.svg);
+    background-image: url(/media/icons/arrow-up-right.svg);
     background-position: 98% 95%;
     background-size: .8rem;
     border-radius: 1em;
@@ -252,6 +252,11 @@ a.entry {
     -moz-border-radius: 1em;
     -ms-border-radius: 1em;
     -o-border-radius: 1em;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -ms-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    
 }
 
 a.entry:hover {
