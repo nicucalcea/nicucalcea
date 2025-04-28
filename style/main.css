@@ -228,14 +228,14 @@ body>footer p {
 }
 
 .portfolio-brand {
-    border: 1px solid white;
-    border-radius: 0.1em;
+    /* border: 1px solid white; */
+    /* border-radius: 0.1em; */
     width: 1em;
     height: 1em;
-    -webkit-border-radius: 0.1em;
+    /* -webkit-border-radius: 0.1em;
     -moz-border-radius: 0.1em;
     -ms-border-radius: 0.1em;
-    -o-border-radius: 0.1em;
+    -o-border-radius: 0.1em; */
 }
 
 a.entry {
