@@ -290,7 +290,7 @@ a.entry:hover small {
     width: 100%;
     border-radius: 8px;
     border: 1px solid var(--gray-200, #ddd);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     padding: 2em
 }
 
@@ -403,7 +403,12 @@ button:active {
         grid-template-rows: repeat(3, auto);
         display: grid;
         grid-template-columns: 1.3fr 1fr;
-        grid-column-gap: 5em
+        grid-column-gap: 5em;
+        align-items: start
+    }
+
+    .box .entry {
+        margin-bottom: 0.25em;
     }
 }
 
@@ -506,3 +511,4 @@ aside> :first-child {
 #custom-substack-embed {
     margin-top: 1em;
 }
+
