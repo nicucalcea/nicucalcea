@@ -231,7 +231,7 @@ a.entry:hover small {
 /* Entry Partners (Also covered by) */
 .entry-partners {
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding: 0.75rem 1.5rem;
     background-color: var(--bg-partners);
     border-radius: 0 0 1rem 1rem;
