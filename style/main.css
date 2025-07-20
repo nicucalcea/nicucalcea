@@ -11,6 +11,21 @@
    ============================================================================= */
 
 :root {
+    --white: #fffffe;
+    --white-off: #eff0f3;
+    --black: #0d0d0d;
+    --grey-light: #a7a9be;
+
+    --purple: #994ff3;
+    --red: #e53170;
+
+    --orange: #ff8906;
+    --teal: #419599;
+    --burgundy: #9A4665;
+
+
+
+
     --gray-50: #fafafa;
     --gray-100: #f4f4f5;
     --gray-200: #e2e8f0;
@@ -96,6 +111,37 @@ ul {
 /* =============================================================================
    Layout Components
    ============================================================================= */
+
+/* Banner */
+.banner {
+    background: linear-gradient(135deg, var(--purple), var(--main-600));
+    text-align: center;
+    padding: 0.75rem 2rem;
+    margin: -1.5rem -3rem 2rem -3rem;
+    border-radius: 0;
+    position: relative;
+}
+
+.banner p {
+    margin: 0;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    max-width: none;
+}
+
+.banner a {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.6);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s ease;
+}
+
+.banner a:hover {
+    text-decoration-color: white;
+    -moz-text-decoration-color: white;
+}
 
 .hero {
     display: flex;
