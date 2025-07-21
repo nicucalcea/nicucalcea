@@ -19,6 +19,10 @@ const config = {
 		}),
 		prerender: {
 			handleHttpError: 'warn'
+		},
+		paths: {
+			base: '',
+			assets: 'https://nicu.md'
 		}
 	}
 };
