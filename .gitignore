@@ -6,7 +6,7 @@ node_modules
 .netlify
 .wrangler
 /.svelte-kit
-/build
+# Note: build/ is NOT ignored so GitHub Pages can access it
 
 # OS
 .DS_Store
