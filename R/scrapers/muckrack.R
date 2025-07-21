@@ -1,6 +1,6 @@
 library(tidyverse)
 
-muckrack <- read_csv("R/muckrack.csv") |>
+muckrack <- read_csv("R/data/muckrack.csv") |>
     mutate(
         # Extract text content after the HTML div by finding the last </div> and taking everything after it
         summary = map_chr(
@@ -45,7 +45,7 @@ muckrack <- read_csv("R/muckrack.csv") |>
 
 jsonlite::write_json(
     muckrack,
-    "R/muckrack-articles.json",
+    "R/data/muckrack-articles.json",
     auto_unbox = TRUE,
     pretty = TRUE
 )
