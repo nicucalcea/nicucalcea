@@ -1,0 +1,163 @@
+/* CSS Custom Properties */
+:root {
+  --white: #fffffe;
+  --white-off: #eff0f3;
+  --black: #0d0d0d;
+  --grey-light: #a7a9be;
+  --purple: #994ff3;
+  --red: #e53170;
+  --orange: #ff8906;
+  --teal: #419599;
+  --burgundy: #9A4665;
+  --gray-50: #fafafa;
+  --gray-100: #f4f4f5;
+  --gray-200: #e2e8f0;
+  --gray-400: #a1a1aa;
+  --gray-600: #a1a1a9;
+  --gray-800: #27272a;
+  --main-100: #f0f9ff;
+  --main-200: #e0f2fe;
+  --main-400: #7dd3fc;
+  --main: #00c2ff;
+  --main-600: #0284c7;
+  --bg-dark: #18181b;
+  --bg-entry-hover: #27272a80;
+  --bg-partners: #27272a20;
+  --border-dark: #383838;
+  --text-light: #f4f4f5;
+  --text-muted: #71717a;
+  --text-nav: #cfcfd2;
+}
+
+/* CSS Reset & Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--gray-600);
+  -webkit-font-smoothing: antialiased;
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 1.5rem 3rem;
+  background-color: var(--bg-dark);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+strong {
+  color: white;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+}
+
+/* Box component styles */
+.box h2,
+.box h3 {
+  color: var(--gray-800);
+  margin-bottom: 0.3em;
+  font-family: 'Domine', serif;
+  font-size: 90%;
+  font-weight: 550;
+}
+
+.box :first-child {
+  margin-top: 0;
+}
+
+.box :last-child {
+  margin-bottom: 0;
+}
+
+.box p {
+  font-size: 85%;
+}
+
+.box figure {
+  max-width: 2.8em;
+}
+
+.box time {
+  margin-left: auto;
+}
+
+.box ul {
+  margin: 1.5em 0 2em;
+}
+
+.box li {
+  margin-bottom: 1.5em;
+}
+
+/* Dark mode overrides */
+:global(.dark) .box h2,
+:global(.dark) .box h3 {
+  color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  html {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+}
+
+@media (max-width: 1024px) {
+  aside {
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  aside {
+    grid-template-rows: repeat(3, auto);
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-column-gap: 5em;
+    align-items: start;
+  }
+  
+  aside > :first-child {
+    grid-area: 1/1 / 4/2;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  aside footer {
+    display: flex;
+    gap: 4em;
+  }
+}
+
+@media (max-width: 1280px) {
+  aside footer {
+    max-width: 32em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
