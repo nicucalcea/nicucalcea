@@ -1,44 +1,60 @@
-<script>
-  import Banner from '$lib/components/Banner.svelte';
-  import Hero from '$lib/components/Hero.svelte';
-  import Stories from '$lib/components/Stories.svelte';
-  import Newsletter from '$lib/components/Newsletter.svelte';
-  import WorkEducation from '$lib/components/WorkEducation.svelte';
-  import GitHubStats from '$lib/components/GitHubStats.svelte';
-  import Projects from '$lib/components/Projects.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-
-  let { data } = $props();
-  const { cv } = data;
-  
-  // Get GitHub username from profiles
-  const githubProfile = cv.basics.profiles.find(p => p.network === 'GitHub');
-  const githubUsername = githubProfile ? githubProfile.username : 'nicucalcea';
+<script lang="ts">
+	import Publication from '$lib/components/Publication.svelte';
+	import Experience from '$lib/components/Experience.svelte';
+	import Project from '$lib/components/Project.svelte';
+	import Hero from '$lib/components/Hero.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { Newspaper, FileUser, Download } from '@lucide/svelte';
+	import cvData from '$data/cv.json';
 </script>
 
 <svelte:head>
-  <title>{cv.basics.name} • {cv.basics.label}</title>
-  <meta name="description" content={cv.basics.summary}>
-  <meta property="og:title" content="{cv.basics.name} - {cv.basics.label} in {cv.basics.location.city}">
-  <meta property="og:description" content={cv.basics.summary}>
+	<title>Nicu Calcea • Investigative Data Journalist</title>
+	<meta name="description" content="Journalist and data analyst specializing in investigations, data-driven stories, and digital journalism. View my portfolio of published work and experience." />
 </svelte:head>
 
-<Banner trainingUrl="https://training.nicu.md/" />
+<!-- Hero Section -->
+<Hero />
 
-<main>
-  <Hero basics={cv.basics} />
+<div class="container mx-auto px-4 py-8">
+	<main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+		<!-- Articles - 2/3 width on desktop, full width on mobile -->
+		<section class="lg:col-span-2 order-1">
+			<h2 class="text-2xl font-semibold text-foreground mb-6">Stories and investigations</h2>
+			<Publication publications={cvData.publications} featured={true} />
+			
+			<div class="flex justify-center mt-8">
+				<Button href="/portfolio" variant="default">
+					<Newspaper />
+					See more stories
+				</Button>
+			</div>
+		</section>
 
-  <aside>
-    <Stories publications={cv.publications} />
-    
-    <Newsletter />
-    
-    <WorkEducation work={cv.work} education={cv.education} />
-    
-    <GitHubStats githubUsername={githubUsername} />
-  </aside>
+		<!-- Work Experience - 1/3 width on desktop, full width on mobile -->
+		<section class="lg:col-span-1 order-2">
+			<h2 class="text-2xl font-semibold text-foreground mb-6">Work Experience</h2>
+			<Experience experiences={cvData.work} featured={true} />
+			
+			<h2 class="text-2xl font-semibold text-foreground mb-6 mt-12">Education</h2>
+			<Experience experiences={cvData.education} featured={true} />
+			
+			<div class="flex flex-col sm:flex-row gap-3 mt-6 justify-center">
+				<Button href="/cv" variant="default">
+					<FileUser />
+					Full CV
+				</Button>
+				<Button href="https://docs.google.com/document/d/1d8x_x-UUQOK3dj4j02eAL-neB_qqZFdcb-0i9iBYqSU/export?format=pdf" variant="default" target="_blank" rel="noopener noreferrer">
+					<Download />
+					Download CV
+				</Button>
+			</div>
+		</section>
+	</main>
 
-  <Projects projects={cv.projects} />
-</main>
-
-<Footer name={cv.basics.name} />
+	<!-- Projects Section - Full width -->
+	<section class="mt-12">
+		<h2 class="text-2xl font-semibold text-foreground mb-6">Projects</h2>
+		<Project projects={cvData.projects} />
+	</section>
+</div>

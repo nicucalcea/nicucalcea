@@ -9,21 +9,17 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			// default options are shown. On some platforms
-			// these options are set automatically — see below
-			pages: 'docs',
-			assets: 'docs',
-			fallback: undefined,
-			precompress: false,
-			strict: true
+			fallback: '404.html'
 		}),
-		prerender: {
-			handleHttpError: 'warn'
-		},
+		// Since you're using a custom domain, you don't need the BASE_PATH
+		// If you want to test with the repo path, uncomment the paths config below
 		// paths: {
-		// 	base: '',
-		// 	assets: 'https://nicu.md'
-		// }
+		// 	base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+		// },
+		alias: {
+			$data: 'src/data',
+			$src: 'src'
+		}
 	}
 };
 
