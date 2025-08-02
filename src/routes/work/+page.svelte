@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>Portfolio • Nicu Calcea</title>
+	<title>Work • Nicu Calcea</title>
 	<meta name="description" content="Portfolio of published stories, investigations, and journalistic work by Nicu Calcea." />
 </svelte:head>
 

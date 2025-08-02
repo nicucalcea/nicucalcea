@@ -19,8 +19,8 @@
 					</NavigationMenu.Item>
 					
 					<NavigationMenu.Item>
-						<NavigationMenu.Link href="/portfolio" class="px-3 py-2 text-sm font-medium transition-colors rounded-md {currentPath === '/portfolio' ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-accent hover:text-accent-foreground'}">
-							Portfolio
+						<NavigationMenu.Link href="/work" class="px-3 py-2 text-sm font-medium transition-colors rounded-md {currentPath === '/work' ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-accent hover:text-accent-foreground'}">
+							Work
 						</NavigationMenu.Link>
 					</NavigationMenu.Item>
 					

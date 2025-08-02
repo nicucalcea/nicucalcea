@@ -169,12 +169,12 @@
       ]
     },
     {
-      "name": "Partidul Liberal Reformator",
+      "name": "Liberal Reformists Party",
       "position": "Communications Assistant",
       "url": "https://plr.md/",
       "startDate": "2013-11-01",
       "endDate": "2014-05-01",
-      "summary": "Worked as a lifeguard at Six Flags America."
+      "summary": "Worked on communication strategies for the party."
     },
     {
       "name": "McDonald's",
@@ -334,7 +334,7 @@
     {
       "name": "Augmenta: A new tool for AI classification and research",
       "publisher": "Global Witness",
-      "releaseDate": "2025-06-29",
+      "releaseDate": "2025-07-29",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/augmenta-new-tool-for-ai-classification-and-research/",
       "summary": "We are making the tool behind some of our investigations available for public use.",
       "featured": true
@@ -389,16 +389,14 @@
       "publisher": "City Monitor / CityMetric",
       "releaseDate": "2021-02-01",
       "url": "https://citymonitor.ai/transport/why-winter-is-a-poor-argument-against-bike-lanes",
-      "summary": "Studies confirm that it is substandard infrastructure and maintenance, rather than the cold or the snow, that keeps cyclists off their wheels in winter. One city that's embraced this lesson is Oulu, Finland.",
-      "featured": true
+      "summary": "Studies confirm that it is substandard infrastructure and maintenance, rather than the cold or the snow, that keeps cyclists off their wheels in winter. One city that's embraced this lesson is Oulu, Finland."
     },
     {
       "name": "Secret holding company of a minister",
       "publisher": "RISE Moldova",
       "releaseDate": "2016-03-01",
       "url": "https://www.rise.md/english/documents-secret-holding-company-of-a-minister/",
-      "summary": "We reveal that Minister of Transport Iurie Chirinciuc controls Cavio, an Italian furniture holding company, via a close family associate.",
-      "featured": true
+      "summary": "We reveal that Minister of Transport Iurie Chirinciuc controls Cavio, an Italian furniture holding company, via a close family associate."
     },
     {
       "name": "US new-biz spotlight: Creative activity more than doubles but media slows",
@@ -929,7 +927,13 @@
       "publisher": "SAMIZDATA",
       "releaseDate": "2024-01-25",
       "url": "https://blog.samizdata.co/p/what-will-the-world-do-today",
-      "summary": "We get 24 hours a day. A new study calculates how we spend them."
+      "summary": "We get 24 hours a day. A new study calculates how we spend them.",
+      "partners": [
+        {
+          "name": "#diez",
+          "url": "https://diez.md/2024/01/26/o-zi-din-viata-unui-moldovean-mai-mult-prasit-si-mai-putina-socializare/"
+        }
+      ]
     },
     {
       "name": "The British sitcom that swept through the Balkans",

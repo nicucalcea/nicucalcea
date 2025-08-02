@@ -20,11 +20,11 @@
 	<main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 		<!-- Articles - 2/3 width on desktop, full width on mobile -->
 		<section class="lg:col-span-2 order-1">
-			<h2 class="text-2xl font-semibold text-foreground mb-6">Stories and investigations</h2>
+			<h2 class="text-2xl font-semibold text-foreground mb-6">Selected stories and investigations</h2>
 			<Publication publications={cvData.publications} featured={true} />
 			
 			<div class="flex justify-center mt-8">
-				<Button href="/portfolio" variant="default">
+				<Button href="/work" variant="default">
 					<Newspaper />
 					See more stories
 				</Button>
