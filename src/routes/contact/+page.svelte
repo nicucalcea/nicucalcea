@@ -80,7 +80,7 @@
 				<div 
 					id="my-cal-inline-30min" 
 					class="w-full h-[600px] md:h-[700px] overflow-auto"
-					style="width:100%;height:100%;overflow:scroll;min-height: 600px;"
+					style="width:100%;height:100%;overflow:scroll;min-height: 500px;"
 				></div>
 			</div>
 		</div>

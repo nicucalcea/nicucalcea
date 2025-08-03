@@ -38,8 +38,8 @@
 					</NavigationMenu.Item>
 					
 					<NavigationMenu.Item>
-						<NavigationMenu.Link href="/contact" class="px-3 py-2 text-sm font-medium transition-colors rounded-md {currentPath === '/contact' ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-accent hover:text-accent-foreground'}">
-							Contact
+						<NavigationMenu.Link href="/contact" class="px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-md bg-chart-2 text-white hover:bg-chart-2/90 hover:text-white shadow-sm hover:shadow-md border border-chart-2/20 {currentPath === '/contact' ? 'ring-2 ring-chart-2/50 bg-chart-2/90' : ''}">
+							Hire me!
 						</NavigationMenu.Link>
 					</NavigationMenu.Item>
 				</NavigationMenu.List>

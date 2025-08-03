@@ -83,7 +83,7 @@
 	
 	const baseWidth = 800;
 	const chartHeight = 300;
-	const margin = { top: 80, right: 40, bottom: 80, left: 40 };
+	const margin = { top: 80, right: 40, bottom: 80, left: 80 };
 	
 	// Reactive dimensions based on container width
 	const chartWidth = $derived(Math.max(320, containerWidth)); // Minimum 320px width
@@ -183,8 +183,6 @@
 </script>
 
 <div class="w-full bg-secondary p-6 rounded-lg relative" bind:this={containerElement}>
-	<h2 class="text-2xl font-bold text-foreground mb-6 text-center">Career Timeline</h2>
-	
 	{#if processedData.experiences.length === 0 && processedData.education.length === 0}
 		<p class="text-center text-muted-foreground">No valid experience or education data available</p>
 	{:else}
@@ -203,8 +201,9 @@
 						y1={plotHeight / 2} 
 						x2={plotWidth} 
 						y2={plotHeight / 2} 
-						stroke="#374151" 
+						stroke="currentColor" 
 						stroke-width="2"
+						class="text-muted-foreground"
 					/>
 					
 					<!-- Year labels -->
@@ -216,16 +215,17 @@
 								y1={plotHeight / 2 - 5} 
 								x2={x} 
 								y2={plotHeight / 2 + 5} 
-								stroke="#374151" 
+								stroke="currentColor" 
 								stroke-width="1"
+								class="text-muted-foreground"
 							/>
 							<text 
 								x={x} 
 								y={plotHeight / 2 + 20} 
 								text-anchor="middle" 
 								font-size={chartWidth < 600 ? "10" : "12"} 
-								fill="#374151"
-								class="font-medium"
+								fill="currentColor"
+								class="font-medium text-muted-foreground"
 							>
 								{year}
 							</text>
@@ -344,24 +344,24 @@
 					
 					<!-- Labels for sections -->
 					<text 
-						x="-30" 
+						x="-20" 
 						y={plotHeight / 2 - 40} 
 						text-anchor="middle" 
 						font-size={chartWidth < 600 ? "12" : "14"} 
 						font-weight="600"
-						fill="#374151"
-						class="font-semibold"
+						fill="currentColor"
+						class="font-semibold text-muted-foreground"
 					>
 						Work
 					</text>
 					<text 
-						x="-30" 
+						x="-20" 
 						y={plotHeight / 2 + 50} 
 						text-anchor="middle" 
 						font-size={chartWidth < 600 ? "12" : "14"} 
 						font-weight="600"
-						fill="#374151"
-						class="font-semibold"
+						fill="currentColor"
+						class="font-semibold text-muted-foreground"
 					>
 						Education
 					</text>
@@ -410,27 +410,5 @@
 				{/if}
 			</div>
 		{/each}
-		
-		<!-- Legend -->
-		<div class="mt-6 text-center">
-			<div class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
-				<div class="flex items-center gap-2">
-					<div class="w-3 h-3 bg-blue-500 rounded-full"></div>
-					<span>Work Experience</span>
-				</div>
-				<div class="flex items-center gap-2">
-					<div class="w-3 h-3 bg-gray-500 rounded-full"></div>
-					<span>Education</span>
-				</div>
-				<div class="flex items-center gap-2">
-					<div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-					<span>Current Position</span>
-				</div>
-				<span class="text-muted-foreground/50 hidden sm:inline">|</span>
-				<span class="hidden sm:inline">Hover over arches for details</span>
-				<span class="text-muted-foreground/50 hidden sm:inline">|</span>
-				<span class="text-xs">Timeline: {processedData.minDate.getFullYear()} - {processedData.maxDate.getFullYear()}</span>
-			</div>
-		</div>
 	{/if}
 </div>
