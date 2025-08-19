@@ -332,12 +332,19 @@
   "certificates": [],
   "publications": [
     {
+      "name": "Oil wells and wildfires: New California data reveals widespread oil production in fire hazard zones",
+      "publisher": "Global Witness",
+      "releaseDate": "2025-08-19",
+      "url": "https://globalwitness.org/en/campaigns/fossil-fuels/oil-wells-and-wildfires-new-california-data-reveals-widespread-oil-production-in-fire-hazard-zones/",
+      "summary": "Oil and gas wells pose risks to health and environment as climate crisis expands California's fire hazard zones.",
+      "featured": true
+    },
+    {
       "name": "Augmenta: A new tool for AI classification and research",
       "publisher": "Global Witness",
       "releaseDate": "2025-07-29",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/augmenta-new-tool-for-ai-classification-and-research/",
-      "summary": "We are making the tool behind some of our investigations available for public use.",
-      "featured": true
+      "summary": "We are making the tool behind some of our investigations available for public use."
     },
     {
       "name": "Fossil fuel donors contributed $19 million to Donald Trump's inaugural fund",
@@ -367,6 +374,13 @@
       "releaseDate": "2024-12-01",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/how-we-used-ai-to-help-us-find-lobbyists-at-cop/",
       "summary": "Every year, Global Witness works with partners in the Keep Big Polluters Out coalition to identify fossil fuel lobbyists who are attending the COP climate talks. For COP29, we pioneered an AI-assisted approach to the process that streamlined and strengthened our analysis."
+    },
+    {
+      "name": "COP oil companies' emissions are set to cause 17 million heat deaths",
+      "publisher": "Global Witness",
+      "releaseDate": "2024-11-21",
+      "url": "https://globalwitness.org/en/campaigns/fossil-fuels/cop-oil-companies-emissions-are-set-to-cause-17-million-heat-deaths/",
+      "summary": "Oil firms present at COP summits made $2.6 trillion profits since the Paris Agreement – enough to pay half the cost of climate damage in poor countries."
     },
     {
       "name": "Fossil fuel lobbyists eclipse delegations from most climate-vulnerable nations at COP29 climate talks",
