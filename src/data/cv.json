@@ -388,6 +388,24 @@
       "releaseDate": "2024-11-15",
       "url": "https://globalwitness.org/en/press-releases/fossil-fuel-lobbyists-eclipse-delegations-from-most-climate-vulnerable-nations-at-cop29-climate-talks/",
       "summary": "At least 1,773 fossil fuel lobbyists have been granted access to the COP29 summit in Baku, underscoring an outsized polluter presence year after year at crucial climate talks, according to a new analysis from the Kick Big Polluters Out (KBPO) coalition.",
+      "partners": [
+        {
+          "name": "The Guardian",
+          "url": "https://www.theguardian.com/environment/2024/nov/15/coal-oil-and-gas-lobbyists-granted-access-to-cop29-says-report"
+        },
+        {
+          "name": "Euronews",
+          "url": "https://www.euronews.com/green/2024/11/15/more-than-1700-oil-and-gas-lobbyists-at-cop29-which-european-delegations-invited-them"
+        },
+        {
+          "name": "The Conversation",
+          "url": "https://theconversation.com/thousands-of-corporate-lobbyists-are-at-the-un-climate-summit-in-baku-but-what-exactly-is-lobbying-and-how-does-it-work-242639"
+        },
+        {
+          "name": "EUobserver",
+          "url": "https://euobserver.com/green-economy/arca0a9830"
+        }
+      ],
       "featured": true
     },
     {
@@ -396,6 +414,24 @@
       "releaseDate": "2024-06-28",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/uk-government-met-oil-lobbyists-every-day-last-year/",
       "summary": "A Global Witness investigation reveals that government officials met with oil and gas lobbyists an average of 1.4 times per working day in 2023.",
+      "partners": [
+        {
+          "name": "Business Insider",
+          "url": "https://www.insider.co.uk/news/uk-government-met-oil-gas-33129568"
+        },
+        {
+          "name": "DeSmog",
+          "url": "https://www.desmog.com/2024/05/09/net-zero-ministers-met-oil-and-gas-representatives-twice-a-week-2023/"
+        },
+        {
+          "name": "Morning Star",
+          "url": "https://morningstaronline.co.uk/article/tory-government-met-oil-and-gas-lobbyists-daily-last-year"
+        },
+        {
+          "name": "Fossil Fuel Parliament",
+          "url": "https://fossilfreeparliament.uk/2025/02/21/revealed-fossil-fuel-lobbyists-accessed-104-meetings-with-labour-ministers-in-first-three-months/"
+        }
+      ],
       "featured": true
     },
     {
