@@ -332,10 +332,36 @@
   "certificates": [],
   "publications": [
     {
-      "name": "Oil wells and wildfires: New California data reveals widespread oil production in fire hazard zones",
+      "name": "Fossil fuel lobbyists flood COP30 climate talks in Brazil, with largest ever attendance share",
       "publisher": "Global Witness",
       "releaseDate": "2025-08-19",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/oil-wells-and-wildfires-new-california-data-reveals-widespread-oil-production-in-fire-hazard-zones/",
+      "summary": "With one in every 25 COP30 attendees a fossil fuel lobbyist, massive industry presence intensifies calls to protect climate negotiations from corporate capture.",
+      "partners": [
+        {
+          "name": "The Guardian",
+          "url": "https://www.theguardian.com/environment/2025/nov/14/fossil-fuel-lobbyists-cop30"
+        },
+        {
+          "name": "Euronews",
+          "url": "https://www.euronews.com/green/2025/11/14/fossil-fuel-lobbyists-outnumber-most-delegations-at-cop30-climate-talks-in-brazil"
+        },
+        {
+          "name": "FT",
+          "url": "https://www.ft.com/content/97dda5a5-0dc6-4adf-a88a-643c9265ab73?segmentId=776b81d7-dd92-c731-e669-99cdd37d3a96"
+        },
+        {
+          "name": "France24",
+          "url": "https://www.france24.com/en/live-news/20251114-fossil-fuel-lobbyists-out-in-force-at-amazon-climate-talks-ngos"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "name": "Oil wells and wildfires: New California data reveals widespread oil production in fire hazard zones",
+      "publisher": "Global Witness",
+      "releaseDate": "2025-11-14",
+      "url": "https://globalwitness.org/en/press-releases/fossil-fuel-lobbyists-flood-cop30-climate-talks-in-brazil-with-largest-ever-attendance-share/",
       "summary": "Oil and gas wells pose risks to health and environment as climate crisis expands California's fire hazard zones.",
       "featured": true
     },
@@ -406,7 +432,7 @@
           "url": "https://euobserver.com/green-economy/arca0a9830"
         }
       ],
-      "featured": true
+      "featured": false
     },
     {
       "name": "The UK government met with oil lobbyists every day last year",
