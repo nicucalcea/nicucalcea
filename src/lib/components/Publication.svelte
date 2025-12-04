@@ -73,7 +73,12 @@
 								class="w-4 h-4 flex-shrink-0"
 								loading="lazy"
 							/>
-							<span class="font-medium">{publication.publisher}</span>
+							<a 
+								href="/work/?publication={encodeURIComponent(publication.publisher)}"
+								class="font-medium hover:underline"
+							>
+								{publication.publisher}
+							</a>
 							<span>• {formatDate(publication.releaseDate)}</span>
 						</div>
 					{:else}

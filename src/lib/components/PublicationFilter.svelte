@@ -23,9 +23,11 @@
 	interface Props {
 		publications: Publication[];
 		onFilterChange: (filters: { publisher: string; year: string }) => void;
+		initialPublisher?: string;
+		initialYear?: string;
 	}
 
-	let { publications, onFilterChange }: Props = $props();
+	let { publications, onFilterChange, initialPublisher = "", initialYear = "" }: Props = $props();
 
 	// Extract unique publishers and years
 	const publishers = $derived(() => {
@@ -59,9 +61,17 @@
 		return Array.from(uniqueYears).sort((a, b) => parseInt(b) - parseInt(a));
 	});
 
-	// State for filters
-	let selectedPublisher = $state("");
-	let selectedYear = $state("");
+	// State for filters - initialized from props
+	let selectedPublisher = $state(initialPublisher);
+	let selectedYear = $state(initialYear);
+	
+	// Sync with URL changes (when props change from parent)
+	$effect(() => {
+		selectedPublisher = initialPublisher;
+	});
+	$effect(() => {
+		selectedYear = initialYear;
+	});
 
 	// State for comboboxes
 	let publisherOpen = $state(false);
