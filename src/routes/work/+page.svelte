@@ -1,21 +1,21 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import Publication from '$lib/components/Publication.svelte';
 	import PublicationFilter from '$lib/components/PublicationFilter.svelte';
 	import cvData from '$data/cv.json';
 
-	// Get filter values from URL query parameters
-	const urlPublisher = $derived(page.url.searchParams.get('publication') ?? "");
-	const urlYear = $derived(page.url.searchParams.get('year') ?? "");
-
-	// State for filters - will be synced with URL
+	// State for filters
 	let filters = $state({ publisher: "", year: "" });
 	
-	// Sync filters with URL on mount and URL changes
+	// Read URL parameters only in browser (not during prerendering)
 	$effect(() => {
-		filters = { publisher: urlPublisher, year: urlYear };
+		if (browser) {
+			const url = new URL(window.location.href);
+			const publisher = url.searchParams.get('publication') ?? "";
+			const year = url.searchParams.get('year') ?? "";
+			filters = { publisher, year };
+		}
 	});
 
 	// Filter the publications based on current filters
@@ -78,8 +78,8 @@
 		<PublicationFilter 
 			publications={cvData.publications} 
 			onFilterChange={handleFilterChange}
-			initialPublisher={urlPublisher}
-			initialYear={urlYear}
+			initialPublisher={filters.publisher}
+			initialYear={filters.year}
 		/>
 		<Publication publications={filteredPublications()} featured={false} />
 	</main>
