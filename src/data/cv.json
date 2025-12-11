@@ -332,6 +332,14 @@
   "certificates": [],
   "publications": [
     {
+      "name": "UK PR firms increased fossil fuels lobbying since Paris Agreement",
+      "publisher": "Global Witness",
+      "releaseDate": "2025-12-09",
+      "url": "https://globalwitness.org/en/campaigns/fossil-fuels/uk-pr-firms-increased-fossil-fuels-lobbying-since-paris-agreement/",
+      "summary": "British PR firms ramped up their collaboration with fossil fuels companies and trade groups despite climate pledges, a Global Witness investigation reveals.",
+      "featured": true
+    },
+    {
       "name": "Fossil fuel lobbyists flood COP30 climate talks in Brazil, with largest ever attendance share",
       "publisher": "Global Witness",
       "releaseDate": "2025-11-14",
@@ -1661,8 +1669,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2022-03-23",
       "url": "https://www.newstatesman.com/business/economics/2022/03/personal-inflation-calculator-how-do-you-compare-to-the-rest-of-britain",
-      "summary": "Our calculator shows how you could be affected by surging prices in the UK.",
-      "featured": true
+      "summary": "Our calculator shows how you could be affected by surging prices in the UK."
     },
     {
       "name": "Record-high temperatures in Antarctica leave scientists worried",
