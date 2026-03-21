@@ -337,7 +337,9 @@
       "releaseDate": "2025-12-09",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/uk-pr-firms-increased-fossil-fuels-lobbying-since-paris-agreement/",
       "summary": "British PR firms ramped up their collaboration with fossil fuels companies and trade groups despite climate pledges, a Global Witness investigation reveals.",
-      "featured": true
+      "featured": true,
+      "img": "barrels.png",
+      "category": "investigation"
     },
     {
       "name": "Fossil fuel lobbyists flood COP30 climate talks in Brazil, with largest ever attendance share",
@@ -363,7 +365,18 @@
           "url": "https://www.france24.com/en/live-news/20251114-fossil-fuel-lobbyists-out-in-force-at-amazon-climate-talks-ngos"
         }
       ],
-      "featured": true
+      "featured": true,
+      "img": "1011.jpg",
+      "category": "investigation"
+    },
+    {
+      "name": "Roots of resistance",
+      "publisher": "Global Witness",
+      "releaseDate": "2025-09-17",
+      "url": "https://globalwitness.org/en/campaigns/land-and-environmental-defenders/roots-of-resistance/",
+      "summary": "Documenting the global struggles of defenders protecting land and environmental rights.",
+      "category": "interactive",
+      "img": "led-report.png"
     },
     {
       "name": "Oil wells and wildfires: New California data reveals widespread oil production in fire hazard zones",
@@ -466,7 +479,9 @@
           "url": "https://fossilfreeparliament.uk/2025/02/21/revealed-fossil-fuel-lobbyists-accessed-104-meetings-with-labour-ministers-in-first-three-months/"
         }
       ],
-      "featured": true
+      "featured": true,
+      "img": "planet-bomb.jpg",
+      "category": "investigation"
     },
     {
       "name": "Why winter is a poor argument against bike lanes",
@@ -505,14 +520,14 @@
     },
     {
       "name": "Christmas dinner: How much will it cost this year?",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-12-19",
       "url": "https://www.bbc.co.uk/news/business-67716356",
       "summary": "Those tucking into a traditional turkey for Christmas dinner shouldn't have to fork out much more than last year. The price of a supermarket frozen bird has gone up by just 1.2% in a year, while fellow festive favourite the mince pie has risen by 25%. Meanwhile, higher-end potatoes, stuffing mix and Brussels sprouts are cheaper, research for the BBC suggests. Overall, a typical Christmas dinner costs around £32.35 this year, which is a 4.3% increase on £31 last year."
     },
     {
       "name": "Energy prices: How much will you pay from January?",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-11-03",
       "url": "https://www.bbc.co.uk/news/business-67489975",
       "summary": "The typical annual energy bill for a household in England, Wales and Scotland has increased to £1,928 per year for the first three months of 2024, a rise of £94 from November-December 2023. The figure is based on how much energy the typical household uses. However, how much you'll actually end up paying depends on how much you use, where you live, and how you pay.",
@@ -522,32 +537,34 @@
           "url": "https://news.yahoo.com/energy-prices-much-pay-january-143413028.html"
         }
       ],
+      "category": "interactive",
+      "img": "energy-calculator.png",
       "featured": true
     },
     {
       "name": "How does your pay compare with other jobs?",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-11-03",
       "url": "https://www.bbc.co.uk/news/business-67308318",
       "summary": "The average full-time worker in the UK was earning nearly £35,000 a year in April, official data shows, a rise of 5.8% on the previous year. The size of that rise varies from job to job, with travel agents getting a pay bump of 21%, while sport coaches saw their earnings fall the most. Despite the increases in pay, most workers' wages rose by less than inflation, the rate at which the cost of goods and services rise."
     },
     {
       "name": "Travel agents lead pay rise league despite cost of living squeeze",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-11-01",
       "url": "https://www.bbc.co.uk/news/business-67278269",
       "summary": "Travel agents recorded the biggest rise in pay last year, up 21% in a year, official data shows, with public relations directors and publicans next on the list. Sports coaches saw the largest fall and, overall, UK workers saw earnings fail to keep pace with rising prices. The average full-time worker's wage was nearly £35,000 in April 2023, an increase of 5.8% on the previous year. But the cost of living grew faster than wages over the same period. That ate into workers' spending power."
     },
     {
       "name": "Package holidays in Greece, Spain and Turkey soar in price",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-06-28",
       "url": "https://www.bbc.co.uk/news/business-66042289",
       "summary": "Nicu Calcea, Colletta Smith &amp; Lucy HookerBBC NewsAll-inclusive package holidays have jumped in price for Mediterranean hotspots including Majorca and Crete. The average price of a week with full food and board in Majorca in Spain is up 21%. Prices for Tenerife have risen more than 22%, figures from TravelSupermarket showed. Crete in Greece is 25% more expensive than last year."
     },
     {
       "name": "Steaks and coffee protected as shoplifting soars",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-05-31",
       "url": "https://www.bbc.com/news/business-65764513",
       "summary": "Steaks are being fitted with security tags and coffee replaced with dummy jars, as supermarkets battle to curb a rise in shoplifting. Some stores are also limiting the number of items on shelves in an attempt to reduce theft. It comes as data analysed by the BBC showed shoplifting offences reached their highest point in four years in March, as the cost of living rises.",
@@ -560,7 +577,7 @@
     },
     {
       "name": "Cost of homemade cheese sandwich rises by more than a third",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-04-26",
       "url": "https://www.bbc.co.uk/news/business-65324359",
       "summary": "The cost of a homemade cheese sandwich has jumped by over a third in one year, according to research for the BBC. The price of two slices of white bread, a serving of butter and mature cheddar has risen to 40p, up 37% over a year. Prices of sandwich fillings including chicken, eggs and ham at supermarkets have soared, while the cost of bread has also risen, the figures suggest."
@@ -587,39 +604,41 @@
     },
     {
       "name": "What is the gender pay gap where you work?",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-04-11",
       "url": "https://www.bbc.co.uk/news/business-65207049",
       "summary": "With eight out of ten firms still paying their male employees more than women, little progress has been made in closing the gender pay gap in the UK. Some sectors have shown some improvement since 2017/18 when companies were first required to publish figures. The latest figures show that organisations in the public sector reduced their pay gap from 14.5% in favour of men in 2017 to 8.9% in 2022."
     },
     {
       "name": "Men still out-earn women in most jobs",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-04-04",
       "url": "https://www.bbc.co.uk/news/business-65179430",
       "summary": "Men still earn more than women, according to data gathered by the BBC. Despite a continued push for equality, the difference in wage has remained at 9.4%, the same level as in 2017/18, when figures were first published. The BBC looked at a company's median pay gap - the difference in pay between the middle-ranking woman and the middle-ranking man."
     },
     {
       "name": "Rent prices: How much have they gone up in your area?",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-03-28",
       "url": "https://www.bbc.co.uk/news/business-65103937",
       "summary": "Business reporter, BBC NewsRents for new lets have increased by 11.1% in January 2023 compared to the same month a year before. This figure varies greatly across the UK, with London rents increasing by 15.2%, while those in Northern Ireland increased by 5.7%. Use the tool below to see what the average prices are in your area and how they've increased in the past four years. Your device may not support this visualisation."
     },
     {
       "name": "Byron Burger chain owner shuts sites and axes jobs",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2023-01-13",
       "url": "https://www.bbc.co.uk/news/business-64260312",
       "summary": "The owner of the Byron Burger chain has said it will close nine restaurants and cut 218 jobs in another restructure of the business. Famously Proper Ltd, which also controls the Mother Clucker fried chicken brand, blamed rising costs and lower consumer spending for the move. It is the third time since 2018 that the company has been significantly downsized."
     },
     {
       "name": "Cost of living: If no one comes, we close early, says pub",
-      "publisher": "BBC",
+      "publisher": "BBC News",
       "releaseDate": "2022-12-20",
       "url": "https://www.bbc.co.uk/news/business-64025508",
       "summary": "At the Barn Pub near Rugby, the drinks are ready to be served, but unless lots of customers arrive, staff leave early. \"If no regulars come in, we close early,\" the chef says. \"It costs to keep this building heated.\"The Barn Pub is not alone. A survey from the British Beer and Pub Association, seen by the BBC, suggested most pubs are thinking of cutting down trading hours over the winter.",
-      "featured": true
+      "featured": true,
+      "img": "pubs.jpg",
+      "category": "investigation"
     },
     {
       "name": "Global new-biz client spotlight: Vodafone win puts telecoms sector at the top in September",
@@ -664,6 +683,15 @@
       "summary": "As distillers have faced rising costs across a range of inputs, the prices paid by global consumers for whisk(e)y have risen – but, largely, not at the same pace as general inflation, exclusive data for Just Drinks suggests. Analysis by research and intelligence group GlobalData of nearly 7,000 products sold in 40 countries show that, in almost all markets, whisk(e)y prices have increased since January 2019."
     },
     {
+      "name": "How big is the gender pay gap in the mining industry in Britain and who are the worst offenders?",
+      "publisher": "Mining Technology",
+      "releaseDate": "2022-04-06",
+      "url": "https://www.mining-technology.com/features/exclusive-how-big-is-the-gender-pay-gap-in-the-mining-industry-in-britain-and-who-are-the-worst-offenders/",
+      "summary": "We analysed tens of thousands of official records to find out which companies are at the bottom of the ranks.",
+      "category": "interactive",
+      "img": "mining-gender-pay.gif"
+    },
+    {
       "name": "Where are energy industries clustered in the UK?",
       "publisher": "Energy Monitor",
       "releaseDate": "2022-02-15",
@@ -675,14 +703,18 @@
       "publisher": "Investment Monitor",
       "releaseDate": "2022-02-11",
       "url": "https://www.investmentmonitor.ai/analysis/industry-clusters-uk-regions-map",
-      "summary": "In 1980, Financial Times journalist Peta Levi coined the term ‘the Cambridge phenomenon’, which she used to describe the spur of technology and biotechnology companies popping up in the city of Cambridge and its surroundings."
+      "summary": "In 1980, Financial Times journalist Peta Levi coined the term ‘the Cambridge phenomenon’, which she used to describe the spur of technology and biotechnology companies popping up in the city of Cambridge and its surroundings.",
+      "category": "interactive",
+      "img": "industries.png"
     },
     {
       "name": "Big tech watches you as you read the news",
       "publisher": "Press Gazette",
       "releaseDate": "2021-03-24",
       "url": "https://www.pressgazette.co.uk/website-tracking-software/",
-      "summary": "Our investigation into website tracking software has found that news websites have, on average, 17 third party reader tracking tools – and Google trackers are on nearly all of them. “Big Tech companies insist spying on users, government is inadvertent,” reads an August 2020 headline on The Washington Times website, a conservative daily covering the DC area as well as US national politics."
+      "summary": "Our investigation into website tracking software has found that news websites have, on average, 17 third party reader tracking tools – and Google trackers are on nearly all of them. “Big Tech companies insist spying on users, government is inadvertent,” reads an August 2020 headline on The Washington Times website, a conservative daily covering the DC area as well as US national politics.",
+      "img": "code.jpg",
+      "category": "investigation"
     },
     {
       "name": "Citizenship for sale: How investment buys passports",
@@ -739,6 +771,15 @@
       "releaseDate": "2020-05-20",
       "url": "https://www.citymetric.com/business/chart-global-economy-shrink-19-2020-western-europe-down-10-5135",
       "summary": "The global economy is now expected to shrink by 1.9% in 2020, according to experts from GlobalData. Western Europe and the US are still expected to bear the brunt, with Italy’s GDP forecast to contract by 10% over the year. France’s GDP is predicted to shrink by 8.6%, the UK’s by 8.2%, Spain’s by 7.9% and Germany’s by 6.6%. Those forecasts are slightly worse than GlobalData was forecasting a week ago."
+    },
+    {
+      "name": "Business Benchmark on Farm Animal Welfare report 2022",
+      "publisher": "Business Benchmark on Farm Animal Welfare",
+      "releaseDate": "2020-05-20",
+      "url": "https://www.bbfaw.com/benchmark/",
+      "summary": "The BBFAW analyses the farm animal welfare policies, management systems, reporting and performance of 150 of the world’s largest food companies",
+      "category": "interactive",
+      "img": "bbfaw.gif"
     },
     {
       "name": "Nearly 40,000 coronavirus deaths in England and Wales, ONS says",
@@ -1080,21 +1121,21 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-04-21",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/04/8000-more-deaths-normal-week-10-april-ons-says",
-      "summary": "Nearly 8,000 more people than normal died in the week ending 10 April, with the bulk of the extra deaths directly attributed to Covid-19, the latest data from the Office for National Statistics (ONS) has revealed."
+      "summary": "Nearly 8,000 more people than normal died in the week ending 10 April, with the bulk of the extra deaths directly attributed to Covid-19, the latest data from the Office for National Statistics (ONS) has revealed."
     },
     {
       "name": "Latest worldwide death stats suggest peak has passed, but not in the US",
       "publisher": "New Statesman",
       "releaseDate": "2020-04-22",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/04/latest-worldwide-death-stats-suggest-peak-has-passed-not-us",
-      "summary": "The latest figures for Covid-19 deaths across the countries hit hardest by the virus suggest the peak of the pandemic has passed – but the data from the US paints a very different picture."
+      "summary": "The latest figures for Covid-19 deaths across the countries hit hardest by the virus suggest the peak of the pandemic has passed – but the data from the US paints a very different picture."
     },
     {
       "name": "Covid-19 daily report: Death toll trends inch downwards in worst-hit nations",
       "publisher": "New Statesman",
       "releaseDate": "2020-04-23",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/04/covid-19-daily-report-death-toll-trends-inch-downwards-worst-hit-nations",
-      "summary": "All the countries worst hit by the coronavirus outbreak – the US, Spain, Italy, France and the UK – have seen their number of daily deaths fall in the past seven days."
+      "summary": "All the countries worst hit by the coronavirus outbreak – the US, Spain, Italy, France and the UK – have seen their number of daily deaths fall in the past seven days."
     },
     {
       "name": "Half of coronavirus business grants in England still unclaimed",
@@ -1115,14 +1156,14 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-04-28",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/04/27000-more-deaths-normal-start-coronavirus-pandemic-ons-says",
-      "summary": "England and Wales saw 27,000 more deaths than would normally be expected between the start of March, when the coronavirus pandemic took hold, and 17 April, new figures from the Office for National Statistics (ONS) show."
+      "summary": "England and Wales saw 27,000 more deaths than would normally be expected between the start of March, when the coronavirus pandemic took hold, and 17 April, new figures from the Office for National Statistics (ONS) show."
     },
     {
       "name": "Up to one in 17 care home residents may have died since the Covid-19 outbreak started. Why?",
       "publisher": "New Statesman",
       "releaseDate": "2020-04-29",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/04/one-17-care-home-residents-may-have-died-covid-19-outbreak-started",
-      "summary": "After 20,836 people died in the five weeks to 17 April, care homes have become the new epicentre of the disease."
+      "summary": "After 20,836 people died in the five weeks to 17 April, care homes have become the new epicentre of the disease."
     },
     {
       "name": "As many as one in 17 care home residents may have died since outbreak began",
@@ -1136,21 +1177,21 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-05-01",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/death-rate-most-deprived-areas-double-richest-neighbourhoods",
-      "summary": "People in the most deprived areas of England and Wales are dying at more than twice the rate of those in the most affluent places, new data from the Office for National Statistics (ONS) shows."
+      "summary": "People in the most deprived areas of England and Wales are dying at more than twice the rate of those in the most affluent places, new data from the Office for National Statistics (ONS) shows."
     },
     {
       "name": "Berlin has biggest rise in public transport use and traffic congestion among world cities",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-01",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/berlin-has-biggest-rise-public-transport-use-and-traffic-congestion-among-world-cities",
-      "summary": "Some world cities are seeing an increased movement of people even before lockdown restrictions are eased, our weekly city mobility chart shows."
+      "summary": "Some world cities are seeing an increased movement of people even before lockdown restrictions are eased, our weekly city mobility chart shows."
     },
     {
       "name": "Renters and the self-employed have taken biggest financial hit from pandemic",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-04",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/renters-and-self-employed-have-taken-biggest-financial-hit-pandemic",
-      "summary": "More than half of self-employed workers say their household finances have suffered during the Covid-19 crisis, according to new data from the Office for National Statistics."
+      "summary": "More than half of self-employed workers say their household finances have suffered during the Covid-19 crisis, according to new data from the Office for National Statistics."
     },
     {
       "name": "Major European cities registering biggest drops in daily Covid-19 cases",
@@ -1164,35 +1205,35 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-05-06",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/crime-northern-ireland-falls-third-during-lockdown",
-      "summary": "Crime in Northern Ireland fell by nearly a third in the five weeks starting 23 March, according to new figures that give us a first glimpse of how the coronavirus lockdown has affected crime in the UK."
+      "summary": "Crime in Northern Ireland fell by nearly a third in the five weeks starting 23 March, according to new figures that give us a first glimpse of how the coronavirus lockdown has affected crime in the UK."
     },
     {
       "name": "Covid-19 cases continue to fall in major worldwide cities",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-11",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/covid-19-cases-continue-fall-major-worldwide-cities",
-      "summary": "The number of new daily Covid-19 cases continues to drop in major cities and regions in Europe and the US, while Wuhan has recorded its first new cases since the end of the lockdown."
+      "summary": "The number of new daily Covid-19 cases continues to drop in major cities and regions in Europe and the US, while Wuhan has recorded its first new cases since the end of the lockdown."
     },
     {
       "name": "US daily deaths now double UK, Spain and France combined",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-12",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/us-daily-deaths-now-double-uk-spain-and-france-combined",
-      "summary": "The US recorded 1,156 Covid-19 deaths yesterday, which is more than the reported totals for the UK, Spain and France combined."
+      "summary": "The US recorded 1,156 Covid-19 deaths yesterday, which is more than the reported totals for the UK, Spain and France combined."
     },
     {
       "name": "Economic forecasts worsen in Europe, Italy faces biggest slump",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-12",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/economic-forecasts-worsen-europe-italy-faces-biggest-slump",
-      "summary": "GDP growth forecasts for major European countries and the US have been revised downwards yet again, with France seeing the biggest change from last week."
+      "summary": "GDP growth forecasts for major European countries and the US have been revised downwards yet again, with France seeing the biggest change from last week."
     },
     {
       "name": "Number of patients waiting six or more weeks for diagnostic tests highest since 2008",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-14",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/number-patients-waiting-six-or-more-weeks-diagnostic-tests-highest-2008",
-      "summary": "The number of people waiting six or more weeks for a diagnostic test in England nearly tripled in March 2020, as Covid-19 saw hospital postpone “non-urgent” treatment."
+      "summary": "The number of people waiting six or more weeks for a diagnostic test in England nearly tripled in March 2020, as Covid-19 saw hospital postpone “non-urgent” treatment."
     },
     {
       "name": "A&E attendance falls to record low",
@@ -1212,42 +1253,42 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-05-15",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/covid-19-involved-more-quarter-all-care-home-deaths-recent-months",
-      "summary": "Coronavirus has accounted for more than a quarter of deaths in care homes since the start of the pandemic, figures published by the Office for National Statistics (ONS) today showed."
+      "summary": "Coronavirus has accounted for more than a quarter of deaths in care homes since the start of the pandemic, figures published by the Office for National Statistics (ONS) today showed."
     },
     {
       "name": "North-west close to overtaking London as epicentre of UK’s Covid-19 outbreak",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-18",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/north-west-close-overtaking-london-epicentre-uks-covid-19-outbreak",
-      "summary": "The north-west of England is set to overtake London as the epicentre of the UK’s outbreak, latest data shows."
+      "summary": "The north-west of England is set to overtake London as the epicentre of the UK’s outbreak, latest data shows."
     },
     {
       "name": "UK cities are awakening as lockdown is eased",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-18",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/uk-cities-are-awakening-lockdown-eased",
-      "summary": "Walking and driving in the UK surged on Saturday, 16 May – the first weekend day since the government eased lockdown restrictions, new data show."
+      "summary": "Walking and driving in the UK surged on Saturday, 16 May – the first weekend day since the government eased lockdown restrictions, new data show."
     },
     {
       "name": "UK unemployment claims jump 69 per cent in April, a record rise",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-19",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/uk-unemployment-claims-jump-69-cent-april-record-rise",
-      "summary": "The number of people claiming UK unemployment benefits increased to 2.1 million in April 2020, a monthly rise of 856,500 and the highest level since 1996."
+      "summary": "The number of people claiming UK unemployment benefits increased to 2.1 million in April 2020, a monthly rise of 856,500 and the highest level since 1996."
     },
     {
       "name": "“Excess deaths“ during pandemic top 50,000 in UK",
       "publisher": "New Statesman",
       "releaseDate": "2020-05-19",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/05/excess-deaths-during-pandemic-top-50000-uk",
-      "summary": "Around 50,000 more people have died in England and Wales since the start of the coronavirus outbreak than would normally be expected for this time of year, new figures show."
+      "summary": "Around 50,000 more people have died in England and Wales since the start of the coronavirus outbreak than would normally be expected for this time of year, new figures show."
     },
     {
       "name": "Has there been a “Cummings effect“ on lockdown compliance?",
       "publisher": "New Statesman",
       "releaseDate": "2020-06-04",
       "url": "https://www.newstatesman.com/politics/uk-politics/2020/06/has-there-been-cummings-effect-lockdown-compliance",
-      "summary": "The data shows increased mobility during the Cummings story, but it is harder to prove a causal link."
+      "summary": "The data shows increased mobility during the Cummings story, but it is harder to prove a causal link."
     },
     {
       "name": "Why is the unemployment rate so much higher in the US than the EU?",
@@ -1282,7 +1323,9 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-08-11",
       "url": "https://www.newstatesman.com/politics/2020/08/is-the-eat-out-to-help-out-scheme-encouraging-unhealthy-eating",
-      "summary": "A New Statesman analysis estimates at least 10,667 of the restaurants currently registered are fast food outlets."
+      "summary": "A New Statesman analysis estimates at least 10,667 of the restaurants currently registered are fast food outlets.",
+      "img": "boris.jpg",
+      "category": "investigation"
     },
     {
       "name": "Why the coronavirus mental health crisis may not have peaked",
@@ -1303,7 +1346,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-09-21",
       "url": "https://www.newstatesman.com/politics/2020/09/data-analysis-how-the-poorest-countries-are-losing-out-on-covid-19-relief-funds",
-      "summary": "New Statesman analysis suggests some countries with a higher GDP per capita have been allocated more international funding to fight the virus than poorer nations."
+      "summary": "New Statesman analysis suggests some countries with a higher GDP per capita have been allocated more international funding to fight the virus than poorer nations."
     },
     {
       "name": "A third of UK residents are under local lockdowns – but has this changed their behaviour?",
@@ -1331,7 +1374,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-11-12",
       "url": "https://www.newstatesman.com/science-tech/coronavirus/2020/11/how-uk-suffered-50000-covid-19-deaths-highest-number-europe",
-      "summary": "Only the US, Brazil, India and Mexico have recorded higher coronavirus death tolls than Britain."
+      "summary": "Only the US, Brazil, India and Mexico have recorded higher coronavirus death tolls than Britain."
     },
     {
       "name": "What will a cashless China mean for the world?",
@@ -1345,21 +1388,23 @@
       "publisher": "New Statesman",
       "releaseDate": "2020-12-04",
       "url": "https://www.newstatesman.com/environment/2020/12/ella-adoo-kissi-debrah-and-great-smog-modern-london",
-      "summary": "Nearly 70 years on from the Great Smog of London, air pollution still haunts Britain’s environmental efforts – and its most deprived places."
+      "summary": "Nearly 70 years on from the Great Smog of London, air pollution still haunts Britain’s environmental efforts – and its most deprived places."
     },
     {
       "name": "Mapping the unequal impact of Brexit",
       "publisher": "New Statesman",
       "releaseDate": "2020-12-23",
       "url": "https://www.newstatesman.com/business/2020/12/mapping-unequal-impact-brexit",
-      "summary": "The New Statesman’s data team has created a Brexit vulnerability index, using data from every local authority to show where the UK economy will be most affected."
+      "summary": "The New Statesman’s data team has created a Brexit vulnerability index, using data from every local authority to show where the UK economy will be most affected.",
+      "category": "interactive",
+      "img": "brexit.gif"
     },
     {
       "name": "How democracy could become one of the pandemic’s lasting victims",
       "publisher": "New Statesman",
       "releaseDate": "2021-01-19",
       "url": "https://www.newstatesman.com/world/2021/01/how-democracy-could-become-one-pandemic-s-lasting-victims",
-      "summary": "New research suggests the world has become increasingly autocratic since the start of the Covid-19 crisis."
+      "summary": "New research suggests the world has become increasingly autocratic since the start of the Covid-19 crisis."
     },
     {
       "name": "Covid-19: a tragedy in numbers",
@@ -1380,7 +1425,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-02-24",
       "url": "https://www.newstatesman.com/business/2021/02/pandemic-winners-and-losers-how-big-techs-gains-mask-struggling-economy",
-      "summary": "A global lockdown has caused dramatic shifts in the economic landscape and focused markets on one sector."
+      "summary": "A global lockdown has caused dramatic shifts in the economic landscape and focused markets on one sector."
     },
     {
       "name": "Britain’s hidden health crisis: How overcrowded housing may be spreading Covid-19",
@@ -1394,7 +1439,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-03-18",
       "url": "https://www.newstatesman.com/politics/uk-politics/2021/03/how-much-has-brexit-cost-uk",
-      "summary": "Two months after the UK’s full departure from the EU, the painful consequences of that decision are becoming ever clearer."
+      "summary": "Two months after the UK’s full departure from the EU, the painful consequences of that decision are becoming ever clearer."
     },
     {
       "name": "UK economic recovery tracker: the effects of Brexit and Covid-19 on jobs, house prices, trade and spending",
@@ -1415,7 +1460,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-04-13",
       "url": "https://www.newstatesman.com/politics/2021/04/britain-becoming-sick-man-g20",
-      "summary": "Our trackers show the UK’s economic recovery will be slower than that of almost any other advanced economy."
+      "summary": "Our trackers show the UK’s economic recovery will be slower than that of almost any other advanced economy."
     },
     {
       "name": "Why India desperately needs more Covid-19 vaccines",
@@ -1429,7 +1474,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-04-29",
       "url": "https://www.newstatesman.com/world/2021/04/prolific-yet-quiet-joe-biden-s-first-100-days-numbers",
-      "summary": "The US president has set about reversing Donald Trump’s legacy, but a smaller media profile and split Senate point to challenges ahead."
+      "summary": "The US president has set about reversing Donald Trump’s legacy, but a smaller media profile and split Senate point to challenges ahead."
     },
     {
       "name": "“It’s our Brexit”: Will low traffic neighbourhoods affect the local election results?",
@@ -1450,7 +1495,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-05-17",
       "url": "https://www.newstatesman.com/business/sectors/2021/05/pubs-and-caf-s-are-back-uk-economy-will-be-slow-recover",
-      "summary": "Britain’s economic recovery has been muted so far, and a cautious return to retail and hospitality could be slowed by the prospect of another wave of infections."
+      "summary": "Britain’s economic recovery has been muted so far, and a cautious return to retail and hospitality could be slowed by the prospect of another wave of infections."
     },
     {
       "name": "How the UK became a stage for hate during the Israel-Palestine conflict",
@@ -1485,14 +1530,14 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-06-29",
       "url": "https://www.newstatesman.com/politics/2021/06/uk-house-prices-grow-at-fastest-rate-in-16-years",
-      "summary": "House prices in Britain rose by an annual rate of 13.4 per cent in June 2021, the highest since 2004."
+      "summary": "House prices in Britain rose by an annual rate of 13.4 per cent in June 2021, the highest since 2004."
     },
     {
       "name": "Bubble trouble: pupil Covid-19 school absences quadrupled in June",
       "publisher": "New Statesman",
       "releaseDate": "2021-06-30",
       "url": "https://www.newstatesman.com/politics/2021/06/bubble-trouble-pupil-covid-19-school-absences-quadrupled-in-june",
-      "summary": "Some schools in England have closed entirely this month as rising numbers of children are sent home and fewer take regular tests."
+      "summary": "Some schools in England have closed entirely this month as rising numbers of children are sent home and fewer take regular tests."
     },
     {
       "name": "UK Covid-19 rates are the highest of any European country after Cyprus",
@@ -1520,7 +1565,7 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-08-19",
       "url": "https://www.newstatesman.com/world/2021/08/how-us-and-uk-accept-far-fewer-afghan-refugees-other-countries",
-      "summary": "The UK took in 9,351 Afghan refugees in 2020, while Germany accommodated 148,000."
+      "summary": "The UK took in 9,351 Afghan refugees in 2020, while Germany accommodated 148,000."
     },
     {
       "name": "China’s income inequality is among the world’s worst",
@@ -1579,12 +1624,14 @@
       "summary": "China and India are far behind countries such as the US and UK for cumulative emissions."
     },
     {
-      "name": "Exclusive: Tory MPs would be over £1m worse off in six months with Boris Johnson’s second job ban",
+      "name": "Tory MPs would be over £1m worse off in six months with Boris Johnson’s second job ban",
       "publisher": "New Statesman",
       "releaseDate": "2021-11-25",
       "url": "https://www.newstatesman.com/politics/2021/11/exclusive-tory-mps-would-be-over-1m-worse-off-in-six-months-with-boris-johnsons-second-job-ban",
       "summary": "Original New Statesman analysis finds Conservative MPs in political consultancy or similar advisory roles over the past six months earned £1,088,036 between them.",
-      "featured": true
+      "featured": true,
+      "img": "tie.jpg",
+      "category": "investigation"
     },
     {
       "name": "Where are the people attempting to cross the Channel coming from?",
@@ -1669,7 +1716,9 @@
       "publisher": "New Statesman",
       "releaseDate": "2022-03-23",
       "url": "https://www.newstatesman.com/business/economics/2022/03/personal-inflation-calculator-how-do-you-compare-to-the-rest-of-britain",
-      "summary": "Our calculator shows how you could be affected by surging prices in the UK."
+      "summary": "Our calculator shows how you could be affected by surging prices in the UK.",
+      "category": "interactive",
+      "img": "inflation-calculator.png"
     },
     {
       "name": "Record-high temperatures in Antarctica leave scientists worried",
@@ -1775,6 +1824,8 @@
       "releaseDate": "2022-10-07",
       "url": "https://www.newstatesman.com/world/europe/ukraine/2022/10/ukraine-war-map-gains-russia-retreats-interactive",
       "summary": "The New Statesman's interactive map shows the size of Ukraine's occupied territory when compared to other countries",
+      "category": "interactive",
+      "img": "ukraine.gif",
       "featured": true
     },
     {
@@ -9106,7 +9157,7 @@
       "keywords": [
         "HTML",
         "CSS",
-        "Interactive Visualizations",
+        "Interactive Visualisations",
         "Web Scraping"
       ]
     },
