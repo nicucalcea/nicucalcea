@@ -1,10 +1,15 @@
 /* Set up default fonts: Roboto for body, Domine for headers */
 body {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Domine', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Domine", serif;
 }
 
 @import "tailwindcss";
