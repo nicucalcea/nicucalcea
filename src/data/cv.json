@@ -6,7 +6,7 @@
     "email": "website@nicu.md",
     "phone": "+44 7784751562",
     "url": "https://nicu.md/",
-    "summary": "Nicu Calcea is a journalist with 15 years of experience in media, specialising in investigative data reporting. Currently based in London.",
+    "summary": "Nicu Calcea is a journalist with 16 years of experience in media, specialising in investigative data reporting. Currently based in London.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -339,7 +339,8 @@
       "summary": "British PR firms ramped up their collaboration with fossil fuels companies and trade groups despite climate pledges, a Global Witness investigation reveals.",
       "featured": true,
       "img": "barrels.png",
-      "category": "investigation"
+      "category": "investigation",
+      "tags": ["lobbying"]
     },
     {
       "name": "Fossil fuel lobbyists flood COP30 climate talks in Brazil, with largest ever attendance share",
@@ -367,7 +368,8 @@
       ],
       "featured": true,
       "img": "1011.jpg",
-      "category": "investigation"
+      "category": "investigation",
+      "tags": ["lobbying"]
     },
     {
       "name": "Roots of resistance",
@@ -391,7 +393,8 @@
       "publisher": "Global Witness",
       "releaseDate": "2025-07-29",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/augmenta-new-tool-for-ai-classification-and-research/",
-      "summary": "We are making the tool behind some of our investigations available for public use."
+      "summary": "We are making the tool behind some of our investigations available for public use.",
+      "tags": ["lobbying"]
     },
     {
       "name": "Fossil fuel donors contributed $19 million to Donald Trump's inaugural fund",
@@ -413,6 +416,7 @@
           "url": "https://www.commondreams.org/news/big-oil-trump-inauguration"
         }
       ],
+      "tags": ["lobbying"],
       "featured": true
     },
     {
@@ -420,7 +424,8 @@
       "publisher": "Global Witness",
       "releaseDate": "2024-12-01",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/how-we-used-ai-to-help-us-find-lobbyists-at-cop/",
-      "summary": "Every year, Global Witness works with partners in the Keep Big Polluters Out coalition to identify fossil fuel lobbyists who are attending the COP climate talks. For COP29, we pioneered an AI-assisted approach to the process that streamlined and strengthened our analysis."
+      "summary": "Every year, Global Witness works with partners in the Keep Big Polluters Out coalition to identify fossil fuel lobbyists who are attending the COP climate talks. For COP29, we pioneered an AI-assisted approach to the process that streamlined and strengthened our analysis.",
+      "tags": ["lobbying"]
     },
     {
       "name": "COP oil companies' emissions are set to cause 17 million heat deaths",
@@ -453,6 +458,7 @@
           "url": "https://euobserver.com/green-economy/arca0a9830"
         }
       ],
+      "tags": ["lobbying"],
       "featured": false
     },
     {
@@ -481,7 +487,8 @@
       ],
       "featured": true,
       "img": "planet-bomb.jpg",
-      "category": "investigation"
+      "category": "investigation",
+      "tags": ["lobbying"]
     },
     {
       "name": "Why winter is a poor argument against bike lanes",
@@ -581,12 +588,6 @@
       "releaseDate": "2023-04-26",
       "url": "https://www.bbc.co.uk/news/business-65324359",
       "summary": "The cost of a homemade cheese sandwich has jumped by over a third in one year, according to research for the BBC. The price of two slices of white bread, a serving of butter and mature cheddar has risen to 40p, up 37% over a year. Prices of sandwich fillings including chicken, eggs and ham at supermarkets have soared, while the cost of bread has also risen, the figures suggest."
-    },
-    {
-      "name": "Coming soon",
-      "releaseDate": "2023-04-26",
-      "url": "https://blog.samizdata.co/p/coming-soon",
-      "summary": "Data journalism has existed since at least the 1800s. But in Eastern Europe, journalism is still slow to innovate, with only a handful of outlets doing any data reporting. This newsletter is an attempt to explore what data journalism could be in that part of the world. My name is Nicu Calcea, and I’m a data journalist based in London, UK. I’m currently at BBC News, and before that, I did data at the New Statesman and a couple of other organisations."
     },
     {
       "name": "Covid-19 is changing FDI - but is it going to last?",
@@ -692,18 +693,17 @@
       "img": "mining-gender-pay.gif"
     },
     {
-      "name": "Where are energy industries clustered in the UK?",
-      "publisher": "Energy Monitor",
-      "releaseDate": "2022-02-15",
-      "url": "https://www.energymonitor.ai/sectors/industry/where-are-energy-industries-clustered-in-the-uk",
-      "summary": "Historically, businesses have gravitated towards locations with resources and infrastructure. It is not surprising therefore that many industrial clusters are found in Scotland. Scotland, which received global attention as the host of the COP26 climate conference last year, has gone through a transformation of its energy sector since the discovery of oil and gas 50 years ago."
-    },
-    {
       "name": "Where are industries clustered in the UK?",
       "publisher": "Investment Monitor",
       "releaseDate": "2022-02-11",
       "url": "https://www.investmentmonitor.ai/analysis/industry-clusters-uk-regions-map",
       "summary": "In 1980, Financial Times journalist Peta Levi coined the term ‘the Cambridge phenomenon’, which she used to describe the spur of technology and biotechnology companies popping up in the city of Cambridge and its surroundings.",
+      "partners": [
+        {
+          "name": "Energy Monitor",
+          "url": "https://www.energymonitor.ai/sectors/industry/where-are-energy-industries-clustered-in-the-uk"
+        }
+      ],
       "category": "interactive",
       "img": "industries.png"
     },
@@ -938,7 +938,7 @@
     {
       "name": "The Highwire Act",
       "publisher": "Wizz Air Magazine",
-      "releaseDate": "2019-03-07",
+      "releaseDate": "2015-10-01",
       "url": "http://nicu.md/blog/2015/10/01/the-highwire-act/",
       "summary": "Published by Nicu Calcea on October, 2015 Original source: Wizz Air Inflight MagazineTucked behind a main road in Chișinău, standing alone among a forest of of weed-covered paving slabs, is one of Easter Europe’s strangest buildings. The white buttress of the exterior rise from the ground like crooked teeth, while the domed roof resembles a medieval crown."
     },
@@ -1629,9 +1629,10 @@
       "releaseDate": "2021-11-25",
       "url": "https://www.newstatesman.com/politics/2021/11/exclusive-tory-mps-would-be-over-1m-worse-off-in-six-months-with-boris-johnsons-second-job-ban",
       "summary": "Original New Statesman analysis finds Conservative MPs in political consultancy or similar advisory roles over the past six months earned £1,088,036 between them.",
-      "featured": true,
       "img": "tie.jpg",
-      "category": "investigation"
+      "category": "investigation",
+      "tags": ["lobbying"],
+      "featured": true
     },
     {
       "name": "Where are the people attempting to cross the Channel coming from?",
@@ -9212,6 +9213,13 @@
   "projects": [
     {
       "name": "SAMIZDATA",
+      "startDate": "2026-01-01",
+      "endDate": "",
+      "description": "A data storytelling consultancy that researches, writes and builds data tools for media organisations, NGOs and other public-benefit institutions.",
+      "url": "https://samizdata.co/"
+    },
+    {
+      "name": "SAMIZDATA newsletter",
       "startDate": "2020-01-01",
       "endDate": "",
       "description": "A data journalism newsletter about Eastern Europe and Central Asia.",
@@ -9221,14 +9229,11 @@
       "url": "https://blog.samizdata.co/"
     },
     {
-      "name": "Augmenta",
-      "startDate": "2024-01-01",
+      "name": "OpenLobbying",
+      "startDate": "2025-12-01",
       "endDate": "",
-      "description": "AI agent for enhancing datasets with information from the internet.",
-      "highlights": [
-        "Open source tool for data enrichment"
-      ],
-      "url": "https://github.com/Global-Witness/augmenta/"
+      "description": "OpenLobbying collects, cleans and standardises UK lobbying registers so you can explore how corporations shape policy.",
+      "url": "https://openlobbying.org/"
     },
     {
       "name": "OpenMoney.md",
@@ -9241,6 +9246,16 @@
       "url": "https://openmoney.md/"
     },
     {
+      "name": "Augmenta",
+      "startDate": "2024-01-01",
+      "endDate": "",
+      "description": "AI agent for enhancing datasets with information from the internet.",
+      "highlights": [
+        "Open source tool for data enrichment"
+      ],
+      "url": "https://github.com/Global-Witness/augmenta/"
+    },
+    {
       "name": "Ra11y",
       "startDate": "2022-01-01",
       "endDate": "",
@@ -9249,26 +9264,6 @@
         "First R package focused on data visualization accessibility"
       ],
       "url": "https://github.com/nicucalcea/Ra11y"
-    },
-    {
-      "name": "dataproofr",
-      "startDate": "2021-01-01",
-      "endDate": "",
-      "description": "A proofreader for your data. Helps spot common errors.",
-      "highlights": [
-        "R package for data quality assurance"
-      ],
-      "url": "https://github.com/dataproofer/dataproofr"
-    },
-    {
-      "name": "Training Resources",
-      "startDate": "2021-01-01",
-      "endDate": "",
-      "description": "A collection of teaching resources for data journalism students.",
-      "highlights": [
-        "Comprehensive curriculum for data journalism education"
-      ],
-      "url": "https://training.nicu.md/"
     }
   ]
 }

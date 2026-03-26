@@ -15,7 +15,7 @@
 		startDate: string;
 		endDate: string;
 		description: string;
-		highlights: string[];
+		highlights?: string[];
 		url: string;
 		featured?: boolean;
 	}

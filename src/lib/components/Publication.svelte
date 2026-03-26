@@ -9,19 +9,7 @@
 	} from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { getFavicon } from '$lib/utils/getIcon.js';
-
-	interface Publication {
-		name: string;
-		publisher?: string;
-		releaseDate: string;
-		url: string;
-		summary?: string;
-		partners?: Array<{
-			name: string;
-			url: string;
-		}>;
-		featured?: boolean;
-	}
+	import type { Publication } from '$lib/types/publication';
 
 	interface Props {
 		publications: Publication[];
@@ -33,7 +21,7 @@
 	// Sort publications chronologically, newest first
 	// Optionally filter to only featured publications
 	const sortedPublications = $derived(
-		publications
+		[...publications]
 			.filter(pub => featured ? pub.featured === true : true)
 			.sort((a, b) => {
 				return new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime();
@@ -74,7 +62,7 @@
 								loading="lazy"
 							/>
 							<a 
-								href="/work/?publication={encodeURIComponent(publication.publisher)}"
+								href="/work/?publisher={encodeURIComponent(publication.publisher)}"
 								class="font-medium hover:underline"
 							>
 								{publication.publisher}
