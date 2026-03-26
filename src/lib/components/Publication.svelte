@@ -9,7 +9,20 @@
 	} from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { getFavicon } from '$lib/utils/getIcon.js';
-	import type { Publication } from '$lib/types/publication';
+
+	interface Publication {
+		name: string;
+		publisher?: string;
+		releaseDate: string;
+		url: string;
+		summary?: string;
+		partners?: Array<{
+			name: string;
+			url: string;
+		}>;
+		tags?: string[];
+		featured?: boolean;
+	}
 
 	interface Props {
 		publications: Publication[];
@@ -62,7 +75,7 @@
 								loading="lazy"
 							/>
 							<a 
-								href="/work/?publisher={encodeURIComponent(publication.publisher)}"
+								href="/work/?publication={encodeURIComponent(publication.publisher)}"
 								class="font-medium hover:underline"
 							>
 								{publication.publisher}
