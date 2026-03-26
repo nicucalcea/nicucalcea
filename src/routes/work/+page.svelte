@@ -1,23 +1,40 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { browser } from '$app/environment';
-	import { page } from '$app/state';
 	import Publication from '$lib/components/Publication.svelte';
 	import PublicationFilter from '$lib/components/PublicationFilter.svelte';
 	import cvData from '$data/cv.json';
+	import { onMount } from 'svelte';
 
 	// State for filters
 	let filters = $state({ publisher: "", year: "" });
-	const tag = $derived(page.url.searchParams.get('tag') ?? "");
-	
-	// Sync filters from the URL
-	$effect(() => {
-		const publisher = page.url.searchParams.get('publication') ?? "";
-		const year = page.url.searchParams.get('year') ?? "";
+	let tag = $state("");
 
-		if (filters.publisher !== publisher || filters.year !== year) {
-			filters = { publisher, year };
+	function syncFromUrl() {
+		if (!browser) {
+			return;
 		}
+
+		const url = new URL(window.location.href);
+		const nextPublisher = url.searchParams.get('publication') ?? "";
+		const nextYear = url.searchParams.get('year') ?? "";
+		const nextTag = url.searchParams.get('tag') ?? "";
+
+		if (filters.publisher !== nextPublisher || filters.year !== nextYear) {
+			filters = { publisher: nextPublisher, year: nextYear };
+		}
+
+		if (tag !== nextTag) {
+			tag = nextTag;
+		}
+	}
+
+	onMount(() => {
+		syncFromUrl();
+	});
+
+	afterNavigate(() => {
+		syncFromUrl();
 	});
 
 	const tagFilteredPublications = $derived(() => {
@@ -53,7 +70,7 @@
 	// Handle filter changes and update URL
 	function handleFilterChange(newFilters: { publisher: string; year: string }) {
 		if (browser) {
-			const url = new URL(page.url);
+			const url = new URL(window.location.href);
 			const currentPublication = url.searchParams.get('publication') ?? "";
 			const currentYear = url.searchParams.get('year') ?? "";
 
