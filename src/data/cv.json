@@ -337,12 +337,12 @@
       "releaseDate": "2025-12-09",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/uk-pr-firms-increased-fossil-fuels-lobbying-since-paris-agreement/",
       "summary": "British PR firms ramped up their collaboration with fossil fuels companies and trade groups despite climate pledges, a Global Witness investigation reveals.",
-      "featured": true,
-      "img": "barrels.png",
-      "category": "investigation",
+      "skills": ["Investigations and research", "Data wrangling and cleaning"],
       "tags": [
         "lobbying"
-      ]
+      ],
+      "featured": true,
+      "img": "barrels.png"
     },
     {
       "name": "Fossil fuel lobbyists flood COP30 climate talks in Brazil, with largest ever attendance share",
@@ -368,12 +368,12 @@
           "url": "https://www.france24.com/en/live-news/20251114-fossil-fuel-lobbyists-out-in-force-at-amazon-climate-talks-ngos"
         }
       ],
-      "featured": true,
-      "img": "1011.jpg",
-      "category": "investigation",
+      "skills": ["Investigations and research", "Data wrangling and cleaning"],
       "tags": [
         "lobbying"
-      ]
+      ],
+      "featured": true,
+      "img": "1011.jpg"
     },
     {
       "name": "Roots of resistance",
@@ -381,7 +381,7 @@
       "releaseDate": "2025-09-17",
       "url": "https://globalwitness.org/en/campaigns/land-and-environmental-defenders/roots-of-resistance/",
       "summary": "Documenting the global struggles of defenders protecting land and environmental rights.",
-      "category": "interactive",
+      "skills": "Interactive tools",
       "img": "led-report.png"
     },
     {
@@ -390,6 +390,7 @@
       "releaseDate": "2025-07-29",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/augmenta-new-tool-for-ai-classification-and-research/",
       "summary": "We are making the tool behind some of our investigations available for public use.",
+      "skills": "Data wrangling and cleaning",
       "tags": [
         "lobbying"
       ]
@@ -400,6 +401,7 @@
       "releaseDate": "2025-07-29",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/oil-wells-and-wildfires-new-california-data-reveals-widespread-oil-production-in-fire-hazard-zones/",
       "summary": "Oil and gas wells pose risks to health and environment as climate crisis expands California's fire hazard zones.",
+      "skills": ["Investigations and research", "Data analysis"],
       "featured": true
     },
     {
@@ -422,6 +424,7 @@
           "url": "https://www.commondreams.org/news/big-oil-trump-inauguration"
         }
       ],
+      "skills": ["Investigations and research", "Data analysis"],
       "tags": [
         "lobbying"
       ],
@@ -432,7 +435,8 @@
       "publisher": "SAMIZDATA",
       "releaseDate": "2025-06-21",
       "url": "https://blog.samizdata.co/p/how-hot-has-eastern-europe-become",
-      "summary": "The world is getting warmer, and Eastern Europe is no exception."
+      "summary": "The world is getting warmer, and Eastern Europe is no exception.",
+      "skills": "Visualisation"
     },
     {
       "name": "Trump's lies about Ukraine, fact-checked",
@@ -447,6 +451,7 @@
       "releaseDate": "2024-12-01",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/how-we-used-ai-to-help-us-find-lobbyists-at-cop/",
       "summary": "Every year, Global Witness works with partners in the Keep Big Polluters Out coalition to identify fossil fuel lobbyists who are attending the COP climate talks. For COP29, we pioneered an AI-assisted approach to the process that streamlined and strengthened our analysis.",
+      "skills": "Data wrangling and cleaning",
       "tags": [
         "lobbying"
       ]
@@ -457,6 +462,7 @@
       "releaseDate": "2024-11-21",
       "url": "https://globalwitness.org/en/campaigns/fossil-fuels/cop-oil-companies-emissions-are-set-to-cause-17-million-heat-deaths/",
       "summary": "Oil firms present at COP summits made $2.6 trillion profits since the Paris Agreement – enough to pay half the cost of climate damage in poor countries.",
+      "skills": ["Data wrangling and cleaning", "Data analysis"],
       "tags": [
         "lobbying"
       ]
@@ -485,6 +491,7 @@
           "url": "https://euobserver.com/green-economy/arca0a9830"
         }
       ],
+      "skills": "Data wrangling and cleaning",
       "tags": [
         "lobbying"
       ],
@@ -495,7 +502,11 @@
       "publisher": "SAMIZDATA",
       "releaseDate": "2024-10-28",
       "url": "https://blog.samizdata.co/p/what-happened-in-the-moldovan-election",
-      "summary": "A controversial election and a razor-thin referendum result. What can we learn from the data?"
+      "summary": "A controversial election and a razor-thin referendum result. What can we learn from the data?",
+      "skills": ["Data analysis", "Visualisation"],
+      "tags": [
+        "elections"
+      ]
     },
     {
       "name": "Eastern European press increasingly under attack",
@@ -529,7 +540,7 @@
         }
       ],
       "img": "planet-bomb.jpg",
-      "category": "investigation",
+      "skills": ["Investigations and research", "Data wrangling and cleaning"],
       "tags": [
         "lobbying"
       ],
@@ -540,7 +551,8 @@
       "publisher": "SAMIZDATA",
       "releaseDate": "2024-04-17",
       "url": "https://blog.samizdata.co/p/russias-tech-brain-drain-in-numbers",
-      "summary": "Many Russian software engineers have left the country, GitHub data shows. Where did they go, and who do Russians code with now?"
+      "summary": "Many Russian software engineers have left the country, GitHub data shows. Where did they go, and who do Russians code with now?",
+      "skills": ["Data analysis", "Visualisation"]
     },
     {
       "name": "US new-biz spotlight: Creative activity more than doubles but media slows",
@@ -574,21 +586,24 @@
           "name": "#diez",
           "url": "https://diez.md/2024/01/26/o-zi-din-viata-unui-moldovean-mai-mult-prasit-si-mai-putina-socializare/"
         }
-      ]
+      ],
+      "skills": "Visualisation"
     },
     {
       "name": "Christmas dinner: How much will it cost this year?",
       "publisher": "BBC News",
       "releaseDate": "2023-12-19",
       "url": "https://www.bbc.co.uk/news/business-67716356",
-      "summary": "Those tucking into a traditional turkey for Christmas dinner shouldn't have to fork out much more than last year. The price of a supermarket frozen bird has gone up by just 1.2% in a year, while fellow festive favourite the mince pie has risen by 25%. Meanwhile, higher-end potatoes, stuffing mix and Brussels sprouts are cheaper, research for the BBC suggests. Overall, a typical Christmas dinner costs around £32.35 this year, which is a 4.3% increase on £31 last year."
+      "summary": "Those tucking into a traditional turkey for Christmas dinner shouldn't have to fork out much more than last year. The price of a supermarket frozen bird has gone up by just 1.2% in a year, while fellow festive favourite the mince pie has risen by 25%. Meanwhile, higher-end potatoes, stuffing mix and Brussels sprouts are cheaper, research for the BBC suggests. Overall, a typical Christmas dinner costs around £32.35 this year, which is a 4.3% increase on £31 last year.",
+      "skills": "Data analysis"
     },
     {
       "name": "How does your pay compare with other jobs?",
       "publisher": "BBC News",
       "releaseDate": "2023-11-03",
       "url": "https://www.bbc.co.uk/news/business-67308318",
-      "summary": "The average full-time worker in the UK was earning nearly £35,000 a year in April, official data shows, a rise of 5.8% on the previous year. The size of that rise varies from job to job, with travel agents getting a pay bump of 21%, while sport coaches saw their earnings fall the most. Despite the increases in pay, most workers' wages rose by less than inflation, the rate at which the cost of goods and services rise."
+      "summary": "The average full-time worker in the UK was earning nearly £35,000 a year in April, official data shows, a rise of 5.8% on the previous year. The size of that rise varies from job to job, with travel agents getting a pay bump of 21%, while sport coaches saw their earnings fall the most. Despite the increases in pay, most workers' wages rose by less than inflation, the rate at which the cost of goods and services rise.",
+      "skills": "Interactive tools"
     },
     {
       "name": "Energy prices: How much will you pay from January?",
@@ -602,7 +617,7 @@
           "url": "https://news.yahoo.com/energy-prices-much-pay-january-143413028.html"
         }
       ],
-      "category": "interactive",
+      "skills": "Interactive tools",
       "img": "energy-calculator.png",
       "featured": true
     },
@@ -732,7 +747,7 @@
       "summary": "At the Barn Pub near Rugby, the drinks are ready to be served, but unless lots of customers arrive, staff leave early. \"If no regulars come in, we close early,\" the chef says. \"It costs to keep this building heated.\"The Barn Pub is not alone. A survey from the British Beer and Pub Association, seen by the BBC, suggested most pubs are thinking of cutting down trading hours over the winter.",
       "featured": true,
       "img": "pubs.jpg",
-      "category": "investigation"
+      "skills": "Investigations and research"
     },
     {
       "name": "Global new-biz client spotlight: Vodafone win puts telecoms sector at the top in September",
@@ -754,7 +769,7 @@
       "releaseDate": "2022-10-07",
       "url": "https://www.newstatesman.com/world/europe/ukraine/2022/10/ukraine-war-map-gains-russia-retreats-interactive",
       "summary": "The New Statesman's interactive map shows the size of Ukraine's occupied territory when compared to other countries",
-      "category": "interactive",
+      "skills": "Interactive tools",
       "img": "ukraine.gif",
       "featured": true
     },
@@ -875,7 +890,10 @@
       "publisher": "New Statesman",
       "releaseDate": "2022-04-11",
       "url": "https://www.newstatesman.com/chart-of-the-day/2022/04/how-the-centre-left-and-centre-right-in-france-collapsed",
-      "summary": "The Socialists and Republicans, the two traditional governing parties, have suffered their worst election results in history."
+      "summary": "The Socialists and Republicans, the two traditional governing parties, have suffered their worst election results in history.",
+      "tags": [
+        "elections"
+      ]
     },
     {
       "name": "How big is the gender pay gap in the mining industry in Britain and who are the worst offenders?",
@@ -883,7 +901,7 @@
       "releaseDate": "2022-04-06",
       "url": "https://www.mining-technology.com/features/exclusive-how-big-is-the-gender-pay-gap-in-the-mining-industry-in-britain-and-who-are-the-worst-offenders/",
       "summary": "We analysed tens of thousands of official records to find out which companies are at the bottom of the ranks.",
-      "category": "interactive",
+      "skills": "Interactive tools",
       "img": "mining-gender-pay.gif"
     },
     {
@@ -899,7 +917,7 @@
       "releaseDate": "2022-03-23",
       "url": "https://www.newstatesman.com/business/economics/2022/03/personal-inflation-calculator-how-do-you-compare-to-the-rest-of-britain",
       "summary": "Our calculator shows how you could be affected by surging prices in the UK.",
-      "category": "interactive",
+      "skills": "Interactive tools",
       "img": "inflation-calculator.png"
     },
     {
@@ -942,7 +960,7 @@
           "url": "https://www.energymonitor.ai/sectors/industry/where-are-energy-industries-clustered-in-the-uk"
         }
       ],
-      "category": "interactive",
+      "skills": "Interactive tools",
       "img": "industries.png"
     },
     {
@@ -957,7 +975,10 @@
       "publisher": "New Statesman",
       "releaseDate": "2022-01-31",
       "url": "https://www.newstatesman.com/chart-of-the-day/2022/01/how-portugals-socialists-triumphed-in-the-general-election",
-      "summary": "The prime minister António Costa has won an unexpected majority after six years in office."
+      "summary": "The prime minister António Costa has won an unexpected majority after six years in office.",
+      "tags": [
+        "elections"
+      ]
     },
     {
       "name": "How Europe is hooked on Russian gas",
@@ -1002,7 +1023,7 @@
       "url": "https://www.newstatesman.com/politics/2021/11/exclusive-tory-mps-would-be-over-1m-worse-off-in-six-months-with-boris-johnsons-second-job-ban",
       "summary": "Original New Statesman analysis finds Conservative MPs in political consultancy or similar advisory roles over the past six months earned £1,088,036 between them.",
       "img": "tie.jpg",
-      "category": "investigation",
+      "skills": "Investigations and research",
       "tags": [
         "lobbying"
       ],
@@ -1118,7 +1139,10 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-06-11",
       "url": "https://www.newstatesman.com/world/americas/north-america/us/2021/06/how-joe-biden-s-popularity-uk-far-exceeds-donald-trump-s",
-      "summary": "The new US president is currently the second most popular foreign politician among the British public."
+      "summary": "The new US president is currently the second most popular foreign politician among the British public.",
+      "tags": [
+        "elections"
+      ]
     },
     {
       "name": "How the Indian Covid variant has surged in England",
@@ -1146,21 +1170,30 @@
       "publisher": "New Statesman",
       "releaseDate": "2021-05-10",
       "url": "https://www.newstatesman.com/politics/2021/05/labour-struggles-tories-and-greens-surge-final-local-election-results",
-      "summary": "Keir Starmer’s party lost 326 council seats, while Boris Johnson’s gained 235."
+      "summary": "Keir Starmer’s party lost 326 council seats, while Boris Johnson’s gained 235.",
+      "tags": [
+        "elections"
+      ]
     },
     {
       "name": "“It’s our Brexit”: Will low traffic neighbourhoods affect the local election results?",
       "publisher": "New Statesman",
       "releaseDate": "2021-04-30",
       "url": "https://www.newstatesman.com/environment/2021/04/it-s-our-brexit-ltns-will-low-traffic-neighbourhoods-affect-local-election",
-      "summary": "As Covid-19 restrictions ease and amid talk of a vaccine bounce, road closures across the country could also be driving voters."
+      "summary": "As Covid-19 restrictions ease and amid talk of a vaccine bounce, road closures across the country could also be driving voters.",
+      "tags": [
+        "elections"
+      ]
     },
     {
       "name": "Prolific yet quiet: Joe Biden’s first 100 days in numbers",
       "publisher": "New Statesman",
       "releaseDate": "2021-04-29",
       "url": "https://www.newstatesman.com/world/2021/04/prolific-yet-quiet-joe-biden-s-first-100-days-numbers",
-      "summary": "The US president has set about reversing Donald Trump’s legacy, but a smaller media profile and split Senate point to challenges ahead."
+      "summary": "The US president has set about reversing Donald Trump’s legacy, but a smaller media profile and split Senate point to challenges ahead.",
+      "tags": [
+        "elections"
+      ]
     },
     {
       "name": "Why India desperately needs more Covid-19 vaccines",
@@ -1197,7 +1230,7 @@
       "url": "https://www.pressgazette.co.uk/website-tracking-software/",
       "summary": "Our investigation into website tracking software has found that news websites have, on average, 17 third party reader tracking tools – and Google trackers are on nearly all of them. “Big Tech companies insist spying on users, government is inadvertent,” reads an August 2020 headline on The Washington Times website, a conservative daily covering the DC area as well as US national politics.",
       "img": "code.jpg",
-      "category": "investigation"
+      "skills": "Investigations and research"
     },
     {
       "name": "How much has Brexit cost the UK?",
@@ -1254,7 +1287,7 @@
       "releaseDate": "2020-12-23",
       "url": "https://www.newstatesman.com/business/2020/12/mapping-unequal-impact-brexit",
       "summary": "The New Statesman’s data team has created a Brexit vulnerability index, using data from every local authority to show where the UK economy will be most affected.",
-      "category": "interactive",
+      "skills": "Interactive tools",
       "img": "brexit.gif"
     },
     {
@@ -1348,7 +1381,7 @@
       "url": "https://www.newstatesman.com/politics/2020/08/is-the-eat-out-to-help-out-scheme-encouraging-unhealthy-eating",
       "summary": "A New Statesman analysis estimates at least 10,667 of the restaurants currently registered are fast food outlets.",
       "img": "boris.jpg",
-      "category": "investigation"
+      "skills": "Investigations and research"
     },
     {
       "name": "A lifetime of inequality: how black Britons face discrimination at every age",
@@ -1419,7 +1452,7 @@
       "releaseDate": "2020-05-20",
       "url": "https://www.bbfaw.com/benchmark/",
       "summary": "The BBFAW analyses the farm animal welfare policies, management systems, reporting and performance of 150 of the world’s largest food companies",
-      "category": "interactive",
+      "skills": "Interactive tools",
       "img": "bbfaw.gif"
     },
     {
@@ -9152,18 +9185,20 @@
   ],
   "skills": [
     {
-      "name": "Data Journalism",
+      "name": "Investigations and research",
+      "summary": "We work on in-depth investigations across topics such as climate, politics and Big Tech. Speak to us if you need help with in-depth, data-led research and investigations.",
       "level": "Expert",
       "keywords": [
-        "Data Analysis",
-        "Statistical Analysis",
-        "Data Visualization",
-        "Interactive Tools"
+        "Data Journalism",
+        "Investigative Journalism",
+        "Research",
+        "FOI requests"
       ]
     },
     {
-      "name": "Programming",
-      "level": "Advanced",
+      "name": "Data analysis",
+      "summary": "We turn your data into actionable insights that inform readers and tell a clear story. We code, use advanced software and develop bespoke tools to tackle even the most challenging datasets.",
+      "level": "Expert",
       "keywords": [
         "R",
         "Python",
@@ -9172,23 +9207,45 @@
       ]
     },
     {
-      "name": "Web Development",
+      "name": "Data wrangling and cleaning",
+      "summary": "We use advanced AI and machine learning techniques to extract, link and format messy and unstructured data into clean, reliable outputs.",
       "level": "Intermediate",
       "keywords": [
-        "HTML",
-        "CSS",
-        "Interactive Visualisations",
-        "Web Scraping"
+        "Deduplication",
+        "Record linkage",
+        "Named entity recognition"
       ]
     },
     {
-      "name": "Investigative Journalism",
+      "name": "Visualisation",
+      "summary": "Charts, dashboards, scrollable stories. If you can imagine it, we can build it.",
       "level": "Expert",
       "keywords": [
-        "OSINT",
-        "Financial Investigation",
-        "Corporate Research",
-        "FOI Requests"
+        "ggplot2",
+        "D3.js",
+        "Datawrapper",
+        "Flourish"
+      ]
+    },
+    {
+      "name": "Interactive tools",
+      "summary": "Calculators, lookup tools, maps and explainers, designed to help readers explore complex stories through direct interaction.",
+      "level": "Intermediate",
+      "keywords": [
+        "Svelte",
+        "SvelteKit",
+        "D3.js",
+        "Leaflet"
+      ]
+    },
+    {
+      "name": "Data explorers",
+      "summary": "Searchable databases and public-interest lookup tools that turn messy records into something people can actually use.",
+      "level": "Intermediate",
+      "keywords": [
+        "Svelte",
+        "SvelteKit",
+        "PostgreSQL"
       ]
     }
   ],
@@ -9252,7 +9309,12 @@
       "startDate": "2025-12-01",
       "endDate": "",
       "description": "OpenLobbying collects, cleans and standardises UK lobbying registers so you can explore how corporations shape policy.",
-      "url": "https://openlobbying.org/"
+      "url": "https://openlobbying.org/",
+      "img": "openlobbying.gif",
+      "skills": [
+        "Data wrangling and cleaning",
+        "Data explorers"
+      ]
     },
     {
       "name": "OpenMoney.md",
@@ -9262,7 +9324,9 @@
       "highlights": [
         "Open data platform for transparency in Moldova"
       ],
-      "url": "https://openmoney.md/"
+      "url": "https://openmoney.md/",
+      "img": "openmoney.gif",
+      "skills": "Data explorers"
     },
     {
       "name": "Augmenta",
