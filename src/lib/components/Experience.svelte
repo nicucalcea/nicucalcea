@@ -1,11 +1,4 @@
 <script lang="ts">
-	import {
-		Card,
-		CardContent,
-		CardDescription,
-		CardHeader,
-		CardTitle
-	} from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { getFavicon } from '$lib/utils/getIcon.js';
 
@@ -69,50 +62,48 @@
 	}
 </script>
 
-<Card class="transition-shadow hover:shadow-md py-0">
-	<CardContent class="p-4">
-		<div class="space-y-4">
-			{#each sortedExperiences as experience, index}
-				<div class="flex items-start gap-3">
-					<div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-secondary rounded-lg mt-1">
-						<img 
-							src={getFavicon(experience.url)} 
-							alt="" 
-							class="w-8 h-8 object-contain"
-							loading="lazy"
-						/>
-					</div>
-					<div class="flex-1 min-w-0">
-						<div class="flex items-center justify-between gap-2">
-							<div class="flex-1 min-w-0">
-								{#if experience.url && experience.url.trim() !== ''}
-									<a
-										href={experience.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="text-lg font-semibold text-primary hover:text-primary/80 hover:underline"
-									>
-										{getTitle(experience)}
-									</a>
-								{:else}
-									<h3 class="text-lg font-semibold text-foreground">{getTitle(experience)}</h3>
-								{/if}
-							</div>
-							{#if isCurrentPosition(experience.endDate)}
-								<Badge variant="default" class="flex-shrink-0">Current</Badge>
+<div class="border border-border bg-card p-6">
+	<div class="space-y-6">
+		{#each sortedExperiences as experience, index}
+			<div class="flex items-start gap-4">
+				<div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-secondary mt-0.5">
+					<img
+						src={getFavicon(experience.url)}
+						alt=""
+						class="w-6 h-6 object-contain"
+						loading="lazy"
+					/>
+				</div>
+				<div class="flex-1 min-w-0">
+					<div class="flex items-center justify-between gap-2">
+						<div class="flex-1 min-w-0">
+							{#if experience.url && experience.url.trim() !== ''}
+								<a
+									href={experience.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="font-display text-base font-bold text-foreground hover:text-[var(--sz-color-accent-text)] transition-colors"
+								>
+									{getTitle(experience)}
+								</a>
+							{:else}
+								<h3 class="font-display text-base font-bold text-foreground">{getTitle(experience)}</h3>
 							{/if}
 						</div>
-						<div class="flex items-center gap-2 text-sm text-muted-foreground">
-							<span class="font-semibold">{getSubtitle(experience)}</span>
-							<span>•</span>
-							<span class="font-normal">{formatDateRange(experience.startDate, experience.endDate)}</span>
-						</div>
+						{#if isCurrentPosition(experience.endDate)}
+							<span class="text-xs font-bold uppercase tracking-[0.18em] text-[var(--sz-color-accent-text)]">Current</span>
+						{/if}
+					</div>
+					<div class="flex items-center gap-2 text-sm text-muted-foreground mt-0.5">
+						<span class="font-medium">{getSubtitle(experience)}</span>
+						<span aria-hidden="true">•</span>
+						<span>{formatDateRange(experience.startDate, experience.endDate)}</span>
 					</div>
 				</div>
-				{#if index < sortedExperiences.length - 1}
-					<hr class="border-border" />
-				{/if}
-			{/each}
-		</div>
-	</CardContent>
-</Card>
+			</div>
+			{#if index < sortedExperiences.length - 1}
+				<hr class="border-border" />
+			{/if}
+		{/each}
+	</div>
+</div>

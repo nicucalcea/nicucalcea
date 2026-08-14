@@ -106,31 +106,24 @@
 		}
 	});
 
-	// Color palette for the arches
+	// SAMIZDATA chart colour palette
+	// Work: raspberry accent as leading series, then categorical
 	const workColors = [
-		'#0ea5e9', // sky-500
-		'#06b6d4', // cyan-500
-		'#10b981', // emerald-500
-		'#84cc16', // lime-500
-		'#eab308', // yellow-500
-		'#f97316', // orange-500
-		'#ef4444', // red-500
-		'#ec4899', // pink-500
-		'#a855f7', // purple-500
-		'#6366f1'  // indigo-500
+		'var(--sz-chart-accent, #9f1853)',   // Leading series
+		'var(--sz-chart-categorical-2, #28666e)',
+		'var(--sz-chart-categorical-3, #c26d3a)',
+		'var(--sz-chart-categorical-4, #60569b)',
+		'var(--sz-chart-categorical-5, #67823a)',
+		'var(--sz-chart-categorical-6, #a64b37)',
+		'var(--sz-chart-categorical-7, #397c8c)',
+		'var(--sz-chart-categorical-8, #8a6075)',
 	];
 
+	// Education: muted sequential tones
 	const educationColors = [
-		'#94a3b8', // slate-400
-		'#71717a', // zinc-500
-		'#6b7280', // gray-500
-		'#78716c', // stone-500
-		'#92400e', // amber-800
-		'#b45309', // amber-700
-		'#dc2626', // red-600
-		'#c2410c', // orange-700
-		'#7c2d12', // orange-900
-		'#365314'  // lime-800
+		'var(--sz-chart-sequential-5, #ad3267)',
+		'var(--sz-chart-sequential-6, #8b0c48)',
+		'var(--sz-chart-sequential-7, #5d002e)',
 	];
 
 	function getDatePosition(date: Date, minDate: Date, dateRange: number): number {
@@ -182,7 +175,7 @@
 	}
 </script>
 
-<div class="w-full bg-secondary p-6 rounded-lg relative" bind:this={containerElement}>
+<div class="w-full border border-border bg-card p-6 relative" bind:this={containerElement}>
 	{#if processedData.experiences.length === 0 && processedData.education.length === 0}
 		<p class="text-center text-muted-foreground">No valid experience or education data available</p>
 	{:else}
@@ -244,7 +237,6 @@
 						{@const tooltipId = `tooltip-work-${i}`}
 						
 						<g>
-							<!-- Arch path with tooltip -->
 							<path 
 								d={path} 
 								fill="none" 
@@ -252,7 +244,7 @@
 								stroke-width={chartWidth < 600 ? "4" : "6"} 
 								stroke-linecap="round"
 								transform={`translate(0, ${plotHeight / 2})`}
-								class="drop-shadow-sm hover:stroke-8 cursor-pointer transition-all duration-200"
+								class="transition-opacity hover:opacity-80 cursor-pointer"
 								role="button"
 								tabindex="0"
 								aria-label={`${exp.name} - ${exp.position} (${exp.startDate.getFullYear()} - ${exp.isCurrent ? 'Present' : exp.endDate.getFullYear()})`}
@@ -286,8 +278,7 @@
 									cx={endX} 
 									cy={plotHeight / 2} 
 									r="4" 
-									fill="#10b981"
-									class="animate-pulse"
+									fill="var(--sz-chart-accent, #9f1853)"
 								/>
 							{/if}
 						</g>
@@ -305,7 +296,6 @@
 						{@const tooltipId = `tooltip-edu-${i}`}
 						
 						<g>
-							<!-- Arch path with tooltip -->
 							<path 
 								d={path} 
 								fill="none" 
@@ -313,7 +303,7 @@
 								stroke-width={chartWidth < 600 ? "4" : "6"} 
 								stroke-linecap="round"
 								transform={`translate(0, ${plotHeight / 2}) scale(1, -1)`}
-								class="drop-shadow-sm hover:stroke-8 cursor-pointer transition-all duration-200"
+								class="transition-opacity hover:opacity-80 cursor-pointer"
 								role="button"
 								tabindex="0"
 								aria-label={`${edu.institution} - ${edu.studyType} in ${edu.area} (${edu.startDate.getFullYear()} - ${edu.endDate.getFullYear()})`}
@@ -373,15 +363,15 @@
 		{#each processedData.experiences as exp, i}
 			<div 
 				id={`tooltip-work-${i}`}
-				class="fixed z-50 bg-popover text-popover-foreground text-sm rounded-lg p-3 shadow-lg pointer-events-none max-w-xs border border-border"
+				class="fixed z-50 bg-popover text-popover-foreground text-sm p-3 shadow-sm pointer-events-none max-w-xs border border-border"
 				style="display: none;"
 			>
-				<div class="font-semibold text-base mb-1">{exp.name}</div>
+				<div class="font-display font-bold text-base mb-1">{exp.name}</div>
 				<div class="text-muted-foreground mb-2">{exp.position}</div>
 				<div class="text-xs text-muted-foreground mb-2">
 					{formatDate(exp.startDate)} - {exp.isCurrent ? 'Present' : formatDate(exp.endDate)}
 					{#if exp.isCurrent}
-						<span class="ml-2 text-emerald-400">● Current</span>
+						<span class="ml-2 text-[var(--sz-color-accent-text)]">● Current</span>
 					{/if}
 				</div>
 				{#if exp.summary}
@@ -395,10 +385,10 @@
 		{#each processedData.education as edu, i}
 			<div 
 				id={`tooltip-edu-${i}`}
-				class="fixed z-50 bg-popover text-popover-foreground text-sm rounded-lg p-3 shadow-lg pointer-events-none max-w-xs border border-border"
+				class="fixed z-50 bg-popover text-popover-foreground text-sm p-3 shadow-sm pointer-events-none max-w-xs border border-border"
 				style="display: none;"
 			>
-				<div class="font-semibold text-base mb-1">{edu.institution}</div>
+				<div class="font-display font-bold text-base mb-1">{edu.institution}</div>
 				<div class="text-muted-foreground mb-2">{edu.studyType} in {edu.area}</div>
 				<div class="text-xs text-muted-foreground mb-2">
 					{formatDate(edu.startDate)} - {formatDate(edu.endDate)}

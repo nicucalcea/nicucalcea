@@ -119,15 +119,15 @@
 		<div class="flex flex-col sm:flex-row gap-4">
 			<!-- Publisher Filter -->
 			<div class="flex flex-col gap-2">
-				<label class="text-sm font-medium text-foreground" for="publisher-filter">
-					Filter by publisher
+				<label class="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground" for="publisher-filter">
+					Publisher
 				</label>
 				<Popover.Root bind:open={publisherOpen}>
 					<Popover.Trigger bind:ref={publisherTriggerRef}>
 						{#snippet child({ props })}
 							<Button
 								variant="outline"
-								class="w-full sm:w-[240px] justify-between"
+								class="w-full sm:w-[240px] justify-between rounded-none"
 								{...props}
 								role="combobox"
 								aria-expanded={publisherOpen}
@@ -137,7 +137,7 @@
 							</Button>
 						{/snippet}
 					</Popover.Trigger>
-					<Popover.Content class="w-[240px] p-0">
+					<Popover.Content class="w-[240px] p-0 rounded-none">
 						<Command.Root>
 							<Command.Input placeholder="Search publishers..." />
 							<Command.List>
@@ -184,15 +184,15 @@
 
 			<!-- Year Filter -->
 			<div class="flex flex-col gap-2">
-				<label class="text-sm font-medium text-foreground" for="year-filter">
-					Filter by year
+				<label class="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground" for="year-filter">
+					Year
 				</label>
 				<Popover.Root bind:open={yearOpen}>
 					<Popover.Trigger bind:ref={yearTriggerRef}>
 						{#snippet child({ props })}
 							<Button
 								variant="outline"
-								class="w-full sm:w-[160px] justify-between"
+								class="w-full sm:w-[160px] justify-between rounded-none"
 								{...props}
 								role="combobox"
 								aria-expanded={yearOpen}
@@ -202,7 +202,7 @@
 							</Button>
 						{/snippet}
 					</Popover.Trigger>
-					<Popover.Content class="w-[160px] p-0">
+					<Popover.Content class="w-[160px] p-0 rounded-none">
 						<Command.Root>
 							<Command.Input placeholder="Search years..." />
 							<Command.List>
@@ -248,15 +248,13 @@
 			</div>
 		</div>
 
-		<!-- Clear Filters Button -->
 		{#if selectedPublisher || selectedYear}
-			<Button variant="ghost" size="sm" onclick={clearFilters} class="self-start sm:self-end">
+			<button onclick={clearFilters} class="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground hover:text-[var(--sz-color-accent-text)] transition-colors self-start sm:self-end py-2">
 				Clear filters
-			</Button>
+			</button>
 		{/if}
 	</div>
 
-	<!-- Results count and active filters -->
 	<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-sm text-muted-foreground">
 		<div>
 			Showing {publications.length} {publications.length === 1 ? 'publication' : 'publications'}

@@ -9,11 +9,10 @@
 
 <ModeWatcher />
 
-<!-- Navigation -->
 <Navigation />
 
-<!-- Page Content -->
-{@render children()}
+<main>
+	{@render children()}
+</main>
 
-<!-- Footer -->
 <Footer />

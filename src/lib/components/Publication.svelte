@@ -1,12 +1,4 @@
 <script lang="ts">
-	import {
-		Card,
-		CardContent,
-		CardDescription,
-		CardFooter,
-		CardHeader,
-		CardTitle
-	} from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { getFavicon } from '$lib/utils/getIcon.js';
 
@@ -53,72 +45,66 @@
 
 <div class="space-y-6">
 	{#each sortedPublications as publication}
-		<Card class="transition-shadow hover:shadow-md gap-3">
-			<CardHeader>
-				<CardTitle>
+		<article class="border border-border bg-card p-6">
+			<div class="space-y-3">
+				<h3 class="font-display text-lg font-bold leading-snug">
 					<a
 						href={publication.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-primary hover:text-primary/80 hover:underline"
+						class="text-foreground hover:text-[var(--sz-color-accent-text)] transition-colors"
 					>
 						{publication.name}
 					</a>
-				</CardTitle>
-				<CardDescription>
-					{#if publication.publisher}
-						<div class="flex items-center gap-2">
-							<img 
-								src={getFavicon(publication.url)} 
-								alt="" 
-								class="w-4 h-4 flex-shrink-0"
-								loading="lazy"
-							/>
-							<a 
-								href="/work/?publication={encodeURIComponent(publication.publisher)}"
-								class="font-medium hover:underline"
-							>
-								{publication.publisher}
-							</a>
-							<span>• {formatDate(publication.releaseDate)}</span>
-						</div>
-					{:else}
-						{formatDate(publication.releaseDate)}
-					{/if}
-				</CardDescription>
-			</CardHeader>
-			<CardContent>
-				{#if publication.summary}
-					<p class="text-foreground">{publication.summary}</p>
-				{/if}
-			</CardContent>
-			{#if publication.partners && publication.partners.length > 0}
-				<CardFooter>
-					<div class="w-full">
-						<div class="flex flex-wrap items-center gap-2">
-							<span class="text-sm font-medium text-muted-foreground">Also published by:</span>
-							{#each publication.partners as partner}
-								<Badge variant="outline">
-									<a
-										href={partner.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="hover:underline flex items-center gap-1.5"
-									>
-										<img 
-											src={getFavicon(partner.url)} 
-											alt="" 
-											class="w-3 h-3 flex-shrink-0"
-											loading="lazy"
-										/>
-										{partner.name}
-									</a>
-								</Badge>
-							{/each}
-						</div>
+				</h3>
+
+				{#if publication.publisher}
+					<div class="flex items-center gap-2 text-sm text-muted-foreground">
+						<img
+							src={getFavicon(publication.url)}
+							alt=""
+							class="w-4 h-4 flex-shrink-0"
+							loading="lazy"
+						/>
+						<a
+							href="/work/?publication={encodeURIComponent(publication.publisher)}"
+							class="font-medium text-muted-foreground hover:text-foreground transition-colors"
+						>
+							{publication.publisher}
+						</a>
+						<span aria-hidden="true">•</span>
+						<span>{formatDate(publication.releaseDate)}</span>
 					</div>
-				</CardFooter>
-			{/if}
-		</Card>
+				{:else}
+					<p class="text-sm text-muted-foreground">{formatDate(publication.releaseDate)}</p>
+				{/if}
+
+				{#if publication.summary}
+					<p class="text-foreground leading-relaxed">{publication.summary}</p>
+				{/if}
+
+				{#if publication.partners && publication.partners.length > 0}
+					<div class="flex flex-wrap items-center gap-2 pt-1">
+						<span class="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">Also in</span>
+						{#each publication.partners as partner}
+							<a
+								href={partner.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground hover:text-[var(--sz-color-accent-text)] hover:border-[var(--sz-color-border-accent)] transition-colors"
+							>
+								<img
+									src={getFavicon(partner.url)}
+									alt=""
+									class="w-3 h-3 flex-shrink-0"
+									loading="lazy"
+								/>
+								{partner.name}
+							</a>
+						{/each}
+					</div>
+				{/if}
+			</div>
+		</article>
 	{/each}
 </div>

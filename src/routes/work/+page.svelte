@@ -107,9 +107,9 @@
 	<meta name="description" content="Portfolio of published stories, investigations, and journalistic work by Nicu Calcea." />
 </svelte:head>
 
-<div class="container mx-auto px-4 py-8">
-	<header class="mb-12">
-		<h1 class="text-4xl font-bold text-foreground mb-4">Stories and investigations</h1>
+<div class="mx-auto max-w-[90rem] px-4 sm:px-6 py-[var(--sz-section-block)]">
+	<header class="mb-[var(--sz-section-block)]">
+		<h1 class="font-display text-4xl font-bold tracking-tight mb-4">Stories and investigations</h1>
 	</header>
 
 	<main>
