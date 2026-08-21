@@ -41,7 +41,7 @@
           href="https://samizdata.co/"
           target="_blank"
           rel="noopener noreferrer"
-          class="ml-2 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] bg-primary text-primary-foreground hover:bg-[var(--sz-color-primary)] transition-colors"
+          class="ml-2 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] bg-primary text-primary-foreground dark:text-white hover:bg-[var(--sz-color-primary)] transition-colors"
         >
           Hire me
         </a>

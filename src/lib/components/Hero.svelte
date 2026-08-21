@@ -41,10 +41,6 @@
 		<div class="flex flex-col lg:flex-row items-center gap-12">
 			<!-- Left content -->
 			<div class="flex-1 space-y-6">
-				<p class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--sz-color-accent-text)]">
-					Investigative data journalism
-				</p>
-
 				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[0.95]">
 					{basics.label}
 				</h1>
