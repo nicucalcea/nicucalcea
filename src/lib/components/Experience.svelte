@@ -82,16 +82,16 @@
 									href={experience.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="font-display text-base font-bold text-foreground hover:text-[var(--sz-color-accent-text)] transition-colors"
+									class="font-display text-base font-black tracking-[-0.04em] text-foreground hover:text-[var(--sz-color-accent-text)] transition-colors"
 								>
 									{getTitle(experience)}
 								</a>
 							{:else}
-								<h3 class="font-display text-base font-bold text-foreground">{getTitle(experience)}</h3>
+								<h3 class="font-display text-base font-black tracking-[-0.04em] text-foreground">{getTitle(experience)}</h3>
 							{/if}
 						</div>
 						{#if isCurrentPosition(experience.endDate)}
-							<span class="text-xs font-bold uppercase tracking-[0.18em] text-[var(--sz-color-accent-text)]">Current</span>
+							<span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-[var(--sz-color-accent-text)]">Current</span>
 						{/if}
 					</div>
 					<div class="flex items-center gap-2 text-sm text-muted-foreground mt-0.5">

@@ -45,9 +45,9 @@
 
 <div class="space-y-6">
 	{#each sortedPublications as publication}
-		<article class="border border-border bg-card p-6">
+		<article class="brand-card border border-border bg-card p-6">
 			<div class="space-y-3">
-				<h3 class="font-display text-lg font-bold leading-snug">
+				<h3 class="font-display text-lg font-black tracking-[-0.04em] leading-snug">
 					<a
 						href={publication.url}
 						target="_blank"
@@ -80,12 +80,12 @@
 				{/if}
 
 				{#if publication.summary}
-					<p class="text-foreground leading-relaxed">{publication.summary}</p>
+					<p class="text-muted-foreground leading-relaxed">{publication.summary}</p>
 				{/if}
 
 				{#if publication.partners && publication.partners.length > 0}
 					<div class="flex flex-wrap items-center gap-2 pt-1">
-						<span class="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">Also in</span>
+						<span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">Also in</span>
 						{#each publication.partners as partner}
 							<a
 								href={partner.url}

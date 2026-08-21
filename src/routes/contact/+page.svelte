@@ -55,8 +55,8 @@
 <div class="mx-auto max-w-[90rem] px-4 sm:px-6 py-[var(--sz-section-block)]">
 	<!-- Header Section -->
 	<div class="text-center mb-12">
-		<p class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--sz-color-accent-text)] mb-4">Get in touch</p>
-		<h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">Let&rsquo;s talk</h1>
+		<p class="font-display text-xs font-bold uppercase tracking-[0.2em] text-[var(--sz-color-accent-text)] mb-4">Get in touch</p>
+		<h1 class="font-display text-4xl sm:text-5xl font-black tracking-[-0.04em] mb-4">Let&rsquo;s talk</h1>
 		<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
 			Ready to discuss an investigation, commission a data story, or want to discuss training? Schedule a 30-minute meeting.
 		</p>
@@ -66,7 +66,7 @@
 	<div class="max-w-4xl mx-auto">
 		<div class="border border-border bg-card">
 			<div class="p-6 border-b border-border">
-				<h2 class="font-display text-xl font-bold">Schedule a Meeting</h2>
+				<h2 class="font-display text-xl font-black tracking-[-0.04em]">Schedule a Meeting</h2>
 				<p class="text-muted-foreground mt-2">
 					Choose a convenient time for our conversation.
 				</p>
@@ -85,13 +85,13 @@
 	<!-- Additional Contact Information -->
 	<div class="max-w-2xl mx-auto mt-12 text-center">
 		<div class="border border-border bg-card p-8">
-			<h3 class="font-display text-lg font-bold mb-4">Prefer contacting me directly?</h3>
+			<h3 class="font-display text-lg font-black tracking-[-0.04em] mb-4">Prefer contacting me directly?</h3>
 			<div class="space-y-4 text-muted-foreground">
 				<div class="flex flex-col sm:flex-row gap-3 justify-center">
-					<a href="mailto:website@nicu.md" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] bg-primary text-primary-foreground hover:bg-[var(--sz-color-primary)] transition-colors">
+					<a href="mailto:website@nicu.md" class="inline-flex items-center justify-center gap-2 px-6 py-3 font-display text-xs font-bold uppercase tracking-[0.18em] bg-primary text-primary-foreground hover:bg-[var(--sz-color-primary)] transition-colors">
 						Send me an email
 					</a>
-					<a href="https://www.linkedin.com/in/nicucalcea/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] border border-border text-foreground hover:bg-card transition-colors">
+					<a href="https://www.linkedin.com/in/nicucalcea/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 font-display text-xs font-bold uppercase tracking-[0.18em] border border-border text-foreground hover:border-[var(--sz-color-border-accent)] hover:text-[var(--sz-color-accent-text)] transition-colors">
 						Connect on LinkedIn
 					</a>
 				</div>

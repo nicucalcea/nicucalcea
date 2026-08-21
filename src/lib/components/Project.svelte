@@ -26,8 +26,8 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 	{#each filteredProjects as project}
-		<article class="border border-border bg-card p-6 flex flex-col h-full">
-			<h3 class="font-display text-base font-bold mb-3">
+		<article class="brand-card border border-border bg-card p-6 flex flex-col h-full">
+			<h3 class="font-display text-base font-black tracking-[-0.04em] mb-3">
 				<a
 					href={project.url}
 					target="_blank"
@@ -43,7 +43,7 @@
 					{project.name}
 				</a>
 			</h3>
-			<p class="text-foreground text-sm leading-relaxed flex-grow">{project.description}</p>
+			<p class="text-muted-foreground text-sm leading-relaxed flex-grow">{project.description}</p>
 		</article>
 	{/each}
 </div>

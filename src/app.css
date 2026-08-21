@@ -51,6 +51,7 @@
   --sz-color-primary-container: #9f1853;
   --sz-color-accent-text: #7b003c;
   --sz-color-accent-text-hover: #9f1853;
+  --sz-color-logo-mark: #7b003c;
   --sz-color-surface: #fbf9f4;
   --sz-color-surface-low: #f5f3ee;
   --sz-color-surface-container: #f0eee9;
@@ -60,17 +61,25 @@
   --sz-color-surface-dim: #dbdad5;
   --sz-color-ink: #1b1c19;
   --sz-color-muted: #574146;
+  --sz-color-ink-soft: rgba(27, 28, 25, 0.72);
   --sz-color-outline: rgba(138, 112, 118, 0.3);
+  --sz-color-outline-ghost: rgba(222, 191, 197, 0.2);
   --sz-color-border-soft: rgba(138, 112, 118, 0.18);
   --sz-color-border-strong: rgba(138, 112, 118, 0.28);
   --sz-color-border-accent: rgba(159, 24, 83, 0.26);
+  --sz-color-primary-glow: rgba(123, 0, 60, 0.1);
   --sz-color-destructive: #c0476b;
   --sz-color-destructive-text: #a52f56;
   --sz-color-on-primary: #ffffff;
+  --sz-color-on-destructive: #ffffff;
 
   --sz-font-display: "Space Grotesk", ui-sans-serif, sans-serif;
   --sz-font-body: "Work Sans", ui-sans-serif, sans-serif;
   --sz-font-monospace: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sz-font-weight-body: 400;
+  --sz-font-weight-medium: 500;
+  --sz-font-weight-label: 700;
+  --sz-font-weight-display: 900;
 
   --sz-space-1: 0.25rem;
   --sz-space-2: 0.5rem;
@@ -80,6 +89,7 @@
   --sz-space-6: 4rem;
   --sz-grid-gap: 1.5rem;
   --sz-shell-max: 90rem;
+  /* Personal-site override: keep the existing, denser section rhythm. */
   --sz-section-block: clamp(2rem, 5vw, 4rem);
   --sz-section-block-tight: clamp(1.5rem, 4vw, 2.5rem);
   --sz-nav-offset: 5.5rem;
@@ -133,6 +143,7 @@
   --sz-color-primary: #a31552;
   --sz-color-primary-container: #c62168;
   --sz-color-accent-text: #f078a6;
+  --sz-color-logo-mark: #d14a7b;
   --sz-color-accent-text-hover: #ff9bc1;
   --sz-color-surface: #111311;
   --sz-color-surface-low: #171a18;
@@ -143,13 +154,17 @@
   --sz-color-surface-dim: #0c0e0d;
   --sz-color-ink: #f4efe9;
   --sz-color-muted: #c2b7b3;
+  --sz-color-ink-soft: rgba(244, 239, 233, 0.76);
   --sz-color-outline: rgba(160, 140, 144, 0.24);
+  --sz-color-outline-ghost: rgba(255, 255, 255, 0.1);
   --sz-color-border-soft: rgba(255, 255, 255, 0.11);
   --sz-color-border-strong: rgba(255, 255, 255, 0.18);
   --sz-color-border-accent: rgba(198, 33, 104, 0.4);
+  --sz-color-primary-glow: rgba(198, 33, 104, 0.16);
   --sz-color-destructive: #d06b8c;
   --sz-color-destructive-text: #e98bab;
   --sz-color-on-primary: #111311;
+  --sz-color-on-destructive: #111311;
 
   --sz-shadow-ambient: 0 1.25rem 2.75rem rgba(0, 0, 0, 0.35);
 }
@@ -207,6 +222,11 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
+
+  ::selection {
+    background: var(--sz-color-primary-container);
+    color: var(--sz-color-on-primary);
+  }
   h1,
   h2,
   h3,
@@ -214,9 +234,9 @@
   h5,
   h6 {
     font-family: var(--sz-font-display);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    font-weight: var(--sz-font-weight-display);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
   }
   /* Accessible focus indicator per SAMIZDATA guidelines */
   :focus-visible {
@@ -230,5 +250,44 @@
       transition-duration: 0ms !important;
       animation-duration: 0ms !important;
     }
+  }
+}
+
+@layer components {
+  .brand-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .brand-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.1;
+    background-image:
+      linear-gradient(var(--sz-color-outline) 1px, transparent 1px),
+      linear-gradient(90deg, var(--sz-color-outline) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+  }
+
+  .brand-hero > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-card {
+    transition:
+      transform var(--sz-transition-duration) ease,
+      box-shadow var(--sz-transition-duration) ease,
+      border-color var(--sz-transition-duration) ease;
+  }
+
+  .brand-card:is(:hover, :focus-within) {
+    transform: translateY(-0.2rem);
+    border-color: var(--sz-color-border-accent);
+    box-shadow: var(--sz-shadow-ambient);
   }
 }

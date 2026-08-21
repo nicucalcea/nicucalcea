@@ -13,13 +13,13 @@
   ];
 </script>
 
-<header class="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-xl">
   <div class="mx-auto max-w-[90rem] px-4 sm:px-6">
     <div class="flex items-center justify-between py-4">
       <!-- Wordmark -->
       <a
         href="/"
-        class="font-display text-lg font-bold tracking-tight text-foreground hover:text-primary transition-colors"
+        class="font-display text-lg font-black tracking-[-0.04em] text-foreground hover:text-[var(--sz-color-accent-text)] transition-colors"
       >
         Nicu&nbsp;Calcea
       </a>
@@ -28,7 +28,7 @@
         {#each links as link}
           <a
             href={link.href}
-            class="px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] transition-colors {currentPath ===
+            class="px-3 py-2 font-display text-xs font-bold uppercase tracking-[0.18em] transition-colors {currentPath ===
             link.href
               ? 'text-primary'
               : 'text-muted-foreground hover:text-foreground'}"
@@ -41,7 +41,7 @@
           href="https://samizdata.co/"
           target="_blank"
           rel="noopener noreferrer"
-          class="ml-2 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] bg-primary text-primary-foreground dark:text-white hover:bg-[var(--sz-color-primary)] transition-colors"
+          class="ml-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-[0.18em] bg-primary text-primary-foreground dark:text-white hover:bg-[var(--sz-color-primary)] transition-colors"
         >
           Hire me
         </a>

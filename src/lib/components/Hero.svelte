@@ -36,12 +36,12 @@
 	}
 </script>
 
-<section class="border-b border-border">
+<section class="brand-hero border-b border-border">
 	<div class="mx-auto max-w-[90rem] px-4 sm:px-6 py-[var(--sz-section-block)]">
 		<div class="flex flex-col lg:flex-row items-center gap-12">
 			<!-- Left content -->
 			<div class="flex-1 space-y-6">
-				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[0.95]">
+				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-[-0.04em] text-foreground leading-[0.95]">
 					{basics.label}
 				</h1>
 

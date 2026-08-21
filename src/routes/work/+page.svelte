@@ -109,7 +109,7 @@
 
 <div class="mx-auto max-w-[90rem] px-4 sm:px-6 py-[var(--sz-section-block)]">
 	<header class="mb-[var(--sz-section-block)]">
-		<h1 class="font-display text-4xl font-bold tracking-tight mb-4">Stories and investigations</h1>
+		<h1 class="font-display text-4xl font-black tracking-[-0.04em] mb-4">Stories and investigations</h1>
 	</header>
 
 	<main>
