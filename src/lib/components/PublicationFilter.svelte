@@ -1,23 +1,9 @@
 <script lang="ts">
-	import CheckIcon from "@lucide/svelte/icons/check";
-	import ChevronsUpDownIcon from "@lucide/svelte/icons/chevrons-up-down";
-	import { tick } from "svelte";
-	import * as Command from "$lib/components/ui/command/index.js";
-	import * as Popover from "$lib/components/ui/popover/index.js";
-	import { Button } from "$lib/components/ui/button/index.js";
-	import { cn } from "$lib/utils.js";
+	import Icon from './Icon.svelte';
 
 	interface Publication {
-		name: string;
 		publisher?: string;
 		releaseDate: string;
-		url: string;
-		summary?: string;
-		partners?: Array<{
-			name: string;
-			url: string;
-		}>;
-		featured?: boolean;
 	}
 
 	interface Props {
@@ -25,253 +11,159 @@
 		onFilterChange: (filters: { publisher: string; year: string }) => void;
 		initialPublisher?: string;
 		initialYear?: string;
+		resultCount: number;
 	}
 
-	let { publications, onFilterChange, initialPublisher = "", initialYear = "" }: Props = $props();
+	let { publications, onFilterChange, initialPublisher = '', initialYear = '', resultCount }: Props = $props();
 
-	// Extract unique publishers and years
-	const publishers = $derived(() => {
-		// Create a map to track the most recent publication date for each publisher
-		const publisherDates = new Map<string, Date>();
-		
-		publications.forEach(pub => {
-			if (pub.publisher) {
-				const pubDate = new Date(pub.releaseDate);
-				const existingDate = publisherDates.get(pub.publisher);
-				if (!existingDate || pubDate > existingDate) {
-					publisherDates.set(pub.publisher, pubDate);
-				}
-			}
-		});
-		
-		// Sort publishers by their most recent publication date (newest first)
-		return Array.from(publisherDates.keys()).sort((a, b) => {
-			const dateA = publisherDates.get(a)!;
-			const dateB = publisherDates.get(b)!;
-			return dateB.getTime() - dateA.getTime();
-		});
+	// Publishers sorted by their most recent publication (newest first)
+	const publishers = $derived.by(() => {
+		const latest = new Map<string, number>();
+		for (const pub of publications) {
+			if (!pub.publisher) continue;
+			const time = new Date(pub.releaseDate).getTime();
+			if (time > (latest.get(pub.publisher) ?? -Infinity)) latest.set(pub.publisher, time);
+		}
+		return [...latest.keys()].sort((a, b) => latest.get(b)! - latest.get(a)!);
 	});
 
-	const years = $derived(() => {
-		const uniqueYears = new Set<string>();
-		publications.forEach(pub => {
-			const year = new Date(pub.releaseDate).getFullYear().toString();
-			uniqueYears.add(year);
-		});
-		return Array.from(uniqueYears).sort((a, b) => parseInt(b) - parseInt(a));
-	});
-
-	// State for filters - synced from props
-	let selectedPublisher = $state("");
-	let selectedYear = $state("");
-	
-	// Sync with URL changes (when props change from parent)
-	$effect(() => {
-		selectedPublisher = initialPublisher;
-	});
-	$effect(() => {
-		selectedYear = initialYear;
-	});
-
-	// State for comboboxes
-	let publisherOpen = $state(false);
-	let yearOpen = $state(false);
-	let publisherTriggerRef = $state<HTMLButtonElement>(null!);
-	let yearTriggerRef = $state<HTMLButtonElement>(null!);
-
-	// Derived values for display
-	const selectedPublisherLabel = $derived(
-		publishers().find(p => p === selectedPublisher) || ""
-	);
-	const selectedYearLabel = $derived(
-		years().find(y => y === selectedYear) || ""
+	const years = $derived(
+		[...new Set(publications.map((pub) => new Date(pub.releaseDate).getFullYear().toString()))].sort(
+			(a, b) => Number(b) - Number(a)
+		)
 	);
 
-	// Functions to close and focus trigger
-	function closePublisherAndFocus() {
-		publisherOpen = false;
-		tick().then(() => {
-			publisherTriggerRef?.focus();
-		});
-	}
-
-	function closeYearAndFocus() {
-		yearOpen = false;
-		tick().then(() => {
-			yearTriggerRef?.focus();
-		});
-	}
-
-	function updateFilters(publisher: string, year: string) {
-		selectedPublisher = publisher;
-		selectedYear = year;
-		onFilterChange({ publisher, year });
-	}
-
-	// Function to clear filters
-	function clearFilters() {
-		updateFilters("", "");
-	}
+	const filtered = $derived(Boolean(initialPublisher || initialYear));
 </script>
 
-<div class="mb-8">
-	<div class="flex flex-col sm:flex-row sm:items-end gap-4 mb-4">
-		<div class="flex flex-col sm:flex-row gap-4">
-			<!-- Publisher Filter -->
-			<div class="flex flex-col gap-2">
-				<label class="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground" for="publisher-filter">
-					Publisher
-				</label>
-				<Popover.Root bind:open={publisherOpen}>
-					<Popover.Trigger bind:ref={publisherTriggerRef}>
-						{#snippet child({ props })}
-							<Button
-								variant="outline"
-								class="w-full sm:w-[240px] justify-between rounded-none"
-								{...props}
-								role="combobox"
-								aria-expanded={publisherOpen}
-							>
-								{selectedPublisherLabel || "All publishers"}
-								<ChevronsUpDownIcon class="ml-2 size-4 shrink-0 opacity-50" />
-							</Button>
-						{/snippet}
-					</Popover.Trigger>
-					<Popover.Content class="w-[240px] p-0 rounded-none">
-						<Command.Root>
-							<Command.Input placeholder="Search publishers..." />
-							<Command.List>
-								<Command.Empty>No publisher found.</Command.Empty>
-								<Command.Group>
-									<Command.Item
-										value=""
-										onSelect={() => {
-											updateFilters("", selectedYear);
-											closePublisherAndFocus();
-										}}
-									>
-										<CheckIcon
-											class={cn(
-												"mr-2 size-4",
-												selectedPublisher !== "" && "text-transparent"
-											)}
-										/>
-										All publishers
-									</Command.Item>
-									{#each publishers() as publisher}
-										<Command.Item
-											value={publisher}
-											onSelect={() => {
-												updateFilters(publisher, selectedYear);
-												closePublisherAndFocus();
-											}}
-										>
-											<CheckIcon
-												class={cn(
-													"mr-2 size-4",
-													selectedPublisher !== publisher && "text-transparent"
-												)}
-											/>
-											{publisher}
-										</Command.Item>
-									{/each}
-								</Command.Group>
-							</Command.List>
-						</Command.Root>
-					</Popover.Content>
-				</Popover.Root>
-			</div>
-
-			<!-- Year Filter -->
-			<div class="flex flex-col gap-2">
-				<label class="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground" for="year-filter">
-					Year
-				</label>
-				<Popover.Root bind:open={yearOpen}>
-					<Popover.Trigger bind:ref={yearTriggerRef}>
-						{#snippet child({ props })}
-							<Button
-								variant="outline"
-								class="w-full sm:w-[160px] justify-between rounded-none"
-								{...props}
-								role="combobox"
-								aria-expanded={yearOpen}
-							>
-								{selectedYearLabel || "All years"}
-								<ChevronsUpDownIcon class="ml-2 size-4 shrink-0 opacity-50" />
-							</Button>
-						{/snippet}
-					</Popover.Trigger>
-					<Popover.Content class="w-[160px] p-0 rounded-none">
-						<Command.Root>
-							<Command.Input placeholder="Search years..." />
-							<Command.List>
-								<Command.Empty>No year found.</Command.Empty>
-								<Command.Group>
-									<Command.Item
-										value=""
-										onSelect={() => {
-											updateFilters(selectedPublisher, "");
-											closeYearAndFocus();
-										}}
-									>
-										<CheckIcon
-											class={cn(
-												"mr-2 size-4",
-												selectedYear !== "" && "text-transparent"
-											)}
-										/>
-										All years
-									</Command.Item>
-									{#each years() as year}
-										<Command.Item
-											value={year}
-											onSelect={() => {
-												updateFilters(selectedPublisher, year);
-												closeYearAndFocus();
-											}}
-										>
-											<CheckIcon
-												class={cn(
-													"mr-2 size-4",
-													selectedYear !== year && "text-transparent"
-												)}
-											/>
-											{year}
-										</Command.Item>
-									{/each}
-								</Command.Group>
-							</Command.List>
-						</Command.Root>
-					</Popover.Content>
-				</Popover.Root>
+<div class="filters">
+	<div class="controls">
+		<div class="field">
+			<label class="label" for="publisher-filter">Publisher</label>
+			<div class="select">
+				<select
+					id="publisher-filter"
+					value={initialPublisher}
+					onchange={(event) => onFilterChange({ publisher: event.currentTarget.value, year: initialYear })}
+				>
+					<option value="">All publishers</option>
+					{#each publishers as publisher}
+						<option value={publisher}>{publisher}</option>
+					{/each}
+				</select>
+				<Icon name="chevron-down" size={18} strokeWidth={2.2} />
 			</div>
 		</div>
 
-		{#if selectedPublisher || selectedYear}
-			<button onclick={clearFilters} class="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground hover:text-[var(--sz-color-accent-text)] transition-colors self-start sm:self-end py-2">
+		<div class="field">
+			<label class="label" for="year-filter">Year</label>
+			<div class="select">
+				<select
+					id="year-filter"
+					value={initialYear}
+					onchange={(event) => onFilterChange({ publisher: initialPublisher, year: event.currentTarget.value })}
+				>
+					<option value="">All years</option>
+					{#each years as year}
+						<option value={year}>{year}</option>
+					{/each}
+				</select>
+				<Icon name="chevron-down" size={18} strokeWidth={2.2} />
+			</div>
+		</div>
+
+		{#if filtered}
+			<button type="button" class="label clear" onclick={() => onFilterChange({ publisher: '', year: '' })}>
 				Clear filters
 			</button>
 		{/if}
 	</div>
 
-	<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-sm text-muted-foreground">
-		<div>
-			Showing {publications.length} {publications.length === 1 ? 'publication' : 'publications'}
-			{#if selectedPublisher || selectedYear}
-				<span class="ml-1">
-					filtered by
-					{#if selectedPublisher}
-						<span class="font-medium text-foreground">{selectedPublisher}</span>
-					{/if}
-					{#if selectedPublisher && selectedYear}
-						<span> and </span>
-					{/if}
-					{#if selectedYear}
-						<span class="font-medium text-foreground">{selectedYear}</span>
-					{/if}
-				</span>
-			{/if}
-		</div>
-	</div>
+	<p class="summary" aria-live="polite">
+		Showing {resultCount}
+		{resultCount === 1 ? 'publication' : 'publications'}
+		{#if filtered}
+			filtered by
+			{#if initialPublisher}<strong>{initialPublisher}</strong>{/if}
+			{#if initialPublisher && initialYear}and{/if}
+			{#if initialYear}<strong>{initialYear}</strong>{/if}
+		{/if}
+	</p>
 </div>
+
+<style>
+	.filters {
+		margin-bottom: var(--sz-space-5);
+	}
+	.controls {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		gap: 1rem 1.5rem;
+	}
+	.field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		width: 100%;
+	}
+	label {
+		color: var(--sz-color-muted);
+	}
+	.select {
+		position: relative;
+		color: var(--sz-color-muted);
+	}
+	.select :global(svg) {
+		position: absolute;
+		top: 50%;
+		right: 1rem;
+		transform: translateY(-50%);
+		pointer-events: none;
+	}
+	select {
+		appearance: none;
+		width: 100%;
+		min-height: 44px;
+		padding: 0.75rem 3rem 0.75rem 1rem;
+		border: 1px solid var(--sz-color-muted);
+		border-radius: 0;
+		background: var(--sz-color-surface-lowest);
+		color: var(--sz-color-ink);
+		font-size: 1rem;
+		cursor: pointer;
+		transition: border-color var(--transition);
+	}
+	select:hover {
+		border-color: var(--sz-color-primary-container);
+	}
+	.clear {
+		min-height: 44px;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: var(--sz-color-muted);
+		cursor: pointer;
+		transition: color var(--transition);
+	}
+	.clear:hover {
+		color: var(--sz-color-accent-text);
+	}
+	.summary {
+		margin: 1.25rem 0 0;
+		font-size: 1rem;
+		color: var(--sz-color-muted);
+	}
+	.summary strong {
+		font-weight: var(--sz-font-weight-medium);
+		color: var(--sz-color-ink);
+	}
+	@media (min-width: 640px) {
+		.field {
+			width: 16rem;
+		}
+		.field + .field {
+			width: 11rem;
+		}
+	}
+</style>

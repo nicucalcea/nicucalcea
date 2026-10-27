@@ -2,15 +2,34 @@
 <html lang="en">
 
 <head>
-	<!-- SAMIZDATA brand fonts: Space Grotesk (display) + Work Sans (body) -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Apply theme before first paint: stored choice, else system preference -->
+	<script>
+		(function () {
+			try {
+				var stored = localStorage.getItem('samizdata-theme');
+				var theme =
+					stored === 'light' || stored === 'dark'
+						? stored
+						: window.matchMedia('(prefers-color-scheme: dark)').matches
+							? 'dark'
+							: 'light';
+				document.documentElement.dataset.theme = theme;
+			} catch (e) {
+				document.documentElement.dataset.theme = 'light';
+			}
+		})();
+	</script>
+	<!-- SAMIZDATA brand fonts: Space Grotesk 700/900 (display) + Work Sans 400/500 (body) -->
 	<link rel="preconnect" href="https://fonts.bunny.net" />
 	<link
-		href="https://fonts.bunny.net/css?family=space-grotesk:500,700,900|work-sans:400,500,600"
+		href="https://fonts.bunny.net/css?family=space-grotesk:700,900|work-sans:400,500&display=swap"
 		rel="stylesheet"
 	/>
-	<meta charset="utf-8" />
 	<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbf9f4" />
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111311" />
 	%sveltekit.head%
 </head>
 

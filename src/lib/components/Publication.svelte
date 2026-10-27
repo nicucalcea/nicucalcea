@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { getFavicon } from '$lib/utils/getIcon.js';
 
 	interface Publication {
@@ -27,15 +26,12 @@
 	// Optionally filter to only featured publications
 	const sortedPublications = $derived(
 		[...publications]
-			.filter(pub => featured ? pub.featured === true : true)
-			.sort((a, b) => {
-				return new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime();
-			})
+			.filter((pub) => (featured ? pub.featured === true : true))
+			.sort((a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime())
 	);
 
 	function formatDate(dateString: string): string {
-		const date = new Date(dateString);
-		return date.toLocaleDateString('en-US', {
+		return new Date(dateString).toLocaleDateString('en-US', {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric'
@@ -43,68 +39,132 @@
 	}
 </script>
 
-<div class="space-y-6">
-	{#each sortedPublications as publication}
-		<article class="brand-card border border-border bg-card p-6">
-			<div class="space-y-3">
-				<h3 class="font-display text-lg font-black tracking-[-0.04em] leading-snug">
-					<a
-						href={publication.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="text-foreground hover:text-[var(--sz-color-accent-text)] transition-colors"
-					>
-						{publication.name}
+<div class="publications">
+	{#each sortedPublications as publication (publication.url)}
+		<article class="card card-interactive">
+			<h3>
+				<a href={publication.url} target="_blank" rel="noopener noreferrer">{publication.name}</a>
+			</h3>
+
+			{#if publication.publisher}
+				<div class="meta">
+					<img src={getFavicon(publication.url)} alt="" width="16" height="16" loading="lazy" />
+					<a class="publisher" href="/work/?publication={encodeURIComponent(publication.publisher)}">
+						{publication.publisher}
 					</a>
-				</h3>
+					<span aria-hidden="true">•</span>
+					<span>{formatDate(publication.releaseDate)}</span>
+				</div>
+			{:else}
+				<p class="meta">{formatDate(publication.releaseDate)}</p>
+			{/if}
 
-				{#if publication.publisher}
-					<div class="flex items-center gap-2 text-sm text-muted-foreground">
-						<img
-							src={getFavicon(publication.url)}
-							alt=""
-							class="w-4 h-4 flex-shrink-0"
-							loading="lazy"
-						/>
-						<a
-							href="/work/?publication={encodeURIComponent(publication.publisher)}"
-							class="font-medium text-muted-foreground hover:text-foreground transition-colors"
-						>
-							{publication.publisher}
+			{#if publication.summary}
+				<p class="summary">{publication.summary}</p>
+			{/if}
+
+			{#if publication.partners && publication.partners.length > 0}
+				<div class="partners">
+					<span class="label muted">Also in</span>
+					{#each publication.partners as partner}
+						<a href={partner.url} target="_blank" rel="noopener noreferrer">
+							<img src={getFavicon(partner.url)} alt="" width="12" height="12" loading="lazy" />
+							{partner.name}
 						</a>
-						<span aria-hidden="true">•</span>
-						<span>{formatDate(publication.releaseDate)}</span>
-					</div>
-				{:else}
-					<p class="text-sm text-muted-foreground">{formatDate(publication.releaseDate)}</p>
-				{/if}
-
-				{#if publication.summary}
-					<p class="text-muted-foreground leading-relaxed">{publication.summary}</p>
-				{/if}
-
-				{#if publication.partners && publication.partners.length > 0}
-					<div class="flex flex-wrap items-center gap-2 pt-1">
-						<span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">Also in</span>
-						{#each publication.partners as partner}
-							<a
-								href={partner.url}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground hover:text-[var(--sz-color-accent-text)] hover:border-[var(--sz-color-border-accent)] transition-colors"
-							>
-								<img
-									src={getFavicon(partner.url)}
-									alt=""
-									class="w-3 h-3 flex-shrink-0"
-									loading="lazy"
-								/>
-								{partner.name}
-							</a>
-						{/each}
-					</div>
-				{/if}
-			</div>
+					{/each}
+				</div>
+			{/if}
 		</article>
 	{/each}
 </div>
+
+<style>
+	.publications {
+		display: grid;
+		gap: var(--sz-space-4);
+	}
+
+	article {
+		display: grid;
+		gap: 0.75rem;
+		padding: var(--sz-space-4);
+	}
+
+	h3 {
+		font-size: 1.125rem;
+		line-height: 1.2;
+	}
+
+	h3 a {
+		color: var(--sz-color-ink);
+		text-decoration: none;
+		transition: color var(--transition);
+	}
+
+	h3 a:hover {
+		color: var(--sz-color-accent-text);
+	}
+
+	.meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--sz-space-2);
+		font-size: 0.875rem;
+		color: var(--sz-color-muted);
+	}
+
+	.meta img {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	.publisher {
+		font-weight: var(--sz-font-weight-medium);
+		color: var(--sz-color-muted);
+		text-decoration: none;
+	}
+
+	.publisher:hover {
+		color: var(--sz-color-ink);
+		text-decoration: underline;
+	}
+
+	.summary {
+		line-height: 1.65;
+		color: var(--sz-color-muted);
+	}
+
+	.partners {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--sz-space-2);
+		padding-top: var(--sz-space-1);
+	}
+
+	.partners a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--sz-space-1);
+		padding: 0.125rem var(--sz-space-2);
+		border: 1px solid var(--sz-color-border-soft);
+		font-size: 0.75rem;
+		font-weight: var(--sz-font-weight-medium);
+		color: var(--sz-color-muted);
+		text-decoration: none;
+		transition:
+			color var(--transition),
+			border-color var(--transition);
+	}
+
+	.partners a:hover {
+		border-color: var(--sz-color-border-accent);
+		color: var(--sz-color-accent-text);
+	}
+
+	.partners img {
+		width: 0.75rem;
+		height: 0.75rem;
+	}
+</style>

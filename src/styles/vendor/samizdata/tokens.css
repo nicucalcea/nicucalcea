@@ -1,0 +1,147 @@
+/* SAMIZDATA design tokens — v1.0.0.
+   Source: _brand.yml and datavis/tokens.yml.
+   Distribution artifact: keep synchronized with those files. */
+
+:root,
+.samizdata-theme {
+  color-scheme: light;
+
+  --sz-color-primary: #7b003c;
+  --sz-color-primary-container: #9f1853;
+  --sz-color-accent-text: #7b003c;
+  --sz-color-accent-text-hover: #9f1853;
+  --sz-color-logo-mark: #7b003c;
+  --sz-color-surface: #fbf9f4;
+  --sz-color-surface-low: #f5f3ee;
+  --sz-color-surface-container: #f0eee9;
+  --sz-color-surface-high: #eae8e3;
+  --sz-color-surface-highest: #e4e2dd;
+  --sz-color-surface-lowest: #ffffff;
+  --sz-color-surface-dim: #dbdad5;
+  --sz-color-ink: #1b1c19;
+  --sz-color-muted: #574146;
+  --sz-color-ink-soft: rgba(27, 28, 25, 0.72);
+  --sz-color-outline: rgba(138, 112, 118, 0.3);
+  --sz-color-outline-ghost: rgba(222, 191, 197, 0.2);
+  --sz-color-border-soft: rgba(138, 112, 118, 0.18);
+  --sz-color-border-strong: rgba(138, 112, 118, 0.28);
+  --sz-color-border-accent: rgba(159, 24, 83, 0.26);
+  --sz-color-primary-glow: rgba(123, 0, 60, 0.1);
+  --sz-color-destructive: #c0476b;
+  --sz-color-destructive-text: #a52f56;
+  --sz-color-on-primary: #ffffff;
+  --sz-color-on-destructive: #ffffff;
+
+  --sz-font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+  --sz-font-body: "Work Sans", ui-sans-serif, sans-serif;
+  --sz-font-monospace: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sz-font-weight-body: 400;
+  --sz-font-weight-medium: 500;
+  --sz-font-weight-label: 700;
+  --sz-font-weight-display: 900;
+
+  --sz-space-1: 0.25rem;
+  --sz-space-2: 0.5rem;
+  --sz-space-3: 1rem;
+  --sz-space-4: 1.5rem;
+  --sz-space-5: 2rem;
+  --sz-space-6: 4rem;
+  --sz-grid-gap: 1.5rem;
+  --sz-shell-max: 90rem;
+  --sz-section-block: clamp(4rem, 9vw, 8rem);
+  --sz-section-block-tight: clamp(2rem, 5vw, 4rem);
+  --sz-nav-offset: 5.5rem;
+
+  --sz-radius-structural: 0;
+  --sz-radius-inline: 0.125rem;
+  --sz-radius-floating: 1rem;
+  --sz-radius-full: 9999px;
+
+  --sz-shadow-ambient: 0 1rem 2rem rgba(123, 0, 60, 0.08);
+  --sz-focus-color: var(--sz-color-accent-text);
+  --sz-focus-width: 0.125rem;
+  --sz-focus-offset: 0.1875rem;
+  --sz-transition-duration: 200ms;
+
+  --sz-chart-foreground: #1b1c19;
+  --sz-chart-muted: #574146;
+  --sz-chart-background: #fbf9f4;
+  --sz-chart-surface: #ffffff;
+  --sz-chart-surface-low: #f5f3ee;
+  --sz-chart-axis: #8a7076;
+  --sz-chart-gridline: rgba(138, 112, 118, 0.3);
+  --sz-chart-baseline: #574146;
+  --sz-chart-accent: #9f1853;
+  --sz-chart-area-fill: rgba(159, 24, 83, 0.14);
+  --sz-chart-selection: rgba(159, 24, 83, 0.26);
+  --sz-chart-categorical-1: #9f1853;
+  --sz-chart-categorical-2: #28666e;
+  --sz-chart-categorical-3: #c26d3a;
+  --sz-chart-categorical-4: #60569b;
+  --sz-chart-categorical-5: #67823a;
+  --sz-chart-categorical-6: #a64b37;
+  --sz-chart-categorical-7: #397c8c;
+  --sz-chart-categorical-8: #8a6075;
+  --sz-chart-sequential-1: #f8edf2;
+  --sz-chart-sequential-2: #edcad8;
+  --sz-chart-sequential-3: #dda0b9;
+  --sz-chart-sequential-4: #c96891;
+  --sz-chart-sequential-5: #ad3267;
+  --sz-chart-sequential-6: #8b0c48;
+  --sz-chart-sequential-7: #5d002e;
+  --sz-chart-diverging-negative: #28666e;
+  --sz-chart-diverging-midpoint: #f0eee9;
+  --sz-chart-diverging-positive: #9f1853;
+}
+
+:root[data-theme="dark"],
+.samizdata-theme[data-theme="dark"] {
+  color-scheme: dark;
+
+  --sz-color-primary: #a31552;
+  --sz-color-primary-container: #c62168;
+  --sz-color-accent-text: #f078a6;
+  --sz-color-accent-text-hover: #ff9bc1;
+  --sz-color-logo-mark: #d14a7b;
+  --sz-color-surface: #111311;
+  --sz-color-surface-low: #171a18;
+  --sz-color-surface-container: #1f211f;
+  --sz-color-surface-high: #2a2c29;
+  --sz-color-surface-highest: #353733;
+  --sz-color-surface-lowest: #1b1f1c;
+  --sz-color-surface-dim: #0c0e0d;
+  --sz-color-ink: #f4efe9;
+  --sz-color-muted: #c2b7b3;
+  --sz-color-ink-soft: rgba(244, 239, 233, 0.76);
+  --sz-color-outline: rgba(160, 140, 144, 0.24);
+  --sz-color-outline-ghost: rgba(255, 255, 255, 0.1);
+  --sz-color-border-soft: rgba(255, 255, 255, 0.11);
+  --sz-color-border-strong: rgba(255, 255, 255, 0.18);
+  --sz-color-border-accent: rgba(198, 33, 104, 0.4);
+  --sz-color-primary-glow: rgba(198, 33, 104, 0.16);
+  --sz-color-destructive: #d06b8c;
+  --sz-color-destructive-text: #e98bab;
+  --sz-color-on-destructive: #111311;
+
+  --sz-shadow-ambient: 0 1.25rem 2.75rem rgba(0, 0, 0, 0.35);
+
+  --sz-chart-foreground: #f4efe9;
+  --sz-chart-muted: #c2b7b3;
+  --sz-chart-background: #111311;
+  --sz-chart-surface: #181a18;
+  --sz-chart-surface-low: #202220;
+  --sz-chart-axis: #a99ca0;
+  --sz-chart-gridline: rgba(255, 255, 255, 0.16);
+  --sz-chart-baseline: #c2b7b3;
+  --sz-chart-accent: #f078a6;
+  --sz-chart-area-fill: rgba(240, 120, 166, 0.18);
+  --sz-chart-selection: rgba(198, 33, 104, 0.32);
+  --sz-chart-diverging-midpoint: #202220;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  .samizdata-theme {
+    --sz-transition-duration: 0ms;
+  }
+}

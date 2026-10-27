@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { getFavicon } from '$lib/utils/getIcon.js';
 
 	interface Props {
@@ -13,7 +12,7 @@
 	// Optionally filter to only featured experiences
 	const sortedExperiences = $derived(
 		experiences
-			.filter(exp => featured ? exp.featured === true : true)
+			.filter((exp) => (featured ? exp.featured === true : true))
 			.sort((a, b) => {
 				const aStart = new Date(a.startDate).getTime();
 				const bStart = new Date(b.startDate).getTime();
@@ -62,48 +61,112 @@
 	}
 </script>
 
-<div class="border border-border bg-card p-6">
-	<div class="space-y-6">
-		{#each sortedExperiences as experience, index}
-			<div class="flex items-start gap-4">
-				<div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-secondary mt-0.5">
-					<img
-						src={getFavicon(experience.url)}
-						alt=""
-						class="w-6 h-6 object-contain"
-						loading="lazy"
-					/>
-				</div>
-				<div class="flex-1 min-w-0">
-					<div class="flex items-center justify-between gap-2">
-						<div class="flex-1 min-w-0">
-							{#if experience.url && experience.url.trim() !== ''}
-								<a
-									href={experience.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="font-display text-base font-black tracking-[-0.04em] text-foreground hover:text-[var(--sz-color-accent-text)] transition-colors"
-								>
-									{getTitle(experience)}
-								</a>
-							{:else}
-								<h3 class="font-display text-base font-black tracking-[-0.04em] text-foreground">{getTitle(experience)}</h3>
-							{/if}
-						</div>
-						{#if isCurrentPosition(experience.endDate)}
-							<span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-[var(--sz-color-accent-text)]">Current</span>
+<ul class="card experience">
+	{#each sortedExperiences as experience}
+		<li>
+			<span class="favicon" aria-hidden="true">
+				<img src={getFavicon(experience.url)} alt="" width="24" height="24" loading="lazy" />
+			</span>
+			<div class="details">
+				<div class="heading">
+					<h3>
+						{#if experience.url && experience.url.trim() !== ''}
+							<a href={experience.url} target="_blank" rel="noopener noreferrer">{getTitle(experience)}</a>
+						{:else}
+							{getTitle(experience)}
 						{/if}
-					</div>
-					<div class="flex items-center gap-2 text-sm text-muted-foreground mt-0.5">
-						<span class="font-medium">{getSubtitle(experience)}</span>
-						<span aria-hidden="true">•</span>
-						<span>{formatDateRange(experience.startDate, experience.endDate)}</span>
-					</div>
+					</h3>
+					{#if isCurrentPosition(experience.endDate)}
+						<span class="label current">Current</span>
+					{/if}
+				</div>
+				<div class="meta">
+					<span class="role">{getSubtitle(experience)}</span>
+					<span aria-hidden="true">•</span>
+					<span>{formatDateRange(experience.startDate, experience.endDate)}</span>
 				</div>
 			</div>
-			{#if index < sortedExperiences.length - 1}
-				<hr class="border-border" />
-			{/if}
-		{/each}
-	</div>
-</div>
+		</li>
+	{/each}
+</ul>
+
+<style>
+	.experience {
+		display: grid;
+		gap: var(--sz-space-4);
+		margin: 0;
+		padding: var(--sz-space-4);
+		list-style: none;
+	}
+
+	li {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--sz-space-3);
+	}
+
+	li + li {
+		padding-top: var(--sz-space-4);
+		border-top: 1px solid var(--sz-color-border-soft);
+	}
+
+	.favicon {
+		display: grid;
+		place-items: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		flex-shrink: 0;
+		background: var(--sz-color-surface-low);
+	}
+
+	.favicon img {
+		width: 1.5rem;
+		height: 1.5rem;
+		object-fit: contain;
+	}
+
+	.details {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--sz-space-2);
+	}
+
+	h3 {
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+
+	h3 a {
+		color: var(--sz-color-ink);
+		text-decoration: none;
+		transition: color var(--transition);
+	}
+
+	h3 a:hover {
+		color: var(--sz-color-accent-text);
+	}
+
+	.current {
+		flex-shrink: 0;
+		color: var(--sz-color-accent-text);
+	}
+
+	.meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 var(--sz-space-2);
+		margin-top: 0.125rem;
+		font-size: 0.875rem;
+		color: var(--sz-color-muted);
+	}
+
+	.role {
+		font-weight: var(--sz-font-weight-medium);
+	}
+</style>

@@ -1,23 +1,12 @@
 <script lang="ts">
 	import cvData from '$data/cv.json';
-	import {
-		Github,
-		Linkedin,
-		Reddit,
-		Globe,
-		BookFill,
-		Bluesky,
-		EnvelopeFill,
-		Mastodon,
-		Threads
-	} from 'svelte-bootstrap-icons';
+	import { Github, Linkedin, Reddit, Globe, BookFill, Bluesky, EnvelopeFill, Mastodon } from 'svelte-bootstrap-icons';
 
 	const { basics } = cvData;
 
 	// Map social network names to Bootstrap icons
 	function getSocialIcon(network: string) {
-		const networkLower = network.toLowerCase();
-		switch (networkLower) {
+		switch (network.toLowerCase()) {
 			case 'github':
 				return Github;
 			case 'linkedin':
@@ -36,56 +25,113 @@
 	}
 </script>
 
-<section class="brand-hero border-b border-border">
-	<div class="mx-auto max-w-[90rem] px-4 sm:px-6 py-[var(--sz-section-block)]">
-		<div class="flex flex-col lg:flex-row items-center gap-12">
-			<!-- Left content -->
-			<div class="flex-1 space-y-6">
-				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-[-0.04em] text-foreground leading-[0.95]">
-					{basics.label}
-				</h1>
+<section class="hero">
+	<div class="grid-pattern" aria-hidden="true"></div>
+	<div class="shell hero-inner">
+		<div class="copy">
+			<h1>{basics.label}</h1>
 
-				<p class="text-lg text-muted-foreground leading-relaxed max-w-lg">
-					{basics.summary}
-				</p>
+			<p class="summary">{basics.summary}</p>
 
-				<!-- Social links -->
-				<div class="flex flex-wrap gap-3 items-center">
-					{#each basics.profiles as profile}
-						<a
-							href={profile.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="flex items-center justify-center w-11 h-11 border border-border bg-card text-muted-foreground hover:text-[var(--sz-color-accent-text)] hover:border-[var(--sz-color-border-accent)] transition-colors"
-							title={profile.network}
-						>
-							<svelte:component this={getSocialIcon(profile.network)} class="w-5 h-5" />
-							<span class="sr-only">{profile.network}</span>
-						</a>
-					{/each}
-
-					<!-- Email link -->
-					<a
-						href="/contact"
-						class="flex items-center justify-center w-11 h-11 border border-border bg-card text-muted-foreground hover:text-[var(--sz-color-accent-text)] hover:border-[var(--sz-color-border-accent)] transition-colors"
-						title="Contact"
-					>
-						<EnvelopeFill class="w-5 h-5" />
-						<span class="sr-only">Contact</span>
+			<div class="socials">
+				{#each basics.profiles as profile}
+					{@const SocialIcon = getSocialIcon(profile.network)}
+					<a href={profile.url} target="_blank" rel="noopener noreferrer" title={profile.network}>
+						<SocialIcon width={20} height={20} />
+						<span class="sr-only">{profile.network}</span>
 					</a>
-				</div>
-			</div>
+				{/each}
 
-			<!-- Right content - Profile image -->
-			<div class="flex-shrink-0 hidden lg:block">
-				<div class="relative">
-					<img
-						src={basics.image}
-						alt={basics.name}
-						class="w-64 h-64 lg:w-80 lg:h-80 object-cover"
-					/>
-				</div>
+				<a href="/contact" title="Contact">
+					<EnvelopeFill width={20} height={20} />
+					<span class="sr-only">Contact</span>
+				</a>
 			</div>
 		</div>
+
+		<img class="portrait" src={basics.image} alt={basics.name} width="320" height="320" />
 	</div>
 </section>
+
+<style>
+	.hero {
+		position: relative;
+		overflow: hidden;
+		border-bottom: 1px solid var(--sz-color-border-soft);
+	}
+
+	.grid-pattern {
+		position: absolute;
+		inset: 0;
+		opacity: 0.1;
+		background-image:
+			linear-gradient(var(--sz-color-outline) 1px, transparent 1px),
+			linear-gradient(90deg, var(--sz-color-outline) 1px, transparent 1px);
+		background-size: 2.5rem 2.5rem;
+		pointer-events: none;
+	}
+
+	.hero-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+		padding-block: var(--sz-section-block-tight);
+	}
+
+	.copy {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		gap: var(--sz-space-4);
+	}
+
+	h1 {
+		font-size: clamp(2.25rem, 6vw, 3.75rem);
+	}
+
+	.summary {
+		max-width: 32rem;
+		font-size: 1.125rem;
+		line-height: 1.65;
+		color: var(--sz-color-muted);
+	}
+
+	.socials {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	.socials a {
+		display: grid;
+		place-items: center;
+		width: 44px;
+		height: 44px;
+		border: 1px solid var(--sz-color-border-soft);
+		background: var(--sz-color-surface-lowest);
+		color: var(--sz-color-muted);
+		transition:
+			color var(--transition),
+			border-color var(--transition);
+	}
+
+	.socials a:hover {
+		border-color: var(--sz-color-border-accent);
+		color: var(--sz-color-accent-text);
+	}
+
+	.portrait {
+		display: none;
+		flex-shrink: 0;
+		width: 20rem;
+		height: 20rem;
+		object-fit: cover;
+	}
+
+	@media (min-width: 1024px) {
+		.portrait {
+			display: block;
+		}
+	}
+</style>

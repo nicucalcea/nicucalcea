@@ -52,50 +52,94 @@
 	<meta name="description" content="Schedule a meeting or consultation. Book a 30-minute session to discuss your project or collaboration." />
 </svelte:head>
 
-<div class="mx-auto max-w-[90rem] px-4 sm:px-6 py-[var(--sz-section-block)]">
+<div class="shell page">
 	<!-- Header Section -->
-	<div class="text-center mb-12">
-		<p class="font-display text-xs font-bold uppercase tracking-[0.2em] text-[var(--sz-color-accent-text)] mb-4">Get in touch</p>
-		<h1 class="font-display text-4xl sm:text-5xl font-black tracking-[-0.04em] mb-4">Let&rsquo;s talk</h1>
-		<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-			Ready to discuss an investigation, commission a data story, or want to discuss training? Schedule a 30-minute meeting.
+	<header>
+		<p class="label eyebrow">Get in touch</p>
+		<h1 class="page-title">Let&rsquo;s talk</h1>
+		<p class="intro">
+			Ready to discuss an investigation, commission a data story, or want to discuss training? Schedule a 30-minute
+			meeting.
 		</p>
-	</div>
+	</header>
 
 	<!-- Calendar Widget Section -->
-	<div class="max-w-4xl mx-auto">
-		<div class="border border-border bg-card">
-			<div class="p-6 border-b border-border">
-				<h2 class="font-display text-xl font-black tracking-[-0.04em]">Schedule a Meeting</h2>
-				<p class="text-muted-foreground mt-2">
-					Choose a convenient time for our conversation.
-				</p>
-			</div>
-			
-			<div class="bg-background">
-				<div 
-					id="my-cal-inline-30min" 
-					class="w-full h-[600px] md:h-[700px] overflow-auto"
-					style="width:100%;height:100%;overflow:scroll;min-height: 500px;"
-				></div>
-			</div>
+	<div class="card calendar-card">
+		<div class="calendar-header">
+			<h2>Schedule a Meeting</h2>
+			<p class="muted">Choose a convenient time for our conversation.</p>
 		</div>
+		<div id="my-cal-inline-30min" class="calendar"></div>
 	</div>
 
 	<!-- Additional Contact Information -->
-	<div class="max-w-2xl mx-auto mt-12 text-center">
-		<div class="border border-border bg-card p-8">
-			<h3 class="font-display text-lg font-black tracking-[-0.04em] mb-4">Prefer contacting me directly?</h3>
-			<div class="space-y-4 text-muted-foreground">
-				<div class="flex flex-col sm:flex-row gap-3 justify-center">
-					<a href="mailto:website@nicu.md" class="inline-flex items-center justify-center gap-2 px-6 py-3 font-display text-xs font-bold uppercase tracking-[0.18em] bg-primary text-primary-foreground hover:bg-[var(--sz-color-primary)] transition-colors">
-						Send me an email
-					</a>
-					<a href="https://www.linkedin.com/in/nicucalcea/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 font-display text-xs font-bold uppercase tracking-[0.18em] border border-border text-foreground hover:border-[var(--sz-color-border-accent)] hover:text-[var(--sz-color-accent-text)] transition-colors">
-						Connect on LinkedIn
-					</a>
-				</div>
-			</div>
+	<div class="card direct">
+		<h3>Prefer contacting me directly?</h3>
+		<div class="button-row">
+			<a href="mailto:website@nicu.md" class="btn-primary">Send me an email</a>
+			<a href="https://www.linkedin.com/in/nicucalcea/" target="_blank" rel="noopener noreferrer" class="btn">
+				Connect on LinkedIn
+			</a>
 		</div>
 	</div>
 </div>
+
+<style>
+	header {
+		max-width: 42rem;
+		margin: 0 auto 3rem;
+		text-align: center;
+	}
+
+	.eyebrow {
+		margin-bottom: var(--sz-space-3);
+		color: var(--sz-color-accent-text);
+	}
+
+	.page-title {
+		margin-bottom: var(--sz-space-3);
+	}
+
+	.intro {
+		font-size: 1.125rem;
+		color: var(--sz-color-muted);
+	}
+
+	.calendar-card {
+		max-width: 56rem;
+		margin: 0 auto;
+	}
+
+	.calendar-header {
+		padding: var(--sz-space-4);
+		border-bottom: 1px solid var(--sz-color-border-soft);
+	}
+
+	.calendar-header h2 {
+		margin-bottom: var(--sz-space-2);
+		font-size: 1.25rem;
+	}
+
+	.calendar {
+		width: 100%;
+		min-height: 500px;
+		overflow: auto;
+		background: var(--sz-color-surface);
+	}
+
+	.direct {
+		max-width: 42rem;
+		margin: 3rem auto 0;
+		padding: var(--sz-space-5);
+		text-align: center;
+	}
+
+	.direct h3 {
+		margin-bottom: var(--sz-space-3);
+		font-size: 1.125rem;
+	}
+
+	.direct .button-row {
+		justify-content: center;
+	}
+</style>

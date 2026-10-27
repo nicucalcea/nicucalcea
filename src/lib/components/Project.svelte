@@ -19,31 +19,75 @@
 	let { projects, featured = false }: Props = $props();
 
 	// Optionally filter to only featured projects
-	const filteredProjects = $derived(
-		projects.filter(project => featured ? project.featured === true : true)
-	);
+	const filteredProjects = $derived(projects.filter((project) => (featured ? project.featured === true : true)));
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="projects">
 	{#each filteredProjects as project}
-		<article class="brand-card border border-border bg-card p-6 flex flex-col h-full">
-			<h3 class="font-display text-base font-black tracking-[-0.04em] mb-3">
-				<a
-					href={project.url}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="text-foreground hover:text-[var(--sz-color-accent-text)] transition-colors inline-flex items-center gap-2"
-				>
-					<img
-						src={getFavicon(project.url)}
-						alt=""
-						class="w-5 h-5 flex-shrink-0"
-						loading="lazy"
-					/>
+		<article class="card card-interactive">
+			<h3>
+				<a href={project.url} target="_blank" rel="noopener noreferrer">
+					<img src={getFavicon(project.url)} alt="" width="20" height="20" loading="lazy" />
 					{project.name}
 				</a>
 			</h3>
-			<p class="text-muted-foreground text-sm leading-relaxed flex-grow">{project.description}</p>
+			<p>{project.description}</p>
 		</article>
 	{/each}
 </div>
+
+<style>
+	.projects {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--sz-space-4);
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: var(--sz-space-4);
+	}
+
+	h3 {
+		font-size: 1rem;
+	}
+
+	h3 a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--sz-space-2);
+		color: var(--sz-color-ink);
+		text-decoration: none;
+		transition: color var(--transition);
+	}
+
+	h3 a:hover {
+		color: var(--sz-color-accent-text);
+	}
+
+	h3 img {
+		width: 1.25rem;
+		height: 1.25rem;
+		flex-shrink: 0;
+	}
+
+	p {
+		font-size: 0.875rem;
+		line-height: 1.65;
+		color: var(--sz-color-muted);
+	}
+
+	@media (min-width: 768px) {
+		.projects {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.projects {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+</style>

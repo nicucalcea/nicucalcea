@@ -1,0 +1,234 @@
+/* Vendored from samizdata-co/brand v1.0.0; refresh with `npm run brand:sync`. */
+@import './vendor/samizdata/tokens.css';
+
+/*
+	nicu.md base styles in the SAMIZDATA design language.
+	Canonical foundations come from the vendored brand tokens above. Theme is
+	driven by data-theme on <html>, set before first paint in app.html.
+ */
+
+:root {
+	--color-nav-surface: color-mix(in srgb, var(--sz-color-surface) 84%, transparent);
+	--transition: var(--sz-transition-duration) ease;
+}
+
+:root[data-theme='dark'] {
+	--color-nav-surface: color-mix(in srgb, var(--sz-color-surface) 78%, transparent);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background: var(--sz-color-surface);
+}
+
+body {
+	margin: 0;
+	font-family: var(--sz-font-body);
+	font-size: 1rem;
+	line-height: 1.6;
+	background: var(--sz-color-surface);
+	color: var(--sz-color-ink);
+	overflow-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background: var(--sz-color-primary-container);
+	color: var(--sz-color-on-primary);
+}
+
+:focus-visible {
+	outline: var(--sz-focus-width) solid var(--sz-focus-color);
+	outline-offset: var(--sz-focus-offset);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	font-family: var(--sz-font-display);
+	font-weight: var(--sz-font-weight-display);
+	letter-spacing: -0.04em;
+	line-height: 0.95;
+	text-wrap: balance;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: var(--sz-color-accent-text);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+a:hover {
+	color: var(--sz-color-accent-text-hover);
+}
+
+button,
+select {
+	font: inherit;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────── */
+
+.shell {
+	width: min(100% - 2rem, var(--sz-shell-max));
+	margin: 0 auto;
+}
+
+.page {
+	padding-block: var(--sz-section-block-tight);
+}
+
+.page-title {
+	font-size: clamp(2.25rem, 5vw, 3rem);
+}
+
+.section-title {
+	margin-bottom: var(--sz-space-4);
+	font-size: 1.5rem;
+}
+
+.muted {
+	color: var(--sz-color-muted);
+}
+
+/* Uppercase Space Grotesk "data label" voice — eyebrows, meta, tags. */
+.label {
+	font-family: var(--sz-font-display);
+	font-size: 0.75rem;
+	font-weight: var(--sz-font-weight-label);
+	line-height: 1.2;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+/* ── Cards ──────────────────────────────────────────────────────────── */
+
+.card {
+	border: 1px solid var(--sz-color-border-soft);
+	border-radius: var(--sz-radius-structural);
+	background: var(--sz-color-surface-lowest);
+}
+
+.card-interactive {
+	transition:
+		transform var(--transition),
+		box-shadow var(--transition),
+		border-color var(--transition);
+}
+
+.card-interactive:is(:hover, :focus-within) {
+	transform: translateY(-0.2rem);
+	border-color: var(--sz-color-border-accent);
+	box-shadow: var(--sz-shadow-ambient);
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────── */
+
+.button-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sz-space-3);
+}
+
+.btn,
+.btn-primary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	min-height: 44px;
+	padding: 0.875rem 1.5rem;
+	border: 1px solid var(--sz-color-border-soft);
+	border-radius: var(--sz-radius-structural);
+	background: var(--sz-color-surface-lowest);
+	color: var(--sz-color-ink);
+	font-family: var(--sz-font-display);
+	font-size: 0.8rem;
+	font-weight: var(--sz-font-weight-label);
+	line-height: 1;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	transition:
+		background-color var(--transition),
+		color var(--transition),
+		border-color var(--transition);
+}
+
+.btn:hover {
+	border-color: var(--sz-color-primary-container);
+	color: var(--sz-color-ink);
+}
+
+.btn-primary {
+	border-color: transparent;
+	background: var(--sz-color-primary-container);
+	color: var(--sz-color-on-primary);
+}
+
+.btn-primary:hover {
+	background: var(--sz-color-primary);
+	color: var(--sz-color-on-primary);
+}
+
+/* ── Utilities ──────────────────────────────────────────────────────── */
+
+.skip-link {
+	position: fixed;
+	top: 0.75rem;
+	left: 0.75rem;
+	z-index: 100;
+	padding: 0.75rem 1rem;
+	background: var(--sz-color-surface-lowest);
+	color: var(--sz-color-accent-text);
+	transform: translateY(calc(-100% - 1rem));
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
+.sr-only {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+@media (min-width: 640px) {
+	.shell {
+		width: min(100% - 3rem, var(--sz-shell-max));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

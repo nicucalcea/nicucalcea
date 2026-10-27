@@ -1,18 +1,17 @@
 <script lang="ts">
-	import '$src/app.css';
-	import Navigation from '$lib/components/Navigation.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import { ModeWatcher } from 'mode-watcher';
-	
+	import '$src/styles/global.css';
+	import SiteNav from '$lib/components/SiteNav.svelte';
+	import SiteFooter from '$lib/components/SiteFooter.svelte';
+
 	let { children } = $props();
 </script>
 
-<ModeWatcher />
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<Navigation />
+<SiteNav />
 
-<main>
+<main id="main-content" tabindex="-1">
 	{@render children()}
 </main>
 
-<Footer />
+<SiteFooter />

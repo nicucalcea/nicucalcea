@@ -9,26 +9,21 @@
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"brand:sync": "cp ../samizdata/brand/css/tokens.css src/styles/vendor/samizdata/tokens.css",
+		"brand:check": "cmp ../samizdata/brand/css/tokens.css src/styles/vendor/samizdata/tokens.css"
 	},
 	"devDependencies": {
-		"@internationalized/date": "^3.12.0",
-		"@lucide/svelte": "^0.548.0",
-		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.61.1",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
-		"@tailwindcss/vite": "^4.2.2",
-		"bits-ui": "^2.16.5",
-		"clsx": "^2.1.1",
 		"svelte": "^5.55.7",
 		"svelte-check": "^4.4.6",
-		"tailwind-merge": "^3.5.0",
-		"tailwind-variants": "^3.2.2",
-		"tailwindcss": "^4.2.2",
-		"tw-animate-css": "^1.4.0",
 		"typescript": "^5.9.3",
 		"vite": "^8.1.3"
+	},
+	"dependencies": {
+		"svelte-bootstrap-icons": "^3.3.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
@@ -37,9 +32,5 @@
 		"overrides": {
 			"cookie": "^1.0.2"
 		}
-	},
-	"dependencies": {
-		"mode-watcher": "^1.1.0",
-		"svelte-bootstrap-icons": "^3.3.0"
 	}
 }

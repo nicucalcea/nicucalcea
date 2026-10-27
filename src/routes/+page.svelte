@@ -8,32 +8,38 @@
 
 <svelte:head>
 	<title>Nicu Calcea • Investigative Data Journalist</title>
-	<meta name="description" content="Journalist and data analyst specializing in investigations, data-driven stories, and digital journalism. View my portfolio of published work and experience." />
+	<meta
+		name="description"
+		content="Journalist and data analyst specializing in investigations, data-driven stories, and digital journalism. View my portfolio of published work and experience."
+	/>
 </svelte:head>
 
 <Hero />
 
-<div class="mx-auto max-w-[90rem] px-4 sm:px-6 py-[var(--sz-section-block)]">
-	<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="shell page">
+	<div class="columns">
 		<!-- Articles - 2/3 width on desktop -->
-		<section class="lg:col-span-2">
-			<h2 class="font-display text-2xl font-black tracking-[-0.04em] mb-6">Selected stories and investigations</h2>
+		<section class="stories">
+			<h2 class="section-title">Selected stories and investigations</h2>
 			<Publication publications={cvData.publications} featured={true} />
 		</section>
 
 		<!-- Work Experience + Education - 1/3 width on desktop -->
 		<section>
-			<h2 class="font-display text-2xl font-black tracking-[-0.04em] mb-6">Work Experience</h2>
+			<h2 class="section-title">Work Experience</h2>
 			<Experience experiences={cvData.work} featured={true} />
-			
-			<h2 class="font-display text-2xl font-black tracking-[-0.04em] mb-6 mt-12">Education</h2>
+
+			<h2 class="section-title education">Education</h2>
 			<Experience experiences={cvData.education} featured={true} />
-			
-			<div class="flex flex-col sm:flex-row gap-3 mt-6">
-				<a href="/cv" class="inline-flex items-center justify-center gap-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-[0.18em] bg-primary text-primary-foreground hover:bg-[var(--sz-color-primary)] transition-colors">
-					Full CV
-				</a>
-				<a href="https://docs.google.com/document/d/1d8x_x-UUQOK3dj4j02eAL-neB_qqZFdcb-0i9iBYqSU/export?format=pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-[0.18em] border border-border text-foreground hover:border-[var(--sz-color-border-accent)] hover:text-[var(--sz-color-accent-text)] transition-colors">
+
+			<div class="button-row cv-actions">
+				<a href="/cv" class="btn-primary">Full CV</a>
+				<a
+					href="https://docs.google.com/document/d/1d8x_x-UUQOK3dj4j02eAL-neB_qqZFdcb-0i9iBYqSU/export?format=pdf"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="btn"
+				>
 					Download CV
 				</a>
 			</div>
@@ -41,8 +47,38 @@
 	</div>
 
 	<!-- Projects Section -->
-	<section class="mt-[var(--sz-section-block)]">
-		<h2 class="font-display text-2xl font-black tracking-[-0.04em] mb-6">Projects</h2>
+	<section class="projects">
+		<h2 class="section-title">Projects</h2>
 		<Project projects={cvData.projects} />
 	</section>
 </div>
+
+<style>
+	.columns {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--sz-space-5);
+	}
+
+	.education {
+		margin-top: 3rem;
+	}
+
+	.cv-actions {
+		margin-top: var(--sz-space-4);
+	}
+
+	.projects {
+		margin-top: var(--sz-section-block-tight);
+	}
+
+	@media (min-width: 1024px) {
+		.columns {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+		.stories {
+			grid-column: span 2;
+		}
+	}
+</style>

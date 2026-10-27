@@ -107,18 +107,23 @@
 	<meta name="description" content="Portfolio of published stories, investigations, and journalistic work by Nicu Calcea." />
 </svelte:head>
 
-<div class="mx-auto max-w-[90rem] px-4 sm:px-6 py-[var(--sz-section-block)]">
-	<header class="mb-[var(--sz-section-block)]">
-		<h1 class="font-display text-4xl font-black tracking-[-0.04em] mb-4">Stories and investigations</h1>
+<div class="shell page">
+	<header>
+		<h1 class="page-title">Stories and investigations</h1>
 	</header>
 
-	<main>
-		<PublicationFilter 
-			publications={tagFilteredPublications()} 
-			onFilterChange={handleFilterChange}
-			initialPublisher={filters.publisher}
-			initialYear={filters.year}
-		/>
-		<Publication publications={filteredPublications()} featured={false} />
-	</main>
+	<PublicationFilter
+		publications={tagFilteredPublications()}
+		onFilterChange={handleFilterChange}
+		initialPublisher={filters.publisher}
+		initialYear={filters.year}
+		resultCount={filteredPublications().length}
+	/>
+	<Publication publications={filteredPublications()} featured={false} />
 </div>
+
+<style>
+	header {
+		margin-bottom: var(--sz-section-block-tight);
+	}
+</style>
