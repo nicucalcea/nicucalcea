@@ -49,6 +49,17 @@
   },
   "work": [
     {
+      "name": "SAMIZDATA",
+      "position": "Director",
+      "url": "https://samizdata.co/",
+      "location": "London, UK / Chișinău, MD",
+      "startDate": "2025-12-01",
+      "endDate": "",
+      "summary": "I run a small consultancy that works with media organisations and non-profits to produce research and data investigations.",
+      "highlights": [],
+      "featured": true
+    },
+    {
       "name": "Global Witness",
       "position": "Senior Data Investigator",
       "url": "https://globalwitness.org/",
