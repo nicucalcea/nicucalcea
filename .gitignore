@@ -21,3 +21,7 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Shared portfolio data, copied from samizdata-co/brand by scripts/sync-cv.mjs
+/src/data/cv.json
+/.brand

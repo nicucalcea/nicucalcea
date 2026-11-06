@@ -4,14 +4,15 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "node scripts/sync-cv.mjs && vite dev",
+		"build": "node scripts/sync-cv.mjs && vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check": "node scripts/sync-cv.mjs && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "node scripts/sync-cv.mjs && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"brand:sync": "cp ../samizdata/brand/css/tokens.css src/styles/vendor/samizdata/tokens.css",
-		"brand:check": "cmp ../samizdata/brand/css/tokens.css src/styles/vendor/samizdata/tokens.css"
+		"brand:check": "cmp ../samizdata/brand/css/tokens.css src/styles/vendor/samizdata/tokens.css",
+		"cv:sync": "node scripts/sync-cv.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.10",

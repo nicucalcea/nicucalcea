@@ -5,7 +5,7 @@
 		name: string;
 		publisher?: string;
 		releaseDate: string;
-		url: string;
+		url?: string;
 		summary?: string;
 		partners?: Array<{
 			name: string;
@@ -40,15 +40,19 @@
 </script>
 
 <div class="publications">
-	{#each sortedPublications as publication (publication.url)}
-		<article class="card card-interactive">
+	{#each sortedPublications as publication (publication.url ?? publication.name)}
+		<article class="card" class:card-interactive={publication.url}>
 			<h3>
-				<a href={publication.url} target="_blank" rel="noopener noreferrer">{publication.name}</a>
+				{#if publication.url}
+					<a href={publication.url} target="_blank" rel="noopener noreferrer">{publication.name}</a>
+				{:else}
+					{publication.name}
+				{/if}
 			</h3>
 
 			{#if publication.publisher}
 				<div class="meta">
-					<img src={getFavicon(publication.url)} alt="" width="16" height="16" loading="lazy" />
+					<img src={getFavicon(publication.url ?? '')} alt="" width="16" height="16" loading="lazy" />
 					<a class="publisher" href="/work/?publication={encodeURIComponent(publication.publisher)}">
 						{publication.publisher}
 					</a>
