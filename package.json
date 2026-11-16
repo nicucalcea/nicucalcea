@@ -16,6 +16,7 @@
 		"dev": "node scripts/sync-cv.mjs && vite dev",
 		"build": "node scripts/sync-cv.mjs && vite build",
 		"preview": "vite preview",
+		"deploy": "pnpm run build && wrangler deploy",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "node scripts/sync-cv.mjs && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "node scripts/sync-cv.mjs && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -30,7 +31,8 @@
 		"svelte": "^5.57.3",
 		"svelte-check": "^4.7.8",
 		"typescript": "^6.0.3",
-		"vite": "^8.3.8"
+		"vite": "^8.3.8",
+		"wrangler": "4.162.0"
 	},
 	"dependencies": {
 		"@fontsource/space-grotesk": "^5.3.0",

@@ -1,0 +1,4 @@
+# SvelteKit puts a content hash in every file name under /_app/immutable/,
+# so these never change at a given URL and can be cached for a year.
+/_app/immutable/*
+  Cache-Control: public, max-age=31536000, immutable

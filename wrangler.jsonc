@@ -1,0 +1,21 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Static site: SvelteKit (adapter-static) prerenders everything into build/,
+	// served as Workers static assets with no Worker code.
+	"name": "nicu-md",
+	"compatibility_date": "2026-11-16",
+	"assets": {
+		"directory": "./build",
+		// /work serves work.html; /work/ redirects to /work
+		"html_handling": "auto-trailing-slash",
+		// Unknown paths get build/404.html with a 404 status
+		"not_found_handling": "404-page"
+	},
+	// www.nicu.md is redirected to nicu.md by a zone redirect rule before it
+	// reaches the Worker; it's attached here so it has a proxied DNS record.
+	"routes": [
+		{ "pattern": "nicu.md", "custom_domain": true },
+		{ "pattern": "www.nicu.md", "custom_domain": true }
+	],
+	"workers_dev": true
+}

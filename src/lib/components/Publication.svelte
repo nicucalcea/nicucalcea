@@ -58,7 +58,7 @@
 			{#if publication.publisher}
 				<div class="meta">
 					<img src={icon(publication.url)} alt="" width="16" height="16" loading="lazy" />
-					<a class="publisher" href="/work/?publication={encodeURIComponent(publication.publisher)}">
+					<a class="publisher" href="/work?publication={encodeURIComponent(publication.publisher)}">
 						{publication.publisher}
 					</a>
 					<span aria-hidden="true">•</span>
