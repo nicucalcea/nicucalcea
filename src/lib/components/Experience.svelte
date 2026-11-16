@@ -1,12 +1,15 @@
 <script lang="ts">
-	import { getFavicon } from '$lib/utils/getIcon.js';
+	import { page } from '$app/state';
+	import { getFavicon } from '#lib/utils/getIcon.js';
 
 	interface Props {
 		experiences: any[];
 		featured?: boolean;
+		/** Heading level for each entry, to follow the page's outline */
+		headingLevel?: 2 | 3;
 	}
 
-	let { experiences, featured = false }: Props = $props();
+	let { experiences, featured = false, headingLevel = 3 }: Props = $props();
 
 	// Sort experiences chronologically, newest first
 	// Optionally filter to only featured experiences
@@ -65,17 +68,17 @@
 	{#each sortedExperiences as experience}
 		<li>
 			<span class="favicon" aria-hidden="true">
-				<img src={getFavicon(experience.url)} alt="" width="24" height="24" loading="lazy" />
+				<img src={getFavicon(experience.url, page.data.missingFavicons)} alt="" width="24" height="24" loading="lazy" />
 			</span>
 			<div class="details">
 				<div class="heading">
-					<h3>
+					<svelte:element this={`h${headingLevel}`} class="title">
 						{#if experience.url && experience.url.trim() !== ''}
 							<a href={experience.url} target="_blank" rel="noopener noreferrer">{getTitle(experience)}</a>
 						{:else}
 							{getTitle(experience)}
 						{/if}
-					</h3>
+					</svelte:element>
 					{#if isCurrentPosition(experience.endDate)}
 						<span class="label current">Current</span>
 					{/if}
@@ -137,18 +140,18 @@
 		gap: var(--sz-space-2);
 	}
 
-	h3 {
+	.title {
 		font-size: 1rem;
 		line-height: 1.2;
 	}
 
-	h3 a {
+	.title a {
 		color: var(--sz-color-ink);
 		text-decoration: none;
 		transition: color var(--transition);
 	}
 
-	h3 a:hover {
+	.title a:hover {
 		color: var(--sz-color-accent-text);
 	}
 

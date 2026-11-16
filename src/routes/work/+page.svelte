@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { afterNavigate, goto } from '$app/navigation';
-	import { browser } from '$app/environment';
-	import Publication from '$lib/components/Publication.svelte';
-	import PublicationFilter from '$lib/components/PublicationFilter.svelte';
-	import cvData from '$data/cv.json';
+	import { browser } from '$app/env';
+	import Publication from '#lib/components/Publication.svelte';
+	import PublicationFilter from '#lib/components/PublicationFilter.svelte';
 	import { onMount } from 'svelte';
+
+	let { data } = $props();
 
 	// State for filters
 	let filters = $state({ publisher: "", year: "" });
@@ -29,8 +30,23 @@
 		}
 	}
 
+	// Over a thousand cards take ~500 ms to hydrate in one go, blocking input.
+	// Prerender and hydrate the first batch, then render the rest in small
+	// batches, each in its own task so the page stays responsive.
+	const INITIAL_CARDS = 40;
+	const CARDS_PER_BATCH = 100;
+	let cardLimit = $state(INITIAL_CARDS);
+
 	onMount(() => {
 		syncFromUrl();
+
+		let timer: ReturnType<typeof setTimeout>;
+		const renderMore = () => {
+			cardLimit += CARDS_PER_BATCH;
+			if (cardLimit < data.publications.length) timer = setTimeout(renderMore);
+		};
+		timer = setTimeout(renderMore);
+		return () => clearTimeout(timer);
 	});
 
 	afterNavigate(() => {
@@ -41,10 +57,10 @@
 		const activeTag = tag;
 
 		if (!activeTag) {
-			return cvData.publications;
+			return data.publications;
 		}
 
-		return cvData.publications.filter(pub => pub.tags?.includes(activeTag));
+		return data.publications.filter(pub => pub.tags?.includes(activeTag));
 	});
 
 	// Filter the publications based on current filters
@@ -94,8 +110,8 @@
 				url.searchParams.delete('year');
 			}
 			
-			// Use replaceState to avoid adding to browser history for each filter change
-			goto(url.toString(), { replaceState: true, noScroll: true, keepFocus: true });
+			// Replace the history entry (no new entry per filter change), keeping scroll and focus
+			goto(url.toString(), { replace: true, reset: false });
 		}
 
 		filters = newFilters;
@@ -119,7 +135,8 @@
 		initialYear={filters.year}
 		resultCount={filteredPublications().length}
 	/>
-	<Publication publications={filteredPublications()} featured={false} />
+	<!-- Publications arrive sorted newest first, so the first batch is the latest -->
+	<Publication publications={filteredPublications().slice(0, cardLimit)} headingLevel={2} />
 </div>
 
 <style>

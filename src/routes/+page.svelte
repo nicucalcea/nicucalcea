@@ -1,9 +1,10 @@
 <script lang="ts">
-	import Publication from '$lib/components/Publication.svelte';
-	import Experience from '$lib/components/Experience.svelte';
-	import Project from '$lib/components/Project.svelte';
-	import Hero from '$lib/components/Hero.svelte';
-	import cvData from '$data/cv.json';
+	import Publication from '#lib/components/Publication.svelte';
+	import Experience from '#lib/components/Experience.svelte';
+	import Project from '#lib/components/Project.svelte';
+	import Hero from '#lib/components/Hero.svelte';
+
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -14,23 +15,23 @@
 	/>
 </svelte:head>
 
-<Hero />
+<Hero basics={data.basics} />
 
 <div class="shell page">
 	<div class="columns">
 		<!-- Articles - 2/3 width on desktop -->
 		<section class="stories">
 			<h2 class="section-title">Selected stories and investigations</h2>
-			<Publication publications={cvData.publications} featured={true} />
+			<Publication publications={data.publications} />
 		</section>
 
 		<!-- Work Experience + Education - 1/3 width on desktop -->
 		<section>
 			<h2 class="section-title">Work Experience</h2>
-			<Experience experiences={cvData.work} featured={true} />
+			<Experience experiences={data.work} />
 
 			<h2 class="section-title education">Education</h2>
-			<Experience experiences={cvData.education} featured={true} />
+			<Experience experiences={data.education} />
 
 			<div class="button-row cv-actions">
 				<a href="/cv" class="btn-primary">Full CV</a>
@@ -49,7 +50,7 @@
 	<!-- Projects Section -->
 	<section class="projects">
 		<h2 class="section-title">Projects</h2>
-		<Project projects={cvData.projects} />
+		<Project projects={data.projects} />
 	</section>
 </div>
 

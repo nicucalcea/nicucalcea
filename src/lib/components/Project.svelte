@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { getFavicon } from '$lib/utils/getIcon.js';
+	import { page } from '$app/state';
+	import { getFavicon } from '#lib/utils/getIcon.js';
 
 	interface Project {
 		name: string;
-		startDate: string;
-		endDate: string;
+		startDate?: string;
+		endDate?: string;
 		description: string;
 		highlights?: string[];
 		url: string;
@@ -27,7 +28,7 @@
 		<article class="card card-interactive">
 			<h3>
 				<a href={project.url} target="_blank" rel="noopener noreferrer">
-					<img src={getFavicon(project.url)} alt="" width="20" height="20" loading="lazy" />
+					<img src={getFavicon(project.url, page.data.missingFavicons)} alt="" width="20" height="20" loading="lazy" />
 					{project.name}
 				</a>
 			</h3>

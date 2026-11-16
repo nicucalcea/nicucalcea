@@ -69,7 +69,10 @@
 			<h2>Schedule a Meeting</h2>
 			<p class="muted">Choose a convenient time for our conversation.</p>
 		</div>
-		<div id="my-cal-inline-30min" class="calendar"></div>
+		<!-- The size is reserved on a wrapper: Cal's element inherits min-height from its parent -->
+		<div class="calendar">
+			<div id="my-cal-inline-30min"></div>
+		</div>
 	</div>
 
 	<!-- Additional Contact Information -->
@@ -106,6 +109,7 @@
 	}
 
 	.calendar-card {
+		container-type: inline-size;
 		max-width: 56rem;
 		margin: 0 auto;
 	}
@@ -120,11 +124,27 @@
 		font-size: 1.25rem;
 	}
 
+	/*
+		Reserve the Cal.com embed's final height so it doesn't push the page
+		down when it loads (measured: its month view stacks below 768px wide
+		and grows with width; at 768px and up it sits side by side at 534px).
+	 */
 	.calendar {
 		width: 100%;
-		min-height: 500px;
+		min-height: calc(568px + 84.75cqi);
 		overflow: auto;
 		background: var(--sz-color-surface);
+	}
+
+	@container (min-width: 768px) {
+		.calendar {
+			min-height: 534px;
+		}
+	}
+
+	/* Cal's skeleton loader reflows as it fills in; show the embed once ready */
+	.calendar :global(cal-inline:not([loading='done'])) {
+		visibility: hidden;
 	}
 
 	.direct {

@@ -1,7 +1,8 @@
 <script lang="ts">
-	import Experience from '$lib/components/Experience.svelte';
-	import Timeline from '$lib/components/Timeline.svelte';
-	import cvData from '$data/cv.json';
+	import Experience from '#lib/components/Experience.svelte';
+	import Timeline from '#lib/components/Timeline.svelte';
+
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -28,18 +29,18 @@
 	<div class="sections">
 		<!-- Timeline Chart -->
 		<section>
-			<Timeline experiences={cvData.work} education={cvData.education} />
+			<Timeline experiences={data.work} education={data.education} />
 		</section>
 
 		<!-- Detailed Experience List -->
 		<section>
-			<Experience experiences={cvData.work} />
+			<Experience experiences={data.work} headingLevel={2} />
 		</section>
 
 		<!-- Education Section -->
 		<section>
 			<h2 class="section-title">Education</h2>
-			<Experience experiences={cvData.education} />
+			<Experience experiences={data.education} />
 		</section>
 	</div>
 </div>

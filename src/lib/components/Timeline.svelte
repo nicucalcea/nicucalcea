@@ -2,8 +2,12 @@
 	// Career timeline — plain HTML/CSS, positioned in percentages so it scales
 	// to any width without measuring. Non-overlapping roles share a lane, and a
 	// readout below replaces hover tooltips so it works by tap and keyboard.
+	// The bars are a pointer shortcut only (many are a few pixels wide, too
+	// small to tap reliably); the stepper is the keyboard and assistive-tech
+	// route through every role, and the readout announces each one.
+	import { page } from '$app/state';
 	import Icon from './Icon.svelte';
-	import { getFavicon } from '$lib/utils/getIcon.js';
+	import { getFavicon } from '#lib/utils/getIcon.js';
 
 	type WorkExperience = {
 		name: string;
@@ -107,7 +111,7 @@
 	);
 	const active = $derived(items.find((item) => item.key === hoveredKey) ?? items[selectedIndex]);
 
-	// Explicit choices (click, tap, focus, stepping) override any hover preview
+	// Explicit choices (click, tap, stepping) override any hover preview
 	function select(key: string) {
 		selectedKey = key;
 		hoveredKey = undefined;
@@ -128,8 +132,9 @@
 
 {#if items.length}
 	<figure class="timeline">
-		<div class="plot" role="group" aria-label="Career timeline" onpointerleave={() => (hoveredKey = undefined)}>
-			<div class="gridlines" aria-hidden="true">
+		<!-- Visual only: the stepper and readout below expose the same choices -->
+<div class="plot" aria-hidden="true" onpointerleave={() => (hoveredKey = undefined)}>
+			<div class="gridlines">
 				{#each years as year}
 					<span style:left="{pct(new Date(year, 0, 1))}%"></span>
 				{/each}
@@ -141,27 +146,25 @@
 					{#each group.lanes as lane}
 						<div class="lane">
 							{#each lane as item (item.key)}
-								<button
-									type="button"
+								<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+								<div
 									class="bar {item.kind}"
 									class:active={item === active}
-									style:--x="{pct(item.start)}%"
+																	style:--x="{pct(item.start)}%"
 									style:--w="{pct(item.end) - pct(item.start)}%"
-									aria-pressed={item === items[selectedIndex]}
-									aria-label="{item.title}, {item.subtitle}, {range(item)}"
+									title="{item.title}, {range(item)}"
 									onpointerenter={(e) => e.pointerType === 'mouse' && (hoveredKey = item.key)}
-									onfocus={() => select(item.key)}
 									onclick={() => select(item.key)}
 								>
 									<span class="bar-label">{item.title}</span>
-								</button>
+								</div>
 							{/each}
 						</div>
 					{/each}
 				</div>
 			{/each}
 
-			<div class="axis" aria-hidden="true">
+			<div class="axis">
 				{#each years as year, i}
 					<span class:odd={i % 2 === 1} class:off-four={i % 4 !== 0} style:left="{pct(new Date(year, 0, 1))}%">{year}</span>
 				{/each}
@@ -170,6 +173,7 @@
 
 		{#if active}
 			<figcaption class="readout">
+	<p class="sr-only">Career timeline: {items.length} roles. Use the previous and next buttons to step through them.</p>
 				<div class="readout-head">
 					<p class="label dates">
 						<span class="range">{range(active)}</span><span class="duration">{duration(active)}</span>
@@ -179,20 +183,22 @@
 						<button type="button" aria-label="Previous role" onclick={() => step(-1)}>
 							<Icon name="chevron-left" size={18} strokeWidth={2.2} />
 						</button>
-						<span class="label count">{selectedIndex + 1}/{items.length}</span>
+						<span class="label count" aria-hidden="true">{selectedIndex + 1}/{items.length}</span>
 						<button type="button" aria-label="Next role" onclick={() => step(1)}>
 							<Icon name="chevron-right" size={18} strokeWidth={2.2} />
 						</button>
 					</div>
 				</div>
-				<div class="heading">
+				<div class="heading" aria-live="polite">
 					<span class="favicon" aria-hidden="true">
-						<img src={getFavicon(active.url ?? '')} alt="" width="28" height="28" />
+						<img src={getFavicon(active.url, page.data.missingFavicons)} alt="" width="28" height="28" />
 					</span>
 					<div>
-						<h3>{active.title}</h3>
+						<p class="title"><span class="sr-only">Role {items.indexOf(active) + 1} of {items.length}: </span>{active.title}</p>
 						<p class="subtitle">
-							{active.subtitle}{#if active.location}<span aria-hidden="true">{' • '}</span>{active.location}{/if}
+							{active.subtitle}{#if active.location}<span aria-hidden="true">{' • '}</span>{active.location}{/if}<span class="sr-only"
+		>, {range(active)}</span
+	>
 						</p>
 					</div>
 				</div>
@@ -292,10 +298,6 @@
 		color: var(--sz-color-on-primary);
 	}
 
-	.bar:focus-visible {
-		z-index: 1;
-		outline-offset: 2px;
-	}
 
 	.bar-label {
 		display: block;
@@ -476,9 +478,14 @@
 		object-fit: contain;
 	}
 
-	h3 {
+	.title {
 		margin-bottom: var(--sz-space-2);
+		font-family: var(--sz-font-display);
 		font-size: clamp(1.375rem, 3vw, 1.75rem);
+		font-weight: var(--sz-font-weight-display);
+		letter-spacing: -0.04em;
+		line-height: 0.95;
+		text-wrap: balance;
 	}
 
 	.subtitle {

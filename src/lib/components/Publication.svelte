@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { getFavicon } from '$lib/utils/getIcon.js';
+	import { page } from '$app/state';
+	import { getFavicon } from '#lib/utils/getIcon.js';
 
 	interface Publication {
 		name: string;
@@ -18,9 +19,13 @@
 	interface Props {
 		publications: Publication[];
 		featured?: boolean;
+		/** Heading level for each title, to follow the page's outline */
+		headingLevel?: 2 | 3;
 	}
 
-	let { publications, featured = false }: Props = $props();
+	let { publications, featured = false, headingLevel = 3 }: Props = $props();
+
+	const icon = (url?: string) => getFavicon(url, page.data.missingFavicons);
 
 	// Sort publications chronologically, newest first
 	// Optionally filter to only featured publications
@@ -42,17 +47,17 @@
 <div class="publications">
 	{#each sortedPublications as publication (publication.url ?? publication.name)}
 		<article class="card" class:card-interactive={publication.url}>
-			<h3>
+			<svelte:element this={`h${headingLevel}`} class="title">
 				{#if publication.url}
 					<a href={publication.url} target="_blank" rel="noopener noreferrer">{publication.name}</a>
 				{:else}
 					{publication.name}
 				{/if}
-			</h3>
+			</svelte:element>
 
 			{#if publication.publisher}
 				<div class="meta">
-					<img src={getFavicon(publication.url ?? '')} alt="" width="16" height="16" loading="lazy" />
+					<img src={icon(publication.url)} alt="" width="16" height="16" loading="lazy" />
 					<a class="publisher" href="/work/?publication={encodeURIComponent(publication.publisher)}">
 						{publication.publisher}
 					</a>
@@ -72,7 +77,7 @@
 					<span class="label muted">Also in</span>
 					{#each publication.partners as partner}
 						<a href={partner.url} target="_blank" rel="noopener noreferrer">
-							<img src={getFavicon(partner.url)} alt="" width="12" height="12" loading="lazy" />
+							<img src={icon(partner.url)} alt="" width="12" height="12" loading="lazy" />
 							{partner.name}
 						</a>
 					{/each}
@@ -92,20 +97,23 @@
 		display: grid;
 		gap: 0.75rem;
 		padding: var(--sz-space-4);
+		/* Skip layout and paint for off-screen cards; /work lists over a thousand */
+		content-visibility: auto;
+		contain-intrinsic-size: auto 13rem;
 	}
 
-	h3 {
+	.title {
 		font-size: 1.125rem;
 		line-height: 1.2;
 	}
 
-	h3 a {
+	.title a {
 		color: var(--sz-color-ink);
 		text-decoration: none;
 		transition: color var(--transition);
 	}
 
-	h3 a:hover {
+	.title a:hover {
 		color: var(--sz-color-accent-text);
 	}
 

@@ -1,8 +1,20 @@
 <script lang="ts">
-	import cvData from '$data/cv.json';
 	import { Github, Linkedin, Reddit, Globe, BookFill, Bluesky, EnvelopeFill, Mastodon } from 'svelte-bootstrap-icons';
+	import portrait320Avif from '#lib/assets/profile-320.avif';
+	import portrait500Avif from '#lib/assets/profile-500.avif';
+	import portrait320Webp from '#lib/assets/profile-320.webp';
+	import portrait500Webp from '#lib/assets/profile-500.webp';
 
-	const { basics } = cvData;
+	interface Props {
+		basics: {
+			name?: string;
+			label?: string;
+			summary?: string;
+			profiles?: Array<{ network: string; url: string }>;
+		};
+	}
+
+	let { basics }: Props = $props();
 
 	// Map social network names to Bootstrap icons
 	function getSocialIcon(network: string) {
@@ -34,7 +46,7 @@
 			<p class="summary">{basics.summary}</p>
 
 			<div class="socials">
-				{#each basics.profiles as profile}
+				{#each basics.profiles ?? [] as profile}
 					{@const SocialIcon = getSocialIcon(profile.network)}
 					<a href={profile.url} target="_blank" rel="noopener noreferrer" title={profile.network}>
 						<SocialIcon width={20} height={20} />
@@ -49,7 +61,19 @@
 			</div>
 		</div>
 
-		<img class="portrait" src={basics.image} alt={basics.name} width="320" height="320" />
+		<picture>
+			<source type="image/avif" srcset="{portrait320Avif} 320w, {portrait500Avif} 500w" sizes="20rem" />
+			<img
+				class="portrait"
+				src={portrait320Webp}
+				srcset="{portrait320Webp} 320w, {portrait500Webp} 500w"
+				sizes="20rem"
+				alt={basics.name}
+				width="320"
+				height="320"
+				fetchpriority="high"
+			/>
+		</picture>
 	</div>
 </section>
 
