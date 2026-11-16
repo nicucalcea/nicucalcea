@@ -17,5 +17,8 @@
 		{ "pattern": "nicu.md", "custom_domain": true },
 		{ "pattern": "www.nicu.md", "custom_domain": true }
 	],
-	"workers_dev": true
+	// Serve only on nicu.md: no <name>.<subdomain>.workers.dev copy and no
+	// per-version preview URLs
+	"workers_dev": false,
+	"preview_urls": false
 }
